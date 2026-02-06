@@ -1154,8 +1154,8 @@ section {
 }
 
 .vision-tagline-brand-compact {
-    font-size: 26px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 700;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

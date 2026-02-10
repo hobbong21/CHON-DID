@@ -136,14 +136,6 @@
                         </div>
                         
                         <div class="contact-detail-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong data-ko="전화" data-en="Phone">전화</strong>
-                                <p>+82-2-1234-5678</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail-item">
                             <i class="fas fa-clock"></i>
                             <div>
                                 <strong data-ko="운영시간" data-en="Business Hours">운영시간</strong>
@@ -398,58 +390,68 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script>
         // FAQ 토글 기능
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
                 const isActive = faqItem.classList.contains('active');
-                
+
                 // 모든 FAQ 아이템 닫기
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
                 });
-                
+
                 // 클릭된 아이템만 열기 (이미 열려있지 않은 경우)
                 if (!isActive) {
                     faqItem.classList.add('active');
                 }
             });
         });
-                    <!-- 모듈식 JavaScript 로드 -->
-                    <script src="js/utils.js" type="module"></script>
-                    <script src="js/navbar.js" type="module"></script>
-                    <script src="js/hero.js" type="module"></script>
-                    <script src="js/animations.js" type="module"></script>
-                    <script src="js/interactions.js" type="module"></script>
-                    <script src="js/index.js" type="module"></script>
+
         // 문의 폼 제출 처리
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // 폼 데이터 수집
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
             // 간단한 유효성 검사
             if (!data.name || !data.email || !data.subject || !data.message) {
                 alert('필수 항목을 모두 입력해주세요.');
                 return;
             }
-            
+
             if (!data.privacy) {
                 alert('개인정보 수집 및 이용에 동의해주세요.');
                 return;
             }
-            
-            // 실제 구현에서는 서버로 데이터 전송
-            console.log('문의 데이터:', data);
-            alert('문의가 성공적으로 전송되었습니다. 빠른 시일 내에 답변드리겠습니다.');
-            
+
+            const recipient = 'ops@chon.ai';
+            const subject = data.subject || 'CHON 문의';
+            const bodyLines = [
+                `이름: ${data.name}`,
+                `이메일: ${data.email}`,
+                `회사명: ${data.company || '-'}`,
+                `연락처: ${data.phone || '-'}`,
+                `문의 유형: ${data['inquiry-type'] || '-'}`,
+                '',
+                data.message
+            ];
+            const body = bodyLines.join('\n');
+            window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
             // 폼 초기화
             this.reset();
         });
     </script>
+    <!-- 모듈식 JavaScript 로드 -->
+    <script src="js/utils.js" type="module"></script>
+    <script src="js/navbar.js" type="module"></script>
+    <script src="js/hero.js" type="module"></script>
+    <script src="js/animations.js" type="module"></script>
+    <script src="js/interactions.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>

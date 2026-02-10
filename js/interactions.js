@@ -41,40 +41,87 @@ class Interactions {
         const langToggle = document.getElementById('langToggle');
         if (!langToggle) return;
 
-        langToggle.addEventListener('click', () => {
-            const currentLang = langToggle.querySelector('span').textContent;
-            const newLang = currentLang === 'EN' ? 'KO' : 'EN';
-            
-            // 언어 변경 로직
-            this.changeLanguage(newLang);
-            
-            // UI 업데이트
-            langToggle.querySelector('span').textContent = newLang;
-            
-            // 로컬스토리지에 저장
-            localStorage.setItem('language', newLang);
-        });
+        const langSpan = langToggle.querySelector('span');
+        const savedLang = localStorage.getItem('chon-language') || 'ko';
+        const initialLang = savedLang === 'en' ? 'en' : 'ko';
 
-        // 저장된 언어 설정 복원
-        const savedLang = localStorage.getItem('language') || 'EN';
-        langToggle.querySelector('span').textContent = savedLang;
+        // 저장된 언어로 초기화
+        this.changeLanguage(initialLang);
+        if (langSpan) {
+            langSpan.textContent = initialLang === 'en' ? 'KO' : 'EN';
+        }
+
+        langToggle.addEventListener('click', () => {
+            const nextLang = document.documentElement.lang === 'en' ? 'ko' : 'en';
+
+            // 언어 변경 로직
+            this.changeLanguage(nextLang);
+
+            // UI 업데이트
+            if (langSpan) {
+                langSpan.textContent = nextLang === 'en' ? 'KO' : 'EN';
+            }
+
+            // 로컬스토리지에 저장
+            localStorage.setItem('chon-language', nextLang);
+        });
     }
 
     // 언어 변경 처리
     changeLanguage(lang) {
+        this.updateMenuLanguage(lang);
+
         // data-ko, data-en 속성을 가진 요소들에 대해 텍스트 변경
         const elements = document.querySelectorAll('[data-ko][data-en]');
         
         elements.forEach(element => {
-            if (lang === 'EN') {
-                element.textContent = element.getAttribute('data-en');
+            if (lang === 'en') {
+                element.innerHTML = element.getAttribute('data-en');
             } else {
-                element.textContent = element.getAttribute('data-ko');
+                element.innerHTML = element.getAttribute('data-ko');
             }
         });
 
         // HTML lang 속성 변경
-        document.documentElement.lang = lang === 'EN' ? 'en' : 'ko';
+        document.documentElement.lang = lang === 'en' ? 'en' : 'ko';
+    }
+
+    updateMenuLanguage(lang) {
+        const menuTranslations = {
+            ko: {
+                'about.html#company': '회사 소개',
+                'about.html#vision': '비전',
+                'ceo.html': 'CEO 메시지',
+                'about.html#team': '팀 소개',
+                'technology.html#overview': 'CHON DID',
+                'technology.html#technology': '신원 인증 기술',
+                'service.html#service': 'Smart Genealogy',
+                'service.html#preservation': '역사 보존',
+                'service.html#blockchain': '블록체인 기록',
+                'service.html#download': '앱 다운로드'
+            },
+            en: {
+                'about.html#company': 'Company Info',
+                'about.html#vision': 'Vision',
+                'ceo.html': 'CEO Message',
+                'about.html#team': 'Team Info',
+                'technology.html#overview': 'CHON DID',
+                'technology.html#technology': 'Identity Technology',
+                'service.html#service': 'Smart Genealogy',
+                'service.html#preservation': 'History Preservation',
+                'service.html#blockchain': 'Blockchain Record',
+                'service.html#download': 'App Download'
+            }
+        };
+
+        const menuItems = document.querySelectorAll('.dropdown-menu a');
+        menuItems.forEach(item => {
+            const href = item.getAttribute('href');
+            const nextText = menuTranslations[lang]?.[href];
+            if (nextText) {
+                item.textContent = nextText;
+            }
+        });
     }
 
     // 진행률 바 애니메이션

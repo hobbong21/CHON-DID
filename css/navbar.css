@@ -81,6 +81,15 @@
     position: relative;
 }
 
+.dropdown::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 12px;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -94,7 +103,9 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: var(--transition-base);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: 0.15s;
+    pointer-events: none;
     z-index: var(--z-dropdown);
 }
 
@@ -102,6 +113,8 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    transition-delay: 0s;
+    pointer-events: auto;
 }
 
 .dropdown-menu li {

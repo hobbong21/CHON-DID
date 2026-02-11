@@ -247,7 +247,7 @@
                     <div class="cta-box">
                         <h3>무료 체험</h3>
                         <p>30일 무료 체험으로 스마트 족보의 모든 기능을 경험해보세요</p>
-                        <a href="#" class="btn btn-primary btn-large">
+                        <a href="#" class="btn btn-primary btn-large" id="trialStartBtn" data-modal-message="무료 체험은 현재 준비 중입니다. 빠른 시일 내에 안내드리겠습니다.">
                             <i class="fas fa-play"></i>
                             무료 체험 시작
                         </a>
@@ -308,14 +308,14 @@
                         </div>
                     </div>
                     <div class="download-buttons">
-                        <a href="#" class="store-button">
+                        <a href="#" class="store-button" data-modal-open data-modal-message="App Store 출시는 현재 준비 중입니다. 출시 일정은 추후 공지됩니다.">
                             <i class="fab fa-apple"></i>
                             <div>
                                 <span>Download on the</span>
                                 <strong>App Store</strong>
                             </div>
                         </a>
-                        <a href="#" class="store-button">
+                        <a href="#" class="store-button" data-modal-open data-modal-message="Google Play 출시는 현재 준비 중입니다. 출시 일정은 추후 공지됩니다.">
                             <i class="fab fa-google-play"></i>
                             <div>
                                 <span>GET IT ON</span>
@@ -332,6 +332,21 @@
         </div>
     </section>
 
+    <div class="trial-modal" id="trialModal" role="dialog" aria-modal="true" aria-labelledby="trialModalTitle" aria-describedby="trialModalDesc" aria-hidden="true">
+        <div class="trial-modal-content" role="document">
+            <button class="trial-modal-close" type="button" aria-label="닫기" data-modal-close>
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="trial-modal-body">
+                <h3 id="trialModalTitle">서비스 준비중</h3>
+                <p id="trialModalDesc">무료 체험은 현재 준비 중입니다. 빠른 시일 내에 안내드리겠습니다.</p>
+            </div>
+            <div class="trial-modal-actions">
+                <button class="btn btn-primary" type="button" data-modal-close>확인</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -343,7 +358,7 @@
                             <p><strong>정보보안담당자:</strong> 김남율</p>
                             <p><strong>이메일:</strong> ops@chon.ai</p>
                             <p><strong>주소:</strong> 서울특별시 강남구 강남대로464 3층 309호</p>
-                            <p><strong>사업자등록번호:</strong> 110111-9136890</p>
+                            <p><strong>사업자등록번호:</strong> 196-86-03544</p>
                         </div>
                     </div>
                 </div>
@@ -387,6 +402,85 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const trialModal = document.getElementById('trialModal');
+        const modalTriggers = document.querySelectorAll('[data-modal-open], #trialStartBtn');
+
+        if (trialModal && modalTriggers.length) {
+            const closeButtons = trialModal.querySelectorAll('[data-modal-close]');
+            const modalMessage = trialModal.querySelector('.trial-modal-body p');
+            const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+            let lastFocusedElement = null;
+
+            const openModal = (message) => {
+                if (modalMessage && message) {
+                    modalMessage.textContent = message;
+                }
+                lastFocusedElement = document.activeElement;
+                trialModal.classList.add('show');
+                trialModal.setAttribute('aria-hidden', 'false');
+                const focusables = trialModal.querySelectorAll(focusableSelector);
+                if (focusables.length) {
+                    focusables[0].focus();
+                }
+            };
+
+            const closeModal = () => {
+                trialModal.classList.remove('show');
+                trialModal.setAttribute('aria-hidden', 'true');
+                if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                    lastFocusedElement.focus();
+                }
+            };
+
+            modalTriggers.forEach((trigger) => {
+                trigger.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const message = trigger.getAttribute('data-modal-message');
+                    openModal(message);
+                });
+            });
+
+            closeButtons.forEach((button) => {
+                button.addEventListener('click', closeModal);
+            });
+
+            trialModal.addEventListener('click', (event) => {
+                if (event.target === trialModal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (!trialModal.classList.contains('show')) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    closeModal();
+                    return;
+                }
+
+                if (event.key === 'Tab') {
+                    const focusables = Array.from(trialModal.querySelectorAll(focusableSelector));
+                    if (!focusables.length) {
+                        return;
+                    }
+                    const first = focusables[0];
+                    const last = focusables[focusables.length - 1];
+
+                    if (event.shiftKey && document.activeElement === first) {
+                        event.preventDefault();
+                        last.focus();
+                    } else if (!event.shiftKey && document.activeElement === last) {
+                        event.preventDefault();
+                        first.focus();
+                    }
+                }
+            });
+        }
+    </script>
 
     <!-- 모듈식 JavaScript 로드 -->
     <script src="js/utils.js" type="module"></script>

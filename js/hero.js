@@ -21,7 +21,7 @@ class HeroSlider {
             return;
         }
         
-        console.log(`%c✓ Hero Slider Initialized: ${this.slides.length}개 슬라이드`, 'color: #06b6d4; font-weight: bold;');
+        console.log(`%cHero Slider Initialized: ${this.slides.length} slides`, 'color: #06b6d4; font-weight: bold;');
         
         // 초기 상태 설정 - 첫 번째 슬라이드만 활성화
         this.slides.forEach((slide, index) => {

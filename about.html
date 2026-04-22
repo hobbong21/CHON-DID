@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <script src="js/https-redirect.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - CHON</title>
+    <meta name="description" content="CHON의 기업 소개 페이지입니다. 관계 기반 신뢰 네트워크와 차세대 탈중앙화 신원 인프라를 만드는 비전과 사업 방향을 소개합니다.">
+    <meta name="keywords" content="CHON, 회사 소개, DID, 기업 비전, 블록체인 신원인증, 관계 기반 신뢰">
+    <meta name="author" content="CHON">
+    <meta property="og:title" content="About CHON | 회사 소개">
+    <meta property="og:description" content="관계 기반 신뢰 네트워크와 차세대 탈중앙화 신원 인프라를 만드는 CHON의 비전과 사업 방향을 소개합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chon.com/about.html">
+    <meta property="og:image" content="images/chon-logo.png">
+    <title>About CHON | 회사 소개</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- CSS 변수 및 기본 스타일 -->
@@ -15,53 +23,12 @@
     <link rel="stylesheet" href="css/footer.css">
     <!-- 메인 스타일시트 (이전 style.css와 호환성) -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/pages.css">
 </head>
-<body>
+<body data-page="about">
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html" style="text-decoration: none;">
-                    <img src="images/chon-logo.png" alt="CHON Logo">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li class="dropdown">
-                    <a href="about.html" class="active">About</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html#company">회사 소개</a></li>
-                        <li><a href="about.html#vision">비전</a></li>
-                        <li><a href="ceo.html">CEO 메시지</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="technology.html">Technology</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="technology.html#overview">CHON DID</a></li>
-                        <li><a href="technology.html#technology">신원 인증 기술</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="service.html">Service</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="service.html#service">Smart Genealogy</a></li>
-                        <li><a href="service.html#download">앱 다운로드</a></li>
-                    </ul>
-                </li>
-                <li><a href="news.html">News</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle">
-                    <i class="fas fa-globe"></i>
-                    <span>EN</span>
-                </button>
-                <button class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <div data-site-shell="nav"></div>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -142,118 +109,19 @@
         </div>
     </section>
 
-    <!-- Market Section -->
-    <!-- Vision Section -->
-    <section id="vision" class="vision-detail-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">VISION</span>
-                <h2 class="section-title">우리의 비전</h2>
-            </div>
-            <div class="vision-detail-content">
-                <div class="vision-main-card">
-                    <div class="vision-icon-large">
-                        <i class="fas fa-infinity"></i>
-                    </div>
-                    <h3>"Preserving human history on the blockchain"</h3>
-                    <p class="vision-tagline">차세대 탈중앙화 신원 인증 플랫폼(DID)으로 메타버스 시대를 위한 새로운 신원 인프라를 구축합니다</p>
-                </div>
-                
-                <div class="vision-pillars">
-                    <div class="pillar-card">
-                        <div class="pillar-number">01</div>
-                        <h4>불변성 (Immutability)</h4>
-                        <p>블록체인의 특성을 활용하여 한 번 기록된 데이터는 영원히 변경되지 않으며, 미래 세대에게 온전히 전달됩니다.</p>
-                        <div class="pillar-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="pillar-card">
-                        <div class="pillar-number">02</div>
-                        <h4>자기주권 (Self-Sovereignty)</h4>
-                        <p>개인의 정보와 데이터에 대한 완전한 통제권을 사용자에게 부여하여, 진정한 디지털 주권을 실현합니다.</p>
-                        <div class="pillar-icon">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="pillar-card">
-                        <div class="pillar-number">03</div>
-                        <h4>영속성 (Permanence)</h4>
-                        <p>가족의 역사와 유산을 디지털 형태로 영구 보존하여, 세대를 넘어 이어지는 가치를 창출합니다.</p>
-                        <div class="pillar-icon">
-                            <i class="fas fa-history"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CEO Message -->
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-brand-row">
-                        <img src="images/chon-logo-new.png" alt="CHON Logo" class="footer-logo">
-                        <div class="footer-company-info">
-                            <p><strong>정보보안담당자:</strong> 김남율</p>
-                            <p><strong>이메일:</strong> ops@chon.ai</p>
-                            <p><strong>주소:</strong> 서울특별시 강남구 강남대로464 3층 309호</p>
-                            <p><strong>사업자등록번호:</strong> 196-86-03544</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>서비스</h4>
-                        <ul>
-                            <li><a href="technology.html">CHON DID</a></li>
-                            <li><a href="service.html">Smart Genealogy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>회사</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="ir.html">투자 정보</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><a href="contact.html">문의하기</a></li>
-                            <li><a href="contact.html#faq">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    <a href="privacy-policy.html">개인정보 처리방침</a>
-                    <span class="separator">|</span>
-                    <a href="#" onclick="alert('이용약관 페이지 준비 중입니다.')">이용약관</a>
-                </div>
-                <p class="copyright">&copy; 2026 CHON. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div data-site-shell="footer"></div>
 
     <!-- 모듈식 JavaScript 로드 -->
     <script src="js/utils.js" type="module"></script>
+    <script src="js/site-shell.js" type="module"></script>
     <script src="js/navbar.js" type="module"></script>
     <script src="js/hero.js" type="module"></script>
     <script src="js/animations.js" type="module"></script>
     <script src="js/interactions.js" type="module"></script>
     <script src="js/index.js" type="module"></script>
+    <script src="js/chatbot.js"></script>
 </body>
 </html>
+

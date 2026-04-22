@@ -20,7 +20,7 @@ class Navigation {
         this.setupDropdownMenus();
         this.setupOutsideClickHandler();
         this.setupNavbarScrollEffect();
-        console.log('%c✓ Navigation Module Initialized', 'color: #2563eb; font-weight: bold;');
+        console.log('%cNavigation Module Initialized', 'color: #2563eb; font-weight: bold;');
     }
 
     // 모바일 메뉴 토글

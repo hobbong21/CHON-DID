@@ -12,7 +12,7 @@ class Interactions {
         this.setupSmoothScroll();
         this.setupLanguageToggle();
         this.setupProgressBar();
-        console.log('%c✓ Interactions Module Initialized', 'color: #ec4899; font-weight: bold;');
+        console.log('%cInteractions Module Initialized', 'color: #ec4899; font-weight: bold;');
     }
 
     // Smooth Scroll Navigation
@@ -90,11 +90,10 @@ class Interactions {
         const menuTranslations = {
             ko: {
                 'about.html#company': '회사 소개',
-                'about.html#vision': '비전',
                 'ceo.html': 'CEO 메시지',
                 'about.html#team': '팀 소개',
                 'technology.html#overview': 'CHON DID',
-                'technology.html#technology': '신원 인증 기술',
+                'technology.html#healthcare': '헬스케어',
                 'service.html#service': 'Smart Genealogy',
                 'service.html#preservation': '역사 보존',
                 'service.html#blockchain': '블록체인 기록',
@@ -102,11 +101,10 @@ class Interactions {
             },
             en: {
                 'about.html#company': 'Company Info',
-                'about.html#vision': 'Vision',
                 'ceo.html': 'CEO Message',
                 'about.html#team': 'Team Info',
                 'technology.html#overview': 'CHON DID',
-                'technology.html#technology': 'Identity Technology',
+                'technology.html#healthcare': 'Healthcare',
                 'service.html#service': 'Smart Genealogy',
                 'service.html#preservation': 'History Preservation',
                 'service.html#blockchain': 'Blockchain Record',

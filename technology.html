@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <script src="js/https-redirect.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHON DID - Decentralized Identity</title>
+    <meta name="description" content="CHON DID 기술과 헬스케어 솔루션 페이지입니다. 탈중앙화 신원 인증, 의료 데이터 보호, 신뢰 기반 인증 구조를 소개합니다.">
+    <meta name="keywords" content="CHON, DID, 헬스케어, 의료 데이터, 탈중앙화 신원인증, ZKP">
+    <meta name="author" content="CHON">
+    <meta property="og:title" content="Technology | CHON DID & Healthcare">
+    <meta property="og:description" content="탈중앙화 신원 인증 기술과 헬스케어 데이터 보호 구조를 중심으로 CHON의 기술 방향을 소개합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chon.com/technology.html">
+    <meta property="og:image" content="images/chon-logo.png">
+    <title>Technology | CHON DID & Healthcare</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- CSS 변수 및 기본 스타일 -->
@@ -15,53 +23,12 @@
     <link rel="stylesheet" href="css/footer.css">
     <!-- 메인 스타일시트 (이전 style.css와 호환성) -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/pages.css">
 </head>
-<body>
+<body data-page="technology">
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html" style="text-decoration: none;">
-                    <img src="images/chon-logo.png" alt="CHON Logo">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li class="dropdown">
-                    <a href="about.html">About</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html#company">회사 소개</a></li>
-                        <li><a href="about.html#vision">비전</a></li>
-                        <li><a href="ceo.html">CEO 메시지</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="technology.html" class="active">Technology</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="technology.html#overview">CHON DID</a></li>
-                        <li><a href="technology.html#technology">신원 인증 기술</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="service.html">Service</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="service.html#service">Smart Genealogy</a></li>
-                        <li><a href="service.html#download">앱 다운로드</a></li>
-                    </ul>
-                </li>
-                <li><a href="news.html">News</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle">
-                    <i class="fas fa-globe"></i>
-                    <span>EN</span>
-                </button>
-                <button class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <div data-site-shell="nav"></div>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -137,41 +104,6 @@
         </div>
     </section>
 
-    <!-- Key Benefits -->
-    <section class="did-benefits-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">KEY BENEFITS</span>
-                <h2 class="section-title">핵심 이점</h2>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-number">01</div>
-                    <h4>개인정보 주권 확보</h4>
-                    <p>중앙 서버에 의존하지 않고 개인이 직접 신원 정보를 관리하며, 언제든지 접근 권한을 통제할 수 있습니다.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-number">02</div>
-                    <h4>강화된 보안</h4>
-                    <p>블록체인 기술과 암호화로 해킹이나 데이터 유출로부터 안전하게 보호됩니다.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-number">03</div>
-                    <h4>간편한 인증</h4>
-                    <p>한 번의 신원 등록으로 여러 서비스에서 간편하게 인증할 수 있습니다.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-number">04</div>
-                    <h4>비용 절감</h4>
-                    <p>반복적인 신원 확인 절차를 줄여 시간과 비용을 절감합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Technology Section -->
     <section id="technology" class="did-technology-section">
         <div class="container">
@@ -179,180 +111,157 @@
                 <span class="section-subtitle">TECHNOLOGY</span>
                 <h2 class="section-title">신원 인증 기술</h2>
             </div>
-            <div class="technology-detail-content">
-                <div class="tech-overview">
-                    <h3>CHON DID의 핵심 기술</h3>
-                    <p>
-                        최첨단 블록체인 기술과 암호화 알고리즘을 기반으로 안전하고 
-                        신뢰할 수 있는 탈중앙화 신원 인증 시스템을 구축했습니다.
-                    </p>
+            <div class="tech-overview">
+                <h3>CHON DID의 핵심 기술</h3>
+                <p>최첨단 블록체인 기술과 암호화 알고리즘을 기반으로 안전하고 신뢰할 수 있는 탈중앙화 신원 인증 시스템을 구축했습니다.</p>
+            </div>
+
+            <div class="hc-card-grid">
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h4>Blockchain Infrastructure</h4>
+                    <div class="hc-tags">
+                        <span>분산 원장 기술 DLT</span>
+                        <span>스마트 컨트랙트</span>
+                        <span>합의 알고리즘</span>
+                        <span>노드 네트워크</span>
+                    </div>
                 </div>
-                
-                <div class="tech-stack-grid">
-                    <div class="tech-stack-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h4>Blockchain Infrastructure</h4>
-                        <ul class="tech-list">
-                            <li><i class="fas fa-check-circle"></i> 분산 원장 기술 (DLT)</li>
-                            <li><i class="fas fa-check-circle"></i> 스마트 컨트랙트</li>
-                            <li><i class="fas fa-check-circle"></i> 합의 알고리즘</li>
-                            <li><i class="fas fa-check-circle"></i> 노드 네트워크</li>
-                        </ul>
+
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    
-                    <div class="tech-stack-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Security & Cryptography</h4>
-                        <ul class="tech-list">
-                            <li><i class="fas fa-check-circle"></i> 공개키 기반 구조 (PKI)</li>
-                            <li><i class="fas fa-check-circle"></i> 영지식 증명 (Zero-Knowledge Proof)</li>
-                            <li><i class="fas fa-check-circle"></i> 다중 서명 (Multi-Signature)</li>
-                            <li><i class="fas fa-check-circle"></i> 암호화 해시 함수</li>
-                        </ul>
+                    <h4>Security & Cryptography</h4>
+                    <div class="hc-tags">
+                        <span>공개키 기반 구조 PKI</span>
+                        <span>영지식 증명 ZKP</span>
+                        <span>다중 서명</span>
+                        <span>암호화 해시 함수</span>
                     </div>
-                    
-                    <div class="tech-stack-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <h4>DID Standards</h4>
-                        <ul class="tech-list">
-                            <li><i class="fas fa-check-circle"></i> W3C DID 표준 준수</li>
-                            <li><i class="fas fa-check-circle"></i> Verifiable Credentials (VC)</li>
-                            <li><i class="fas fa-check-circle"></i> DID Document 관리</li>
-                            <li><i class="fas fa-check-circle"></i> Universal Resolver</li>
-                        </ul>
+                </div>
+
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-id-card"></i>
                     </div>
-                    
-                    <div class="tech-stack-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>User Experience</h4>
-                        <ul class="tech-list">
-                            <li><i class="fas fa-check-circle"></i> 생체 인증 (Biometric)</li>
-                            <li><i class="fas fa-check-circle"></i> QR 코드 인증</li>
-                            <li><i class="fas fa-check-circle"></i> 모바일 지갑</li>
-                            <li><i class="fas fa-check-circle"></i> 크로스 플랫폼 지원</li>
-                        </ul>
+                    <h4>DID Standards</h4>
+                    <div class="hc-tags">
+                        <span>W3C DID 표준</span>
+                        <span>Verifiable Credentials</span>
+                        <span>DID Document 관리</span>
+                        <span>Universal Resolver</span>
+                    </div>
+                </div>
+
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>User Experience</h4>
+                    <div class="hc-tags">
+                        <span>생체 인증 Biometric</span>
+                        <span>QR 코드 인증</span>
+                        <span>모바일 지갑</span>
+                        <span>크로스 플랫폼 지원</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="did-process-section">
-        <div class="container">
+    <!-- Healthcare Section -->
+    <section id="healthcare" class="did-technology-section healthcare-section overlay-strong">
+        <video class="hc-bg-video" autoplay muted loop>
+            <source src="images/@healthcare.mp4" type="video/mp4">
+        </video>
+        <div class="hc-bg-overlay"></div>
+        <div class="container hc-container">
             <div class="section-header">
-                <span class="section-subtitle">HOW IT WORKS</span>
-                <h2 class="section-title">작동 원리</h2>
+                <span class="section-subtitle">HEALTHCARE</span>
+                <h2 class="section-title">헬스케어 솔루션</h2>
             </div>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-circle">1</div>
-                    <div class="step-content">
-                        <h4>DID 생성</h4>
-                        <p>사용자가 앱을 통해 고유한 탈중앙화 식별자(DID)를 생성합니다</p>
-                    </div>
-                    <div class="step-icon">
-                        <i class="fas fa-plus-circle"></i>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">2</div>
-                    <div class="step-content">
-                        <h4>신원 정보 등록</h4>
-                        <p>개인 신원 정보를 암호화하여 블록체인에 안전하게 등록합니다</p>
-                    </div>
-                    <div class="step-icon">
-                        <i class="fas fa-user-check"></i>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">3</div>
-                    <div class="step-content">
-                        <h4>자격증명 발급</h4>
-                        <p>신뢰기관으로부터 검증 가능한 자격증명(VC)을 발급받습니다</p>
-                    </div>
-                    <div class="step-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">4</div>
-                    <div class="step-content">
-                        <h4>선택적 공유</h4>
-                        <p>필요한 정보만 선택하여 서비스 제공자와 안전하게 공유합니다</p>
-                    </div>
-                    <div class="step-icon">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-circle">5</div>
-                    <div class="step-content">
-                        <h4>신원 검증</h4>
-                        <p>블록체인을 통해 신원 정보의 진위 여부를 즉시 검증합니다</p>
-                    </div>
-                    <div class="step-icon">
-                        <i class="fas fa-check-double"></i>
-                    </div>
-                </div>
+            <div class="tech-overview">
+                <h3>CHON DID 기반 의료 데이터 관리</h3>
+                <p>CHON의 탈중앙화 신원 인증 기술을 의료 분야에 접목하여, 환자의 의료 기록을 안전하게 보호하고 의료진과의 신뢰 있는 데이터 공유를 실현합니다.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Use Cases -->
-    <section class="did-usecases-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">USE CASES</span>
-                <h2 class="section-title">활용 사례</h2>
+            <div class="hc-card-grid">
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h4>의료 기록 관리</h4>
+                    <div class="hc-tags">
+                        <span>블록체인 진료 기록</span>
+                        <span>환자 데이터 통제</span>
+                        <span>병원 간 기록 공유</span>
+                        <span>실시간 이력 조회</span>
+                    </div>
+                </div>
+
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>의료진 신원 인증</h4>
+                    <div class="hc-tags">
+                        <span>자격증명 검증</span>
+                        <span>면허 위변조 방지</span>
+                        <span>경력 이력 관리</span>
+                        <span>원격 진료 인증</span>
+                    </div>
+                </div>
+
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h4>개인정보 보호</h4>
+                    <div class="hc-tags">
+                        <span>영지식 증명 ZKP</span>
+                        <span>선택적 정보 공개</span>
+                        <span>HIPAA·GDPR 준수</span>
+                        <span>암호화 데이터 전송</span>
+                    </div>
+                </div>
+
+                <div class="hc-card">
+                    <div class="hc-card-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>디지털 헬스케어 연동</h4>
+                    <div class="hc-tags">
+                        <span>웨어러블 데이터 통합</span>
+                        <span>전자처방전 발급</span>
+                        <span>보험 청구 자동화</span>
+                        <span>임상시험 관리</span>
+                    </div>
+                </div>
             </div>
-            <div class="usecases-grid">
-                <div class="usecase-card">
-                    <i class="fas fa-university"></i>
-                    <h4>금융 서비스</h4>
-                    <p>은행 계좌 개설, 대출 신청 시 간편하고 안전한 본인 인증</p>
+
+            <div class="hc-benefits">
+                <div class="hc-benefit-item">
+                    <div class="hc-benefit-number">01</div>
+                    <h4>환자 중심 데이터 주권</h4>
+                    <p>환자가 직접 자신의 의료 데이터 접근 권한을 관리하고, 필요한 의료진에게만 선택적으로 공유합니다.</p>
                 </div>
-                
-                <div class="usecase-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>교육 기관</h4>
-                    <p>학위, 자격증 등 학력 증명서의 디지털 발급 및 검증</p>
+                <div class="hc-benefit-item">
+                    <div class="hc-benefit-number">02</div>
+                    <h4>의료 정보 연속성</h4>
+                    <p>병원을 이동해도 모든 진료 이력이 안전하게 이어져 중복 검사와 의료 오류를 방지합니다.</p>
                 </div>
-                
-                <div class="usecase-card">
-                    <i class="fas fa-hospital"></i>
-                    <h4>의료 서비스</h4>
-                    <p>의료 기록 접근 권한 관리 및 안전한 정보 공유</p>
+                <div class="hc-benefit-item">
+                    <div class="hc-benefit-number">03</div>
+                    <h4>위변조 불가 기록</h4>
+                    <p>블록체인에 저장된 의료 기록은 위변조가 불가능하여 법적 분쟁 시 신뢰할 수 있는 증거로 활용됩니다.</p>
                 </div>
-                
-                <div class="usecase-card">
-                    <i class="fas fa-building"></i>
-                    <h4>정부 서비스</h4>
-                    <p>전자정부 서비스 이용 시 통합 신원 인증</p>
-                </div>
-                
-                <div class="usecase-card">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h4>전자상거래</h4>
-                    <p>온라인 쇼핑 시 안전한 결제 및 본인 확인</p>
-                </div>
-                
-                <div class="usecase-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h4>기업 서비스</h4>
-                    <p>직원 신원 관리 및 접근 권한 통제</p>
+                <div class="hc-benefit-item">
+                    <div class="hc-benefit-number">04</div>
+                    <h4>빠른 응급 처치 지원</h4>
+                    <p>응급 상황에서 환자의 과거 병력, 알레르기 정보를 즉시 조회하여 신속하고 정확한 처치를 지원합니다.</p>
                 </div>
             </div>
         </div>
@@ -370,67 +279,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-brand-row">
-                        <img src="images/chon-logo-new.png" alt="CHON Logo" class="footer-logo">
-                        <div class="footer-company-info">
-                            <p><strong>정보보안담당자:</strong> 김남율</p>
-                            <p><strong>이메일:</strong> ops@chon.ai</p>
-                            <p><strong>주소:</strong> 서울특별시 강남구 강남대로464 3층 309호</p>
-                            <p><strong>사업자등록번호:</strong> 196-86-03544</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>서비스</h4>
-                        <ul>
-                            <li><a href="technology.html">CHON DID</a></li>
-                            <li><a href="service.html">Smart Genealogy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>회사</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="ir.html">투자 정보</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><a href="contact.html">문의하기</a></li>
-                            <li><a href="contact.html#faq">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    <a href="privacy-policy.html">개인정보 처리방침</a>
-                    <span class="separator">|</span>
-                    <a href="#" onclick="alert('이용약관 페이지 준비 중입니다.')">이용약관</a>
-                </div>
-                <p class="copyright">&copy; 2026 CHON. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div data-site-shell="footer"></div>
 
     <!-- 모듈식 JavaScript 로드 -->
     <script src="js/utils.js" type="module"></script>
+    <script src="js/site-shell.js" type="module"></script>
     <script src="js/navbar.js" type="module"></script>
     <script src="js/hero.js" type="module"></script>
     <script src="js/animations.js" type="module"></script>
     <script src="js/interactions.js" type="module"></script>
     <script src="js/index.js" type="module"></script>
+    <script src="js/chatbot.js"></script>
 </body>
 </html>

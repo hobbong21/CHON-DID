@@ -73,4 +73,4 @@ export const setAriaExpanded = (element, expanded) => {
     }
 };
 
-console.log('%c✓ Utils Module Loaded', 'color: #10b981; font-weight: bold;');
+console.log('%cUtils Module Loaded', 'color: #10b981; font-weight: bold;');

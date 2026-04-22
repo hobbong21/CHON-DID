@@ -15,7 +15,7 @@ class AnimationManager {
         this.setupParallax();
         this.setupCounterAnimation();
         this.setupActiveNavHighlight();
-        console.log('%c✓ Animation Module Initialized', 'color: #f59e0b; font-weight: bold;');
+        console.log('%cAnimation Module Initialized', 'color: #f59e0b; font-weight: bold;');
     }
 
     // 스크롤 애니메이션 설정

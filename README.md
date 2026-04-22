@@ -42,6 +42,8 @@ chon-home/
 │   ├── interactions.js      # 상호작용
 │   └── index.js            # 메인 스크립트
 ├── images/                 # 이미지 자산
+├── docs/                   # 프로젝트 문서
+│   └── FINAL_REPORT.md     # 최종 정리 보고서
 ├── package.json            # 프로젝트 메타데이터
 └── README.md               # 이 파일
 ```
@@ -191,7 +193,7 @@ chon/
 │   ├── style.css          # 메인 스타일시트
 │   └── pages.css          # 페이지별 스타일
 ├── js/
-│   └── main.js            # JavaScript 기능
+│   └── index.js           # JavaScript 엔트리
 ├── images/
 │   ├── chon-logo.png      # 메인 로고
 │   ├── chon-logo-new.png  # 푸터 로고
@@ -205,7 +207,8 @@ chon/
 ├── ir.html                # 투자 정보
 ├── contact.html           # 연락처
 ├── ceo.html               # CEO 소개
-└── privacy-policy.html    # 개인정보처리방침
+├── privacy-policy.html    # 개인정보처리방침
+└── docs/FINAL_REPORT.md   # 정리 보고서
 ```
 
 ## 🌐 반응형 디자인

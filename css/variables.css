@@ -33,6 +33,9 @@
     --gradient-hero: linear-gradient(135deg, #0b1220 0%, #0f1724 50%, #2563eb 100%);
     --gradient-card: linear-gradient(145deg, #ffffff 0%, #f6f8fb 100%);
     --gradient-subtle: linear-gradient(145deg, #fbfdff 0%, #f1f5f9 100%);
+    --gradient-1: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    --gradient-2: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-3: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     
     /* Shadows */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -50,6 +53,15 @@
     --radius-xl: 24px;
     --radius-2xl: 32px;
     --radius-full: 9999px;
+
+    /* Border Radius — legacy aliases for --border-radius-* naming in style.css/pages.css */
+    --border-radius-xs: var(--radius-xs);
+    --border-radius-sm: var(--radius-sm);
+    --border-radius-md: var(--radius-md);
+    --border-radius-lg: var(--radius-lg);
+    --border-radius-xl: var(--radius-xl);
+    --border-radius-2xl: var(--radius-2xl);
+    --border-radius-full: var(--radius-full);
     
     /* Spacing */
     --space-xs: 0.5rem;

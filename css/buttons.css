@@ -1,81 +1,58 @@
-/* Button System */
+/* Button System — Corporate Style (unified) */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-xs);
-    padding: var(--space-md) var(--space-xl);
+    gap: 0;
+    padding: 0.95rem 1.5rem;
     font-family: var(--font-sans);
     font-size: var(--text-base);
     font-weight: 600;
+    letter-spacing: 0.01em;
     line-height: 1;
     text-decoration: none;
     border: 2px solid transparent;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-full);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
     white-space: nowrap;
     user-select: none;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
 /* Button Variants */
 .btn-primary {
-    background: var(--gradient-primary);
-    color: #ffffff;
-    box-shadow: var(--shadow-sm);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: var(--primary-color);
+    color: var(--text-white);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: var(--highlight-color);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    color: #ffffff;
+    background: #20324a;
+    color: var(--text-white);
 }
 
 .btn-secondary {
-    background: var(--gradient-secondary);
-    color: #ffffff;
-    box-shadow: var(--shadow-md);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: #20324a;
+    color: var(--text-white);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--text-white);
 }
 
 .btn-outline {
-    background: transparent;
-    color: var(--accent-color);
-    border-color: var(--accent-color);
+    background: var(--text-white);
+    color: var(--primary-color);
+    border-color: rgba(15, 23, 36, 0.16);
 }
 
 .btn-outline:hover,
 .btn-outline:focus {
-    background: var(--accent-color);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-white);
 }
 
 .btn-ghost {
@@ -85,9 +62,8 @@
 }
 
 .btn-ghost:hover {
-    background: var(--gradient-subtle);
-    color: var(--accent-color);
-    transform: translateY(-1px);
+    background: #eef3f8;
+    color: var(--primary-color);
 }
 
 /* Button Sizes */
@@ -123,14 +99,9 @@
     transform: translateY(0);
 }
 
+/* Icon inside button — hidden per corporate design */
 .btn i {
-    font-size: 16px;
-    color: inherit;
-}
-
-.btn-lg i {
-    font-size: 18px;
-    color: inherit;
+    display: none;
 }
 
 /* Responsive */

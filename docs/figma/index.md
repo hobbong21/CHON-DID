@@ -277,7 +277,9 @@ Figma MCP 도구로 호출:
 | ID Gen 카메라 픽셀 정밀화 가이드 | [`docs/figma/id_gen_camera_pixel_precision.md`](./id_gen_camera_pixel_precision.md) |
 | AppColors → ChonColors 마이그레이션 | [`docs/figma/appcolors_migration.md`](./appcolors_migration.md) |
 | flutter test 첫 실행 체크리스트 | [`mobile/test/FIRST_RUN_CHECKLIST.md`](../../mobile/test/FIRST_RUN_CHECKLIST.md) |
-| i18n 마이그레이션 (29 키 추가, Home 적용) | [`docs/figma/i18n_migration.md`](./i18n_migration.md) |
+| i18n 마이그레이션 (101 키 추가, Home/Tutorial 적용) | [`docs/figma/i18n_migration.md`](./i18n_migration.md) |
+| 백엔드 엔드포인트 audit | [`docs/backend_endpoint_audit.md`](../backend_endpoint_audit.md) |
+| Integration test 셋업 | [`mobile/integration_test/README.md`](../../mobile/integration_test/README.md) |
 | Family Tree 인계 노트 (이전 세션) | [`docs/figma/family_tree_handoff.md`](./family_tree_handoff.md) |
 | 사용 가이드 | [`mobile/lib/presentations/widgets/README.md`](../../mobile/lib/presentations/widgets/README.md) |
 | Figma → Flutter 자동 변환 워크플로 | [`docs/figma/codegen_workflow.md`](./codegen_workflow.md) |

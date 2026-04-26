@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/router/app_navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,46 +16,41 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// ```
 /// or in tests, supply a custom [onFinish] to avoid the router.
 class TutorialPage extends StatefulWidget {
-  const TutorialPage({
+  TutorialPage({
     super.key,
-    this.steps = defaultSteps,
+    List<TutorialStep>? steps,
     this.onFinish,
     this.onSkip,
-  });
+  }) : steps = steps ?? _localizedDefaultSteps();
 
   final List<TutorialStep> steps;
 
-  /// Fired when the user taps "시작하기" on the last step.
-  /// Defaults to `AppNavigator.go(Routes.home)`.
   final VoidCallback? onFinish;
-
-  /// Fired when the user taps "건너뛰기" on any step.
-  /// Defaults to the same as [onFinish].
   final VoidCallback? onSkip;
 
-  static const List<TutorialStep> defaultSteps = [
-    TutorialStep(
-      title: '나를 확인 받는\nCHON DID',
-      body: '내 신분을 가족·인척에게\n확인 받고, 필요한 곳에 인증해 보세요.',
-      illustration: TutorialIllustration.shield,
-    ),
-    TutorialStep(
-      title: '서로를 인증하는\n상호 인증',
-      body: '가족과 서로를 인증해\n관계를 증명하세요.',
-      illustration: TutorialIllustration.handshake,
-    ),
-    TutorialStep(
-      title: '나의 가족과 함께\n가계도',
-      body: '가족 관계를 시각화하고\n족보를 안전하게 보관합니다.',
-      illustration: TutorialIllustration.tree,
-    ),
-    TutorialStep(
-      title: 'CHON과 함께\n시작해 볼까요?',
-      body: '준비가 끝났습니다.\n지금 바로 사용해 보세요.',
-      illustration: TutorialIllustration.start,
-      isFinalStep: true,
-    ),
-  ];
+  static List<TutorialStep> _localizedDefaultSteps() => [
+        TutorialStep(
+          title: S.current.chon_tutorial_s1_title,
+          body: S.current.chon_tutorial_s1_body,
+          illustration: TutorialIllustration.shield,
+        ),
+        TutorialStep(
+          title: S.current.chon_tutorial_s2_title,
+          body: S.current.chon_tutorial_s2_body,
+          illustration: TutorialIllustration.handshake,
+        ),
+        TutorialStep(
+          title: S.current.chon_tutorial_s3_title,
+          body: S.current.chon_tutorial_s3_body,
+          illustration: TutorialIllustration.tree,
+        ),
+        TutorialStep(
+          title: S.current.chon_tutorial_s4_title,
+          body: S.current.chon_tutorial_s4_body,
+          illustration: TutorialIllustration.start,
+          isFinalStep: true,
+        ),
+      ];
 
   @override
   State<TutorialPage> createState() => _TutorialPageState();
@@ -138,7 +134,7 @@ class _TutorialPageState extends State<TutorialPage> {
                     elevation: 0,
                   ),
                   child: Text(
-                    _isLast ? '시작하기' : '다음',
+                    _isLast ? S.current.chon_action_start : S.current.chon_action_next,
                     style: ChonTextStyles.actionLabel(
                             color: ChonColors.textInverse)
                         .copyWith(fontSize: 16.sp, height: 1.0),
@@ -171,7 +167,7 @@ class _SkipButton extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
           ),
           child: Text(
-            '건너뛰기',
+            S.current.chon_action_skip,
             style: ChonTextStyles.body(size: 14, color: ChonColors.textTertiary),
           ),
         ),

@@ -37,10 +37,28 @@ class AppColors {
 
   /// Text ---
   final Color whiteText;
+
+  /// Vendor `#374151` differs from Figma `#1E1E1E`.
+  /// Use `ChonColors.textPrimary`. See `docs/figma/appcolors_migration.md`.
+  @Deprecated('Use ChonColors.textPrimary from chon_design_tokens.dart')
   final Color blackText;
+
+  /// **Vendor placeholder error** — `primaryText` was set to the brand
+  /// orange `#FFA000` by mistake. Body text should be `ChonColors.textPrimary`
+  /// (`#1E1E1E`). See `docs/figma/appcolors_migration.md`.
+  @Deprecated('Vendor placeholder; use ChonColors.textPrimary instead')
   final Color primaryText;
+
+  /// Vendor `#4B5563` differs from Figma `#5A5A5A`.
+  /// Use `ChonColors.textSecondary`.
+  @Deprecated('Use ChonColors.textSecondary from chon_design_tokens.dart')
   final Color secondaryText;
+
+  /// Vendor `#9E9E9E` differs from Figma `#8E8E93`.
+  /// Use `ChonColors.textTertiary`.
+  @Deprecated('Use ChonColors.textTertiary from chon_design_tokens.dart')
   final Color greyText;
+
   final Color blueText;
   final Color greenText;
   final Color labelText;

@@ -3,6 +3,7 @@ part of 'app_navigator.dart';
 enum Routes {
   // Auth Routes
   splash('/splash'),
+  tutorial('/tutorial'),
   login('/login'),
   register('/register'),
 

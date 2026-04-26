@@ -1,6 +1,7 @@
 # Mobile Tests
 
-Initial test suite for the CHON Flutter app, added with the Home v2 work.
+Test suite for the CHON Flutter app. Grows alongside each feature that's
+moved from the legacy implementation onto the Figma-faithful design.
 
 ## Layout
 
@@ -8,14 +9,36 @@ Initial test suite for the CHON Flutter app, added with the Home v2 work.
 test/
 ├── presentations/
 │   ├── modules/
-│   │   └── home/
-│   │       ├── home_cubit_test.dart       # HomeCubit unit tests (bloc_test)
-│   │       └── home_page_v2_test.dart     # Home v2 widget tests
+│   │   ├── home/
+│   │   │   ├── home_cubit_test.dart                   # HomeCubit unit (bloc_test)
+│   │   │   └── home_page_v2_test.dart                 # Home v2 widget
+│   │   ├── splash/
+│   │   │   └── splash_page_v2_test.dart               # Splash v2 widget
+│   │   ├── tutorial/
+│   │   │   └── tutorial_page_test.dart                # Tutorial widget
+│   │   ├── mutual_auth_request/
+│   │   │   └── mutual_auth_request_cubit_test.dart    # Cubit unit
+│   │   └── family_tree_v2/
+│   │       └── family_tree_node_test.dart             # Tree builder unit
 │   └── widgets/
 │       ├── chon_bottom_navigation_bar_test.dart
 │       └── chon_quick_action_button_test.dart
 └── README.md (this file)
 ```
+
+## Before you run
+
+The Mutual Auth Cubit uses Freezed for state. You must run code generation
+once after pulling new Cubits:
+
+```bash
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+```
+
+If you skip this, you'll see compile errors like
+`The name '_$MutualAuthRequestState' isn't a class.` — that's the missing
+generated file.
 
 ## Dependencies (added to `pubspec.yaml`)
 

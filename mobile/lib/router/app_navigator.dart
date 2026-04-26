@@ -38,9 +38,11 @@ import 'package:base_flutter/presentations/modules/view_image/view_image_page.da
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../presentations/modules/home/home_page.dart';
+// import '../presentations/modules/home/home_page.dart'; // legacy — restore if reverting
+import '../presentations/modules/home/home_page_v2.dart';
 import '../presentations/modules/login/login_page.dart';
 import '../presentations/modules/splash/splash_page.dart';
+import '../presentations/modules/tutorial/tutorial_page.dart';
 import 'app_tab_bar.dart';
 import 'guards.dart';
 
@@ -53,13 +55,20 @@ final class _RouteConfig {
       builder: (context, state) => const SplashPage(),
     ),
     GoRoute(
+      path: Routes.tutorial.path,
+      builder: (context, state) => const TutorialPage(),
+    ),
+    GoRoute(
       path: Routes.login.path,
       builder: (context, state) => const LoginPage(),
     ),
     GoRoute(
       redirect: AuthGuard.guard,
       path: Routes.home.path,
-      builder: (context, state) => HomePage(),
+      // Use the Figma-faithful Home v2. Original `HomePage` is preserved in
+      // `home_page.dart` for fallback/comparison; swap back if a regression
+      // shows up.
+      builder: (context, state) => const HomePageV2(),
     ),
     GoRoute(
       redirect: AuthGuard.guard,

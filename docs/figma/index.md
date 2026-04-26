@@ -260,6 +260,12 @@ Figma MCP 도구로 호출:
 | 디자인 토큰 (Color · TextStyle · Shape) | [`mobile/lib/core/theme/chon_design_tokens.dart`](../../mobile/lib/core/theme/chon_design_tokens.dart) |
 | Bottom Nav (5 변형) | [`mobile/lib/presentations/widgets/chon_bottom_navigation_bar.dart`](../../mobile/lib/presentations/widgets/chon_bottom_navigation_bar.dart) |
 | Quick Action 버튼 (76×76) + 4-up 그리드 | [`mobile/lib/presentations/widgets/chon_quick_action_button.dart`](../../mobile/lib/presentations/widgets/chon_quick_action_button.dart) |
+| Home v2 (라우터에 활성화됨) | [`mobile/lib/presentations/modules/home/home_page_v2.dart`](../../mobile/lib/presentations/modules/home/home_page_v2.dart) |
+| Splash v2 | [`mobile/lib/presentations/modules/splash/splash_page_v2.dart`](../../mobile/lib/presentations/modules/splash/splash_page_v2.dart) |
+| Tutorial 4-step (`Routes.tutorial` 신설) | [`mobile/lib/presentations/modules/tutorial/tutorial_page.dart`](../../mobile/lib/presentations/modules/tutorial/tutorial_page.dart) |
+| Mutual Auth Request (Cubit + 6-stage 페이지) | [`mobile/lib/presentations/modules/mutual_auth_request/`](../../mobile/lib/presentations/modules/mutual_auth_request) |
+| Family Tree 데이터 모델 스캐폴드 | [`mobile/lib/presentations/modules/family_tree_v2/family_tree_node.dart`](../../mobile/lib/presentations/modules/family_tree_v2/family_tree_node.dart) |
+| Family Tree 인계 노트 | [`docs/figma/family_tree_handoff.md`](./family_tree_handoff.md) |
 | 사용 가이드 | [`mobile/lib/presentations/widgets/README.md`](../../mobile/lib/presentations/widgets/README.md) |
 | Figma → Flutter 자동 변환 워크플로 | [`docs/figma/codegen_workflow.md`](./codegen_workflow.md) |
 

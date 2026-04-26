@@ -1,13 +1,13 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/presentations/modules/id_generation_v2/cubit/id_generation_cubit.dart';
+import 'package:base_flutter/presentations/modules/id_generation_v2/widgets/id_camera_capture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-/// Shell page for ID Generation v2 — Figma section 3.
-///
-/// Phase-driven view dispatch. Most phases are simple stub leaves
-/// today; pixel-perfect Figma rendering comes via `get_design_context`
-/// for each frame. See `docs/figma/section_3_id_gen_handoff.md`.
 class IdGenerationV2Page extends StatelessWidget {
   const IdGenerationV2Page({super.key, required this.cubit});
 
@@ -46,43 +46,36 @@ class IdGenerationV2Page extends StatelessWidget {
               case IdGenStage.selectIdType:
                 return _IdTypeLeaf(state: state, cubit: cubit);
               case IdGenStage.capturePrep:
-                return _StubLeaf(
-                  title: '카메라 준비',
-                  caption: 'Figma `ID Gen_03_01` 픽셀 정밀 변환 대기.',
-                  onNext: cubit.next,
-                );
+                return _CapturePrepLeaf(onNext: cubit.next);
               case IdGenStage.captureFront:
-                return _StubLeaf(
-                  title: '신분증 앞면 촬영',
-                  caption:
-                      'Figma `ID Gen_03_02_01_NN` 픽셀 정밀 변환 대기. '
-                      '실제로는 `mobile_scanner` / `camera` 패키지 사용.',
-                  onNext: () {
-                    cubit.setFrontImage('stub-front-base64');
+                return IdCameraCapture(
+                  instructionLabel: '신분증 앞면을 가이드 안에 맞춰주세요',
+                  onCaptured: (file) async {
+                    final bytes = await file.readAsBytes();
+                    cubit.setFrontImage(base64Encode(bytes));
+                    final secret = dotenv.env['OCR_SECRET'] ?? '';
+                    if (secret.isNotEmpty) {
+                      await cubit.runOcr(file: file, secretKey: secret);
+                    }
                     cubit.next();
                   },
                 );
               case IdGenStage.captureBack:
-                return _StubLeaf(
-                  title: '신분증 뒷면 촬영',
-                  caption: 'Figma `ID Gen_03_02_02` 픽셀 정밀 변환 대기.',
-                  onNext: () {
-                    cubit.setBackImage('stub-back-base64');
+                return IdCameraCapture(
+                  instructionLabel: '신분증 뒷면을 가이드 안에 맞춰주세요',
+                  onCaptured: (file) async {
+                    final bytes = await file.readAsBytes();
+                    cubit.setBackImage(base64Encode(bytes));
                     cubit.next();
                   },
                 );
               case IdGenStage.ocrConfirm:
-                return _StubLeaf(
-                  title: 'OCR 결과 확인',
-                  caption:
-                      'Figma `ID Gen_03_02_03` 픽셀 정밀 변환 대기. '
-                      '기존 `ocr_id` 모듈에 OCR 호출 + 결과 파싱 로직이 있음.',
-                  onNext: cubit.next,
-                );
+                return _OcrConfirmLeaf(state: state, cubit: cubit);
               case IdGenStage.review:
                 return _ReviewLeaf(state: state, cubit: cubit);
               case IdGenStage.done:
-                return _DoneLeaf(onClose: () => Navigator.of(context).maybePop());
+                return _DoneLeaf(
+                    onClose: () => Navigator.of(context).maybePop());
             }
           },
         ),
@@ -142,10 +135,8 @@ class _PersonalInfoLeaf extends StatefulWidget {
 }
 
 class _PersonalInfoLeafState extends State<_PersonalInfoLeaf> {
-  late final _name =
-      TextEditingController(text: widget.state.fullName);
-  late final _id =
-      TextEditingController(text: widget.state.idNumber);
+  late final _name = TextEditingController(text: widget.state.fullName);
+  late final _id = TextEditingController(text: widget.state.idNumber);
 
   @override
   void dispose() {
@@ -213,26 +204,13 @@ class _SimpleField extends StatelessWidget {
           onChanged: onChanged,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: ChonTextStyles.body(
-                size: 14, color: ChonColors.textTertiary),
             filled: true,
             fillColor: ChonColors.bgSurface,
-            contentPadding: const EdgeInsets.symmetric(
-                horizontal: 16, vertical: 16),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: ChonColors.brandPrimary,
-                width: 1.5,
-              ),
             ),
           ),
         ),
@@ -257,9 +235,8 @@ class _VerificationLeaf extends StatelessWidget {
           Icon(
             failed ? Icons.cancel_outlined : Icons.check_circle_outline,
             size: 96,
-            color: failed
-                ? const Color(0xFFE24B4A)
-                : ChonColors.brandPrimary,
+            color:
+                failed ? const Color(0xFFE24B4A) : ChonColors.brandPrimary,
           ),
           const SizedBox(height: 24),
           Text(
@@ -268,14 +245,13 @@ class _VerificationLeaf extends StatelessWidget {
             style: ChonTextStyles.cardTitle(),
           ),
           const Spacer(),
-          if (failed) ...[
+          if (failed)
             _PrimaryButton(
               label: '다시 입력',
               onPressed: () => cubit.goTo(IdGenStage.personalInfo),
-            ),
-          ] else ...[
+            )
+          else
             _PrimaryButton(label: '계속', onPressed: cubit.next),
-          ],
           const SizedBox(height: 16),
         ],
       ),
@@ -287,48 +263,9 @@ class _IdTypeLeaf extends StatelessWidget {
   const _IdTypeLeaf({required this.state, required this.cubit});
   final IdGenerationState state;
   final IdGenerationCubit cubit;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SizedBox(height: 16),
-          Text(
-            '발급할 ID 종류를 선택해주세요',
-            style: ChonTextStyles.cardTitle().copyWith(fontSize: 18),
-          ),
-          const SizedBox(height: 16),
-          ...IdGenType.values.map((t) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: _TypeCard(
-                  type: t,
-                  selected: state.idType == t,
-                  onTap: () => cubit.setIdType(t),
-                ),
-              )),
-          const Spacer(),
-          _PrimaryButton(label: '다음', onPressed: cubit.next),
-          const SizedBox(height: 16),
-        ],
-      ),
-    );
-  }
-}
 
-class _TypeCard extends StatelessWidget {
-  const _TypeCard({
-    required this.type,
-    required this.selected,
-    required this.onTap,
-  });
-  final IdGenType type;
-  final bool selected;
-  final VoidCallback onTap;
-
-  String get _label {
-    switch (type) {
+  String _label(IdGenType t) {
+    switch (t) {
       case IdGenType.selfId:
         return '주민/외국인등록증';
       case IdGenType.cardFamily:
@@ -340,40 +277,178 @@ class _TypeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: ChonColors.bgSurface,
-      borderRadius: BorderRadius.circular(16),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(
-              color: selected
-                  ? ChonColors.brandPrimary
-                  : Colors.transparent,
-              width: 2,
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  _label,
-                  style: ChonTextStyles.cardTitle().copyWith(fontSize: 16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const SizedBox(height: 16),
+          Text('발급할 ID 종류를 선택해주세요',
+              style: ChonTextStyles.cardTitle().copyWith(fontSize: 18)),
+          const SizedBox(height: 16),
+          ...IdGenType.values.map((t) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Material(
+                  color: ChonColors.bgSurface,
+                  borderRadius: BorderRadius.circular(16),
+                  child: InkWell(
+                    onTap: () => cubit.setIdType(t),
+                    borderRadius: BorderRadius.circular(16),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: state.idType == t
+                              ? ChonColors.brandPrimary
+                              : Colors.transparent,
+                          width: 2,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(_label(t),
+                                style: ChonTextStyles.cardTitle()
+                                    .copyWith(fontSize: 16)),
+                          ),
+                          Icon(
+                            state.idType == t
+                                ? Icons.radio_button_checked
+                                : Icons.radio_button_off,
+                            color: state.idType == t
+                                ? ChonColors.brandPrimary
+                                : ChonColors.iconDisabledStrong,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              Icon(
-                selected ? Icons.radio_button_checked : Icons.radio_button_off,
-                color: selected
-                    ? ChonColors.brandPrimary
-                    : ChonColors.iconDisabledStrong,
-              ),
-            ],
+              )),
+          const Spacer(),
+          _PrimaryButton(label: '다음', onPressed: cubit.next),
+          const SizedBox(height: 16),
+        ],
+      ),
+    );
+  }
+}
+
+class _CapturePrepLeaf extends StatelessWidget {
+  const _CapturePrepLeaf({required this.onNext});
+  final VoidCallback onNext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const SizedBox(height: 32),
+          const Icon(Icons.camera_alt_outlined,
+              size: 96, color: ChonColors.brandPrimary),
+          const SizedBox(height: 24),
+          Text('촬영 전 확인해주세요',
+              textAlign: TextAlign.center,
+              style: ChonTextStyles.cardTitle()),
+          const SizedBox(height: 16),
+          _Tip(text: '어두운 배경에서 촬영해주세요.'),
+          _Tip(text: '빛이 반사되지 않도록 방향을 조정하세요.'),
+          _Tip(text: '신분증 모서리가 가이드 안에 들어오게 해주세요.'),
+          const Spacer(),
+          _PrimaryButton(label: '촬영 시작', onPressed: onNext),
+          const SizedBox(height: 16),
+        ],
+      ),
+    );
+  }
+}
+
+class _Tip extends StatelessWidget {
+  const _Tip({required this.text});
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(Icons.check_circle,
+              size: 18, color: ChonColors.brandPrimary),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(text,
+                style: ChonTextStyles.body(
+                    size: 14,
+                    color: ChonColors.textSecondary,
+                    height: 1.5)),
           ),
-        ),
+        ],
+      ),
+    );
+  }
+}
+
+class _OcrConfirmLeaf extends StatelessWidget {
+  const _OcrConfirmLeaf({required this.state, required this.cubit});
+  final IdGenerationState state;
+  final IdGenerationCubit cubit;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text('인식 결과를 확인해주세요',
+              style: ChonTextStyles.cardTitle().copyWith(fontSize: 18)),
+          const SizedBox(height: 16),
+          if (state.isLoading)
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 32),
+              child: Center(
+                child: CircularProgressIndicator(
+                    color: ChonColors.brandPrimary),
+              ),
+            )
+          else
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: ChonColors.bgSurface,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                children: [
+                  _Row(label: '성명', value: state.fullName),
+                  _Row(label: 'ID 번호', value: state.idNumber),
+                  if (state.address.isNotEmpty)
+                    _Row(label: '주소', value: state.address),
+                  if (state.issuedDate.isNotEmpty)
+                    _Row(label: '발급일', value: state.issuedDate),
+                  if (state.issuingAuthority.isNotEmpty)
+                    _Row(label: '발급기관', value: state.issuingAuthority),
+                ],
+              ),
+            ),
+          if (state.errorMessage.isNotEmpty && !state.isLoading) ...[
+            const SizedBox(height: 12),
+            Text(state.errorMessage,
+                style: ChonTextStyles.body(
+                    size: 13, color: ChonColors.textTertiary)),
+          ],
+          const Spacer(),
+          OutlinedButton(
+            onPressed: () => cubit.goTo(IdGenStage.captureFront),
+            child: const Text('다시 촬영'),
+          ),
+          const SizedBox(height: 8),
+          _PrimaryButton(label: '확인', onPressed: cubit.next),
+          const SizedBox(height: 16),
+        ],
       ),
     );
   }
@@ -472,40 +547,6 @@ class _DoneLeaf extends StatelessWidget {
               style: ChonTextStyles.cardTitle()),
           const Spacer(),
           _PrimaryButton(label: '확인', onPressed: onClose),
-          const SizedBox(height: 16),
-        ],
-      ),
-    );
-  }
-}
-
-class _StubLeaf extends StatelessWidget {
-  const _StubLeaf({
-    required this.title,
-    required this.caption,
-    required this.onNext,
-  });
-  final String title;
-  final String caption;
-  final VoidCallback onNext;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SizedBox(height: 48),
-          Text(title,
-              textAlign: TextAlign.center,
-              style: ChonTextStyles.cardTitle()),
-          const SizedBox(height: 12),
-          Text(caption,
-              textAlign: TextAlign.center,
-              style: ChonTextStyles.body(
-                  size: 13, color: ChonColors.textTertiary, height: 1.5)),
-          const Spacer(),
-          _PrimaryButton(label: '계속', onPressed: onNext),
           const SizedBox(height: 16),
         ],
       ),

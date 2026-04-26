@@ -1,13 +1,10 @@
 part of 'app_navigator.dart';
 
 enum Routes {
-  // Auth Routes
   splash('/splash'),
   tutorial('/tutorial'),
   login('/login'),
   register('/register'),
-
-  // Home Routes
   home('/home'),
   setting('/setting'),
   vehicleList('/vehicle_list'),
@@ -37,16 +34,24 @@ enum Routes {
   biography('/biography'),
   confirmRelationship('/confirmRelationship'),
   contactPicker('/contactPicker'),
-
   reportPage('/reportPage'),
   detailReportPage('/detailReportPage'),
   termService('/termSerVice'),
   privacyPolicy('/privacyPolicy'),
   guardPage('/guardPage'),
   requesterListPage('/requesterListPage'),
+  mutualAuthRequest('/v2/mutualAuthRequest'),
+  mutualAuthReceive('/v2/mutualAuthReceive'),
+  mutualAuthOffline('/v2/mutualAuthOffline'),
+  mutualAuthOfflineDisplay('/v2/mutualAuthOffline/display'),
+  mutualAuthOfflineScan('/v2/mutualAuthOffline/scan'),
+  inProcContact('/v2/inProcContact'),
+  profileEditV2('/v2/profileEdit'),
+  reportV2('/v2/report'),
+  aiChatV2('/v2/aiChat'),
+  idGenerationV2('/v2/idGeneration'),
   ;
 
   final String path;
-
   const Routes(this.path);
 }

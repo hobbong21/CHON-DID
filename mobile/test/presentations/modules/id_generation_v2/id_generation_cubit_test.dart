@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:base_flutter/data/models/self_id/create_card_model.dart';
 import 'package:base_flutter/data/models/self_id/list_card_info_model.dart';
+import 'package:base_flutter/data/models/self_id/ocr_card_id.dart';
+import 'package:base_flutter/domain/repositories/ocr_repo.dart';
 import 'package:base_flutter/domain/repositories/self_id_repo.dart';
 import 'package:base_flutter/presentations/modules/id_generation_v2/cubit/id_generation_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';
@@ -8,28 +12,36 @@ import 'package:mocktail/mocktail.dart';
 
 class _MockSelfIdRepo extends Mock implements SelfIdRepo {}
 
+class _MockOcrRepo extends Mock implements OcrRepo {}
+
 class _FakeCreateCardRequest extends Fake implements CreateCardRequest {}
+
+class _FakeFile extends Fake implements File {}
 
 void main() {
   late _MockSelfIdRepo repo;
+  late _MockOcrRepo ocrRepo;
 
   setUpAll(() {
     registerFallbackValue(_FakeCreateCardRequest());
+    registerFallbackValue(_FakeFile());
   });
 
   setUp(() {
     repo = _MockSelfIdRepo();
+    ocrRepo = _MockOcrRepo();
   });
 
-  IdGenerationCubit make() => IdGenerationCubit(selfIdRepo: repo);
+  IdGenerationCubit make() =>
+      IdGenerationCubit(selfIdRepo: repo, ocrRepo: ocrRepo);
 
   group('navigation', () {
     blocTest<IdGenerationCubit, IdGenerationState>(
       'next moves through linear stages in order',
       build: () => make(),
       act: (c) {
-        c.next(); // start → personalInfo
-        c.next(); // personalInfo → verificationOk
+        c.next();
+        c.next();
       },
       expect: () => [
         isA<IdGenerationState>()
@@ -76,10 +88,7 @@ void main() {
     blocTest<IdGenerationCubit, IdGenerationState>(
       'onPersonalInfoChanged keeps unchanged fields',
       build: () => make(),
-      seed: () => IdGenerationState(
-        fullName: 'Alice',
-        idNumber: '123',
-      ),
+      seed: () => IdGenerationState(fullName: 'Alice', idNumber: '123'),
       act: (c) => c.onPersonalInfoChanged(address: 'Seoul'),
       expect: () => [
         isA<IdGenerationState>()
@@ -96,7 +105,7 @@ void main() {
       expect: () => [
         isA<IdGenerationState>()
             .having((s) => s.stage, 'stage', IdGenStage.verificationOk)
-            .having((s) => s.verificationFailed, 'verificationFailed', true),
+            .having((s) => s.verificationFailed, 'failed', true),
       ],
     );
 
@@ -116,14 +125,61 @@ void main() {
     );
   });
 
+  group('runOcr', () {
+    blocTest<IdGenerationCubit, IdGenerationState>(
+      'unrecognized response → errorMessage with no card data',
+      build: () {
+        when(() => ocrRepo.idCardOcr(
+              secretKey: any(named: 'secretKey'),
+              file: any(named: 'file'),
+              message: any(named: 'message'),
+            )).thenAnswer((_) async => const OcrDocumentIdCardResponse(
+              version: 'V2',
+              requestId: 'r',
+              timestamp: 0,
+              images: [],
+            ));
+        return make();
+      },
+      act: (c) => c.runOcr(file: _FakeFile(), secretKey: 'secret'),
+      expect: () => [
+        isA<IdGenerationState>().having((s) => s.isLoading, 'loading', true),
+        isA<IdGenerationState>()
+            .having((s) => s.isLoading, 'loading', false)
+            .having((s) => s.errorMessage, 'errorMessage',
+                contains('인식하지 못했어요'))
+            .having((s) => s.ocrResult, 'ocrResult', isNull),
+      ],
+    );
+
+    blocTest<IdGenerationCubit, IdGenerationState>(
+      'remote throws → errorMessage propagates',
+      build: () {
+        when(() => ocrRepo.idCardOcr(
+              secretKey: any(named: 'secretKey'),
+              file: any(named: 'file'),
+              message: any(named: 'message'),
+            )).thenThrow(Exception('ocr-503'));
+        return make();
+      },
+      act: (c) => c.runOcr(file: _FakeFile(), secretKey: 'secret'),
+      expect: () => [
+        isA<IdGenerationState>().having((s) => s.isLoading, 'loading', true),
+        isA<IdGenerationState>()
+            .having((s) => s.isLoading, 'loading', false)
+            .having((s) => s.errorMessage, 'errorMessage', contains('ocr-503')),
+      ],
+    );
+  });
+
   group('submit', () {
     blocTest<IdGenerationCubit, IdGenerationState>(
       'rejects when required fields are missing',
       build: () => make(),
       act: (c) => c.submit(),
       expect: () => [
-        isA<IdGenerationState>().having(
-            (s) => s.errorMessage, 'errorMessage', contains('필수')),
+        isA<IdGenerationState>()
+            .having((s) => s.errorMessage, 'errorMessage', contains('필수')),
       ],
     );
 

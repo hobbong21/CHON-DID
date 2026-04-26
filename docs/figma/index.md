@@ -274,6 +274,9 @@ Figma MCP 도구로 호출:
 | ID Generation v2 (Cubit 10-phase + shell + 핵심 phase) | [`mobile/lib/presentations/modules/id_generation_v2/`](../../mobile/lib/presentations/modules/id_generation_v2) |
 | Section 11 리네이밍 권장 | [`docs/figma/section_11_renaming.md`](./section_11_renaming.md) |
 | Section 3 ID Gen 인계 | [`docs/figma/section_3_id_gen_handoff.md`](./section_3_id_gen_handoff.md) |
+| ID Gen 카메라 픽셀 정밀화 가이드 | [`docs/figma/id_gen_camera_pixel_precision.md`](./id_gen_camera_pixel_precision.md) |
+| AppColors → ChonColors 마이그레이션 | [`docs/figma/appcolors_migration.md`](./appcolors_migration.md) |
+| flutter test 첫 실행 체크리스트 | [`mobile/test/FIRST_RUN_CHECKLIST.md`](../../mobile/test/FIRST_RUN_CHECKLIST.md) |
 | Family Tree 인계 노트 (이전 세션) | [`docs/figma/family_tree_handoff.md`](./family_tree_handoff.md) |
 | 사용 가이드 | [`mobile/lib/presentations/widgets/README.md`](../../mobile/lib/presentations/widgets/README.md) |
 | Figma → Flutter 자동 변환 워크플로 | [`docs/figma/codegen_workflow.md`](./codegen_workflow.md) |

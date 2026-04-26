@@ -39,7 +39,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 // import '../presentations/modules/home/home_page.dart'; // legacy — restore if reverting
+import 'package:base_flutter/domain/repositories/relation_repo.dart';
+import 'package:base_flutter/injector.dart';
 import '../presentations/modules/home/home_page_v2.dart';
+import '../presentations/modules/family_tree_v2/cubit/family_tree_cubit.dart';
+import '../presentations/modules/family_tree_v2/family_tree_v2_page.dart';
 import '../presentations/modules/login/login_page.dart';
 import '../presentations/modules/splash/splash_page.dart';
 import '../presentations/modules/tutorial/tutorial_page.dart';
@@ -138,7 +142,11 @@ final class _RouteConfig {
     GoRoute(
       redirect: AuthGuard.guard,
       path: Routes.familyTree.path,
-      builder: (context, state) => FamilyTreePage(),
+      builder: (context, state) => FamilyTreeV2Page(
+        cubit: FamilyTreeCubit(
+          relationRepo: Injector.getIt<RelationRepo>(),
+        )..load(phoneNumber: state.extra as String?),
+      ),
     ),
     GoRoute(
       redirect: AuthGuard.guard,

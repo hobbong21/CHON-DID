@@ -266,6 +266,7 @@ Figma MCP 도구로 호출:
 | Mutual Auth Request (Cubit + 6-stage 페이지) | [`mobile/lib/presentations/modules/mutual_auth_request/`](../../mobile/lib/presentations/modules/mutual_auth_request) |
 | Family Tree v2 (Cubit + 페이지 + 노드 + 레이아웃 + 연결선 painter) | [`mobile/lib/presentations/modules/family_tree_v2/`](../../mobile/lib/presentations/modules/family_tree_v2) |
 | Mutual Auth Receive (Cubit + 페이지) | [`mobile/lib/presentations/modules/mutual_auth_receive/`](../../mobile/lib/presentations/modules/mutual_auth_receive) |
+| Mutual Auth Offline / QR (Cubit + Entry/Display/Scan 페이지) | [`mobile/lib/presentations/modules/mutual_auth_offline/`](../../mobile/lib/presentations/modules/mutual_auth_offline) |
 | Family Tree 인계 노트 (이전 세션) | [`docs/figma/family_tree_handoff.md`](./family_tree_handoff.md) |
 | 사용 가이드 | [`mobile/lib/presentations/widgets/README.md`](../../mobile/lib/presentations/widgets/README.md) |
 | Figma → Flutter 자동 변환 워크플로 | [`docs/figma/codegen_workflow.md`](./codegen_workflow.md) |

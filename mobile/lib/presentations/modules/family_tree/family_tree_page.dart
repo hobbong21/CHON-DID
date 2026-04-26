@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_colors.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
 import 'package:base_flutter/data/models/family/relation_model.dart';
 import 'package:base_flutter/generated/l10n.dart';
@@ -79,7 +80,7 @@ class _FamilyTreePageState extends State<FamilyTreePage> {
                     padding:
                         EdgeInsets.only(top: 12.h, left: 16.w, right: 16.w),
                     decoration: BoxDecoration(
-                      color: colors.background,
+                      color: ChonColors.bgPage,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black12,
@@ -221,7 +222,7 @@ class _FamilyTreePageState extends State<FamilyTreePage> {
         //         cubit.selectedNode?.model.isCollapsed == true
         //             ? Icons.open_in_full
         //             : Icons.close_fullscreen,
-        //         color: colors.secondaryText,
+        //         color: ChonColors.textSecondary,
         //       ),
         //     );
         //   },

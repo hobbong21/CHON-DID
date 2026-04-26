@@ -35,7 +35,7 @@ public class RelationController {
         return new ResponseData<>().success(relationUsersService.getListRequester(request));
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseData<Object> relationDelete(@PathVariable Long id) {
         relationUsersService.deleteRelation(id);
         return new ResponseData<>().success("Delete Success");

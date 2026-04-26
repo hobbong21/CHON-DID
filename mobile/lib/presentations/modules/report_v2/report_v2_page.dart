@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/report/report_model.dart';
 import 'package:base_flutter/presentations/modules/report_v2/cubit/report_v2_cubit.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 /// Report (문제 신고) page — Figma section 11.
 ///
 /// Stage-driven shell:
-/// - `list` — past reports + "새 신고하기" button
+/// - `list` — past reports + S.current.chon_report_new button
 /// - `compose` — form
 /// - `submitting` — loading screen
 /// - `submitted` — success
@@ -28,7 +29,7 @@ class ReportV2Page extends StatelessWidget {
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
           centerTitle: true,
-          title: Text('문제 신고', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_report_title, style: ChonTextStyles.cardTitle()),
         ),
         body: BlocBuilder<ReportV2Cubit, ReportV2State>(
           builder: (context, state) {
@@ -38,7 +39,7 @@ class ReportV2Page extends StatelessWidget {
               case ReportV2Stage.compose:
                 return _ComposeBody(state: state, cubit: cubit);
               case ReportV2Stage.submitting:
-                return const _LoadingBody(label: '신고를 보내는 중…');
+                return _LoadingBody(label: S.current.chon_report_sending);
               case ReportV2Stage.submitted:
                 return _SuccessBody(onClose: cubit.backToList);
               case ReportV2Stage.failed:
@@ -67,7 +68,7 @@ class _ListBody extends StatelessWidget {
                 )
               : state.reports.isEmpty
                   ? Center(
-                      child: Text('이전 신고가 없습니다.',
+                      child: Text(S.current.chon_report_empty,
                           style: ChonTextStyles.body(
                               size: 14, color: ChonColors.textSecondary)),
                     )
@@ -94,7 +95,7 @@ class _ListBody extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50)),
                 elevation: 0,
               ),
-              child: const Text('새 신고하기'),
+              child: Text(S.current.chon_report_new),
             ),
           ),
         ),
@@ -155,16 +156,16 @@ class _ComposeBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Field(
-            label: '제목',
-            hint: '신고 제목을 입력해주세요.',
+            label: S.current.chon_report_field_title,
+            hint: S.current.chon_report_field_title_hint,
             initial: state.title,
             onChanged: cubit.onTitleChanged,
             keyName: 'report.title',
           ),
           const SizedBox(height: 16),
           _Field(
-            label: '내용',
-            hint: '발생한 문제를 자세히 적어주세요.',
+            label: S.current.chon_report_field_content,
+            hint: S.current.chon_report_field_content_hint,
             initial: state.content,
             onChanged: cubit.onContentChanged,
             keyName: 'report.content',
@@ -191,7 +192,7 @@ class _ComposeBody extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50)),
                 elevation: 0,
               ),
-              child: const Text('보내기'),
+              child: Text(S.current.chon_action_send),
             ),
           ),
         ],
@@ -287,7 +288,7 @@ class _AttachmentRow extends StatelessWidget {
             // Here we expose a no-op so the structure is in place.
             onPressed: () {},
             icon: const Icon(Icons.attach_file_outlined),
-            label: Text(hasAttachment ? '첨부됨' : '파일 첨부'),
+            label: Text(hasAttachment ? S.current.chon_action_attached : S.current.chon_action_attach),
             style: OutlinedButton.styleFrom(
               foregroundColor: ChonColors.textPrimary,
               minimumSize: const Size.fromHeight(48),
@@ -346,13 +347,13 @@ class _SuccessBody extends StatelessWidget {
               size: 96, color: ChonColors.brandPrimary),
           const SizedBox(height: 24),
           Text(
-            '신고가 접수되었어요.',
+            S.current.chon_report_submitted,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 22),
           ),
           const SizedBox(height: 8),
           Text(
-            '확인 후 빠른 시일 내에 답변 드리겠습니다.',
+            S.current.chon_report_submitted_sub,
             textAlign: TextAlign.center,
             style: ChonTextStyles.body(
                 size: 14, color: ChonColors.textSecondary),
@@ -367,7 +368,7 @@ class _SuccessBody extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
             ),
-            child: const Text('확인'),
+            child: Text(S.current.chon_action_confirm),
           ),
           const SizedBox(height: 16),
         ],
@@ -391,7 +392,7 @@ class _FailedBody extends StatelessWidget {
           const Icon(Icons.error_outline,
               size: 96, color: Color(0xFFE24B4A)),
           const SizedBox(height: 24),
-          Text('전송에 실패했어요.',
+          Text(S.current.chon_report_failed,
               textAlign: TextAlign.center,
               style: ChonTextStyles.cardTitle().copyWith(fontSize: 22)),
           const SizedBox(height: 8),
@@ -410,7 +411,7 @@ class _FailedBody extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
             ),
-            child: const Text('다시 시도'),
+            child: Text(S.current.chon_action_retry),
           ),
           const SizedBox(height: 16),
         ],

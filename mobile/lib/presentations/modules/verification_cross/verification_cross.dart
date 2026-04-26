@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_colors.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
 import 'package:base_flutter/generated/assets.gen.dart';
 import 'package:base_flutter/generated/l10n.dart';
@@ -84,7 +85,7 @@ class _VerificationCrossState extends State<VerificationCross>
                 //       final focusColorFilter =
                 //           ColorFilter.mode(colors.white, BlendMode.srcIn);
                 //       final unFocusColorFilter = ColorFilter.mode(
-                //           colors.secondaryText, BlendMode.srcIn);
+                //           ChonColors.textSecondary, BlendMode.srcIn);
                 //       return IntrinsicHeight(
                 //         child: Row(
                 //           crossAxisAlignment: CrossAxisAlignment.stretch,

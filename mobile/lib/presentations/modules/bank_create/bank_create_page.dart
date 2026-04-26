@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/bank/bank_info_model.dart';
 import 'package:base_flutter/presentations/modules/bank_create/cubit/bank_cubit.dart';
@@ -106,7 +107,7 @@ class _BankCreatePageState extends State<BankCreatePage> {
                           controller: cubit.accountController,
                           enabled: !state.isLoading,
                           decoration: InputDecoration(
-                            fillColor: colors.background,
+                            fillColor: ChonColors.bgPage,
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: colors.primary),
                             ),

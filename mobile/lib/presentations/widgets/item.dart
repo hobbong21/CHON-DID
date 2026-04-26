@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -46,7 +47,7 @@ class Item extends StatelessWidget {
                   width: 48.r,
                   height: 48.r,
                   decoration: BoxDecoration(
-                    color: colors.background,
+                    color: ChonColors.bgPage,
                     borderRadius: BorderRadius.circular(48.r),
                   ),
                   child: icon,

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -25,12 +26,15 @@ class IdCameraCapture extends StatefulWidget {
   const IdCameraCapture({
     super.key,
     required this.onCaptured,
-    this.instructionLabel = '신분증을 가이드 안에 맞춰주세요',
+    this.instructionLabel,
     this.onPermissionDenied,
   });
 
   final ValueChanged<File> onCaptured;
-  final String instructionLabel;
+
+  /// `null` → resolves to `S.current.chon_id_gen_capture_front` at build
+  /// time. Pass an explicit string for tests or to override per-phase.
+  final String? instructionLabel;
 
   /// Optional callback when the camera permission is denied. Default
   /// behaviour is to display an inline error inside the widget.
@@ -138,7 +142,9 @@ class _IdCameraCaptureState extends State<IdCameraCapture> {
           left: 0,
           right: 0,
           top: 24,
-          child: _InstructionPill(label: widget.instructionLabel),
+          child: _InstructionPill(
+              label: widget.instructionLabel ??
+                  S.current.chon_id_gen_capture_front),
         ),
         Positioned(
           left: 0,

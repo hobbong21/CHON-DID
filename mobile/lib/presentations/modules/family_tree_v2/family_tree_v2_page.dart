@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/family_tree_v2/cubit/family_tree_cubit.dart';
 import 'package:base_flutter/presentations/modules/family_tree_v2/family_tree_layout.dart';
 import 'package:base_flutter/presentations/modules/family_tree_v2/family_tree_node.dart';
@@ -26,11 +27,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 /// The Cubit owns the data; `layoutForest` produces deterministic
 /// positions; `InteractiveViewer` handles gestures.
 class FamilyTreeV2Page extends StatelessWidget {
-  const FamilyTreeV2Page({
+  FamilyTreeV2Page({
     super.key,
     required this.cubit,
-    this.title = '가계도',
-  });
+    String? title,
+  }) : title = title ?? S.current.chon_ft_title;
 
   final FamilyTreeCubit cubit;
   final String title;
@@ -71,7 +72,7 @@ class FamilyTreeV2Page extends StatelessWidget {
             }
             if (state.roots.isEmpty) {
               return Center(
-                child: Text('가족 정보가 없습니다.',
+                child: Text(S.current.chon_ft_empty,
                     style: ChonTextStyles.body(
                         size: 14, color: ChonColors.textSecondary)),
               );

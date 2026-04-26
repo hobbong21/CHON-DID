@@ -17,7 +17,7 @@ class ViewImagePage extends StatelessWidget {
     final isQr = extra?['isQr'] ?? false;
     final colors = context.colors;
     return Scaffold(
-        backgroundColor: colors.background,
+        backgroundColor: ChonColors.bgPage,
         body: Column(
           children: [
             Padding(

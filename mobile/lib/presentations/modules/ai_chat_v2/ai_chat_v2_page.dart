@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/chatbot/message_model.dart';
 import 'package:base_flutter/presentations/modules/chat_bot/cubit/chat_bot_cubit.dart';
 import 'package:flutter/material.dart';
@@ -83,12 +84,12 @@ class _EmptyState extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'CHON AI에 무엇이든 물어보세요',
+              S.current.chon_chat_empty_title,
               style: ChonTextStyles.cardTitle().copyWith(fontSize: 18),
             ),
             const SizedBox(height: 8),
             Text(
-              '가족 관계, 신원 인증, 가계도에 대해\n질문해 보세요.',
+              S.current.chon_chat_empty_body,
               textAlign: TextAlign.center,
               style: ChonTextStyles.body(
                   size: 14, color: ChonColors.textSecondary, height: 1.5),
@@ -333,7 +334,7 @@ class _Composer extends StatelessWidget {
                 textInputAction: TextInputAction.send,
                 onSubmitted: (_) => onSend(),
                 decoration: InputDecoration(
-                  hintText: '메시지를 입력하세요',
+                  hintText: S.current.chon_chat_input_hint,
                   hintStyle: ChonTextStyles.body(
                       size: 14, color: ChonColors.textTertiary),
                   filled: true,

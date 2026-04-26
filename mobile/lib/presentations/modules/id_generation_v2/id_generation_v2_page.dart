@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/id_generation_v2/cubit/id_generation_cubit.dart';
 import 'package:base_flutter/presentations/modules/id_generation_v2/widgets/id_camera_capture.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class IdGenerationV2Page extends StatelessWidget {
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
           centerTitle: true,
-          title: Text('신분증 발급', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_id_gen_title, style: ChonTextStyles.cardTitle()),
           leading: BlocBuilder<IdGenerationCubit, IdGenerationState>(
             builder: (context, state) => IconButton(
               icon: const Icon(Icons.arrow_back),
@@ -49,7 +50,7 @@ class IdGenerationV2Page extends StatelessWidget {
                 return _CapturePrepLeaf(onNext: cubit.next);
               case IdGenStage.captureFront:
                 return IdCameraCapture(
-                  instructionLabel: '신분증 앞면을 가이드 안에 맞춰주세요',
+                  instructionLabel: S.current.chon_id_gen_capture_front,
                   onCaptured: (file) async {
                     final bytes = await file.readAsBytes();
                     cubit.setFrontImage(base64Encode(bytes));
@@ -62,7 +63,7 @@ class IdGenerationV2Page extends StatelessWidget {
                 );
               case IdGenStage.captureBack:
                 return IdCameraCapture(
-                  instructionLabel: '신분증 뒷면을 가이드 안에 맞춰주세요',
+                  instructionLabel: S.current.chon_id_gen_capture_back,
                   onCaptured: (file) async {
                     final bytes = await file.readAsBytes();
                     cubit.setBackImage(base64Encode(bytes));
@@ -107,18 +108,18 @@ class _StartLeaf extends StatelessWidget {
                 size: 72, color: ChonColors.brandPrimary),
           ),
           const SizedBox(height: 24),
-          Text('CHON ID 발급을 시작할게요',
+          Text(S.current.chon_id_gen_intro_title,
               textAlign: TextAlign.center,
               style: ChonTextStyles.cardTitle()),
           const SizedBox(height: 8),
           Text(
-            '신분증 정보 입력과 촬영을 통해\n나의 CHON ID를 만들어 보세요.',
+            S.current.chon_id_gen_intro_body,
             textAlign: TextAlign.center,
             style: ChonTextStyles.body(
                 size: 14, color: ChonColors.textSecondary, height: 1.5),
           ),
           const Spacer(),
-          _PrimaryButton(label: '시작하기', onPressed: onNext),
+          _PrimaryButton(label: S.current.chon_action_start, onPressed: onNext),
           const SizedBox(height: 16),
         ],
       ),
@@ -153,15 +154,15 @@ class _PersonalInfoLeafState extends State<_PersonalInfoLeaf> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _SimpleField(
-            label: '성명',
-            hint: '신분증 상의 이름',
+            label: S.current.chon_id_gen_field_name,
+            hint: S.current.chon_id_gen_field_name_hint,
             controller: _name,
             onChanged: (v) =>
                 widget.cubit.onPersonalInfoChanged(fullName: v),
           ),
           const SizedBox(height: 16),
           _SimpleField(
-            label: '주민등록번호 / 외국인등록번호',
+            label: S.current.chon_id_gen_field_id,
             hint: '예: 900101-1234567',
             controller: _id,
             onChanged: (v) =>
@@ -174,7 +175,7 @@ class _PersonalInfoLeafState extends State<_PersonalInfoLeaf> {
                     .copyWith(color: const Color(0xFFE24B4A))),
           ],
           const SizedBox(height: 32),
-          _PrimaryButton(label: '다음', onPressed: widget.cubit.next),
+          _PrimaryButton(label: S.current.chon_action_next, onPressed: widget.cubit.next),
         ],
       ),
     );
@@ -240,18 +241,18 @@ class _VerificationLeaf extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Text(
-            failed ? '확인할 수 없어요' : '확인되었어요',
+            failed ? S.current.chon_id_gen_verified_fail : S.current.chon_id_gen_verified_ok,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle(),
           ),
           const Spacer(),
           if (failed)
             _PrimaryButton(
-              label: '다시 입력',
+              label: S.current.chon_id_gen_reenter,
               onPressed: () => cubit.goTo(IdGenStage.personalInfo),
             )
           else
-            _PrimaryButton(label: '계속', onPressed: cubit.next),
+            _PrimaryButton(label: S.current.chon_action_continue, onPressed: cubit.next),
           const SizedBox(height: 16),
         ],
       ),
@@ -267,11 +268,11 @@ class _IdTypeLeaf extends StatelessWidget {
   String _label(IdGenType t) {
     switch (t) {
       case IdGenType.selfId:
-        return '주민/외국인등록증';
+        return S.current.chon_id_gen_type_resident;
       case IdGenType.cardFamily:
-        return '가족관계증명서';
+        return S.current.chon_id_gen_type_family;
       case IdGenType.cardTaekwondo:
-        return '태권도 단증';
+        return S.current.chon_id_gen_type_taekwondo;
     }
   }
 
@@ -283,7 +284,7 @@ class _IdTypeLeaf extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const SizedBox(height: 16),
-          Text('발급할 ID 종류를 선택해주세요',
+          Text(S.current.chon_id_gen_pick_type,
               style: ChonTextStyles.cardTitle().copyWith(fontSize: 18)),
           const SizedBox(height: 16),
           ...IdGenType.values.map((t) => Padding(
@@ -328,7 +329,7 @@ class _IdTypeLeaf extends StatelessWidget {
                 ),
               )),
           const Spacer(),
-          _PrimaryButton(label: '다음', onPressed: cubit.next),
+          _PrimaryButton(label: S.current.chon_action_next, onPressed: cubit.next),
           const SizedBox(height: 16),
         ],
       ),
@@ -350,15 +351,15 @@ class _CapturePrepLeaf extends StatelessWidget {
           const Icon(Icons.camera_alt_outlined,
               size: 96, color: ChonColors.brandPrimary),
           const SizedBox(height: 24),
-          Text('촬영 전 확인해주세요',
+          Text(S.current.chon_id_gen_prep_title,
               textAlign: TextAlign.center,
               style: ChonTextStyles.cardTitle()),
           const SizedBox(height: 16),
-          _Tip(text: '어두운 배경에서 촬영해주세요.'),
-          _Tip(text: '빛이 반사되지 않도록 방향을 조정하세요.'),
-          _Tip(text: '신분증 모서리가 가이드 안에 들어오게 해주세요.'),
+          _Tip(text: S.current.chon_id_gen_prep_tip1),
+          _Tip(text: S.current.chon_id_gen_prep_tip2),
+          _Tip(text: S.current.chon_id_gen_prep_tip3),
           const Spacer(),
-          _PrimaryButton(label: '촬영 시작', onPressed: onNext),
+          _PrimaryButton(label: S.current.chon_id_gen_prep_start, onPressed: onNext),
           const SizedBox(height: 16),
         ],
       ),
@@ -403,7 +404,7 @@ class _OcrConfirmLeaf extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text('인식 결과를 확인해주세요',
+          Text(S.current.chon_id_gen_ocr_title,
               style: ChonTextStyles.cardTitle().copyWith(fontSize: 18)),
           const SizedBox(height: 16),
           if (state.isLoading)
@@ -423,14 +424,14 @@ class _OcrConfirmLeaf extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  _Row(label: '성명', value: state.fullName),
-                  _Row(label: 'ID 번호', value: state.idNumber),
+                  _Row(label: S.current.chon_id_gen_field_name, value: state.fullName),
+                  _Row(label: S.current.chon_id_gen_field_id_label, value: state.idNumber),
                   if (state.address.isNotEmpty)
-                    _Row(label: '주소', value: state.address),
+                    _Row(label: S.current.chon_id_gen_field_address, value: state.address),
                   if (state.issuedDate.isNotEmpty)
-                    _Row(label: '발급일', value: state.issuedDate),
+                    _Row(label: S.current.chon_id_gen_field_issued, value: state.issuedDate),
                   if (state.issuingAuthority.isNotEmpty)
-                    _Row(label: '발급기관', value: state.issuingAuthority),
+                    _Row(label: S.current.chon_id_gen_field_authority, value: state.issuingAuthority),
                 ],
               ),
             ),
@@ -443,10 +444,10 @@ class _OcrConfirmLeaf extends StatelessWidget {
           const Spacer(),
           OutlinedButton(
             onPressed: () => cubit.goTo(IdGenStage.captureFront),
-            child: const Text('다시 촬영'),
+            child: Text(S.current.chon_action_recapture),
           ),
           const SizedBox(height: 8),
-          _PrimaryButton(label: '확인', onPressed: cubit.next),
+          _PrimaryButton(label: S.current.chon_action_confirm, onPressed: cubit.next),
           const SizedBox(height: 16),
         ],
       ),
@@ -465,7 +466,7 @@ class _ReviewLeaf extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text('확인하시고 발급을 완료하세요',
+          Text(S.current.chon_id_gen_review_title,
               style: ChonTextStyles.cardTitle().copyWith(fontSize: 18)),
           const SizedBox(height: 16),
           Container(
@@ -477,10 +478,10 @@ class _ReviewLeaf extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _Row(label: '성명', value: state.fullName),
-                _Row(label: 'ID 번호', value: state.idNumber),
+                _Row(label: S.current.chon_id_gen_field_name, value: state.fullName),
+                _Row(label: S.current.chon_id_gen_field_id_label, value: state.idNumber),
                 if (state.address.isNotEmpty)
-                  _Row(label: '주소', value: state.address),
+                  _Row(label: S.current.chon_id_gen_field_address, value: state.address),
               ],
             ),
           ),
@@ -492,7 +493,7 @@ class _ReviewLeaf extends StatelessWidget {
           ],
           const Spacer(),
           _PrimaryButton(
-              label: '발급하기',
+              label: S.current.chon_id_gen_review_finish,
               onPressed: state.isLoading ? null : cubit.submit,
               isLoading: state.isLoading),
           const SizedBox(height: 16),
@@ -542,11 +543,11 @@ class _DoneLeaf extends StatelessWidget {
           const Icon(Icons.celebration_outlined,
               size: 96, color: ChonColors.brandPrimary),
           const SizedBox(height: 24),
-          Text('CHON ID가 발급되었어요',
+          Text(S.current.chon_id_gen_done,
               textAlign: TextAlign.center,
               style: ChonTextStyles.cardTitle()),
           const Spacer(),
-          _PrimaryButton(label: '확인', onPressed: onClose),
+          _PrimaryButton(label: S.current.chon_action_confirm, onPressed: onClose),
           const SizedBox(height: 16),
         ],
       ),

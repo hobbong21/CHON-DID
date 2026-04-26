@@ -351,13 +351,50 @@ class MessageLookup extends MessageLookupByLibrary {
       "Đã xác nhận\nCheck-out",
     ),
     "children": MessageLookupByLibrary.simpleMessage("Con cái"),
+    "chon_action_approve": MessageLookupByLibrary.simpleMessage("Chấp nhận"),
+    "chon_action_attach": MessageLookupByLibrary.simpleMessage("Đính kèm"),
+    "chon_action_attached": MessageLookupByLibrary.simpleMessage("Đã đính kèm"),
+    "chon_action_back": MessageLookupByLibrary.simpleMessage("Trở lại"),
+    "chon_action_close": MessageLookupByLibrary.simpleMessage("Đóng"),
     "chon_action_confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+    "chon_action_continue": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
+    "chon_action_finish": MessageLookupByLibrary.simpleMessage("Hoàn tất"),
     "chon_action_next": MessageLookupByLibrary.simpleMessage("Tiếp"),
+    "chon_action_recapture": MessageLookupByLibrary.simpleMessage("Chụp lại"),
+    "chon_action_reject": MessageLookupByLibrary.simpleMessage("Từ chối"),
     "chon_action_retry": MessageLookupByLibrary.simpleMessage("Thử lại"),
     "chon_action_save": MessageLookupByLibrary.simpleMessage("Lưu"),
+    "chon_action_search_again": MessageLookupByLibrary.simpleMessage("Tìm lại"),
     "chon_action_send": MessageLookupByLibrary.simpleMessage("Gửi"),
     "chon_action_skip": MessageLookupByLibrary.simpleMessage("Bỏ qua"),
     "chon_action_start": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
+    "chon_chat_empty_body": MessageLookupByLibrary.simpleMessage(
+      "Hỏi về quan hệ gia đình, xác thực,\ngia phả.",
+    ),
+    "chon_chat_empty_title": MessageLookupByLibrary.simpleMessage(
+      "Hỏi CHON AI bất cứ điều gì",
+    ),
+    "chon_chat_input_hint": MessageLookupByLibrary.simpleMessage(
+      "Nhập tin nhắn",
+    ),
+    "chon_chat_title": MessageLookupByLibrary.simpleMessage("CHON AI"),
+    "chon_contact_completed": MessageLookupByLibrary.simpleMessage(
+      "Đã kết thúc cuộc gọi.",
+    ),
+    "chon_contact_connecting": MessageLookupByLibrary.simpleMessage(
+      "Đang kết nối…",
+    ),
+    "chon_contact_failed": MessageLookupByLibrary.simpleMessage(
+      "Không kết nối được.",
+    ),
+    "chon_contact_idle_prompt": MessageLookupByLibrary.simpleMessage(
+      "Chọn người để liên hệ.",
+    ),
+    "chon_contact_title": MessageLookupByLibrary.simpleMessage("Liên hệ"),
+    "chon_ft_empty": MessageLookupByLibrary.simpleMessage(
+      "Chưa có thông tin gia đình.",
+    ),
+    "chon_ft_title": MessageLookupByLibrary.simpleMessage("Gia phả"),
     "chon_home_banner": MessageLookupByLibrary.simpleMessage(
       "Tạo CHON ID của bạn qua xác thực lẫn nhau.",
     ),
@@ -381,11 +418,219 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
       "Hướng dẫn\nCHON DID",
     ),
+    "chon_id_gen_capture_back": MessageLookupByLibrary.simpleMessage(
+      "Căn mặt sau của ID vào khung",
+    ),
+    "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
+      "Căn mặt trước của ID vào khung",
+    ),
+    "chon_id_gen_done": MessageLookupByLibrary.simpleMessage(
+      "Đã phát hành CHON ID",
+    ),
+    "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage(
+      "Thiếu thông tin.",
+    ),
+    "chon_id_gen_field_address": MessageLookupByLibrary.simpleMessage(
+      "Địa chỉ",
+    ),
+    "chon_id_gen_field_authority": MessageLookupByLibrary.simpleMessage(
+      "Cơ quan phát hành",
+    ),
+    "chon_id_gen_field_id": MessageLookupByLibrary.simpleMessage("Số CMND/ID"),
+    "chon_id_gen_field_id_label": MessageLookupByLibrary.simpleMessage("Số ID"),
+    "chon_id_gen_field_issued": MessageLookupByLibrary.simpleMessage(
+      "Ngày phát hành",
+    ),
+    "chon_id_gen_field_name": MessageLookupByLibrary.simpleMessage("Họ tên"),
+    "chon_id_gen_field_name_hint": MessageLookupByLibrary.simpleMessage(
+      "Tên trên thẻ ID",
+    ),
+    "chon_id_gen_intro_body": MessageLookupByLibrary.simpleMessage(
+      "Nhập thông tin ID và chụp ảnh\nđể tạo CHON ID.",
+    ),
+    "chon_id_gen_intro_title": MessageLookupByLibrary.simpleMessage(
+      "Bắt đầu phát hành\nCHON ID của bạn",
+    ),
+    "chon_id_gen_ocr_err": MessageLookupByLibrary.simpleMessage(
+      "Không đọc được ID. Vui lòng chụp lại.",
+    ),
+    "chon_id_gen_ocr_no_result": MessageLookupByLibrary.simpleMessage(
+      "Không có kết quả tự động.",
+    ),
+    "chon_id_gen_ocr_title": MessageLookupByLibrary.simpleMessage(
+      "Xác nhận kết quả đọc",
+    ),
+    "chon_id_gen_pick_type": MessageLookupByLibrary.simpleMessage(
+      "Chọn loại ID",
+    ),
+    "chon_id_gen_prep_start": MessageLookupByLibrary.simpleMessage(
+      "Bắt đầu chụp",
+    ),
+    "chon_id_gen_prep_tip1": MessageLookupByLibrary.simpleMessage(
+      "Chụp với nền tối.",
+    ),
+    "chon_id_gen_prep_tip2": MessageLookupByLibrary.simpleMessage(
+      "Tránh ánh sáng phản chiếu.",
+    ),
+    "chon_id_gen_prep_tip3": MessageLookupByLibrary.simpleMessage(
+      "Đặt ID vào khung hướng dẫn.",
+    ),
+    "chon_id_gen_prep_title": MessageLookupByLibrary.simpleMessage(
+      "Trước khi chụp",
+    ),
+    "chon_id_gen_reenter": MessageLookupByLibrary.simpleMessage("Nhập lại"),
+    "chon_id_gen_review_finish": MessageLookupByLibrary.simpleMessage(
+      "Phát hành",
+    ),
+    "chon_id_gen_review_title": MessageLookupByLibrary.simpleMessage(
+      "Kiểm tra và hoàn tất",
+    ),
+    "chon_id_gen_title": MessageLookupByLibrary.simpleMessage("Phát hành ID"),
+    "chon_id_gen_type_family": MessageLookupByLibrary.simpleMessage(
+      "Giấy CN gia đình",
+    ),
+    "chon_id_gen_type_resident": MessageLookupByLibrary.simpleMessage(
+      "Thẻ căn cước",
+    ),
+    "chon_id_gen_type_taekwondo": MessageLookupByLibrary.simpleMessage(
+      "Chứng chỉ Taekwondo",
+    ),
+    "chon_id_gen_verified_fail": MessageLookupByLibrary.simpleMessage(
+      "Không xác minh được",
+    ),
+    "chon_id_gen_verified_ok": MessageLookupByLibrary.simpleMessage(
+      "Đã xác minh",
+    ),
+    "chon_mauth_off_intro": MessageLookupByLibrary.simpleMessage(
+      "Xác minh CHON ID\ntrực tiếp ngoại tuyến.",
+    ),
+    "chon_mauth_off_my_qr": MessageLookupByLibrary.simpleMessage("QR của tôi"),
+    "chon_mauth_off_no_payload": MessageLookupByLibrary.simpleMessage(
+      "Thẻ này không có QR.",
+    ),
+    "chon_mauth_off_scan": MessageLookupByLibrary.simpleMessage(
+      "Quét QR đối phương",
+    ),
+    "chon_mauth_off_scan_prompt": MessageLookupByLibrary.simpleMessage(
+      "Đặt QR vào trong khung.",
+    ),
+    "chon_mauth_off_scan_sub": MessageLookupByLibrary.simpleMessage(
+      "Dùng camera để đọc QR.",
+    ),
+    "chon_mauth_off_scan_title": MessageLookupByLibrary.simpleMessage(
+      "Quét QR",
+    ),
+    "chon_mauth_off_show": MessageLookupByLibrary.simpleMessage(
+      "Hiện QR của tôi",
+    ),
+    "chon_mauth_off_show_prompt": MessageLookupByLibrary.simpleMessage(
+      "Hãy đưa QR này cho đối phương.",
+    ),
+    "chon_mauth_off_show_sub": MessageLookupByLibrary.simpleMessage(
+      "Đối phương quét QR của tôi.",
+    ),
+    "chon_mauth_off_title": MessageLookupByLibrary.simpleMessage(
+      "Xác thực ngoại tuyến",
+    ),
+    "chon_mauth_off_verified": MessageLookupByLibrary.simpleMessage(
+      "Đã xác minh",
+    ),
+    "chon_mauth_off_verifying": MessageLookupByLibrary.simpleMessage(
+      "Đang xác minh…",
+    ),
+    "chon_mauth_rcv_anonymous": MessageLookupByLibrary.simpleMessage("Vô danh"),
+    "chon_mauth_rcv_approved": MessageLookupByLibrary.simpleMessage(
+      "Đã chấp nhận",
+    ),
+    "chon_mauth_rcv_approving": MessageLookupByLibrary.simpleMessage(
+      "Đang chấp nhận…",
+    ),
+    "chon_mauth_rcv_detail": MessageLookupByLibrary.simpleMessage(
+      "Chi tiết yêu cầu",
+    ),
+    "chon_mauth_rcv_empty": MessageLookupByLibrary.simpleMessage(
+      "Chưa có yêu cầu.",
+    ),
+    "chon_mauth_rcv_rejected": MessageLookupByLibrary.simpleMessage(
+      "Đã từ chối",
+    ),
+    "chon_mauth_rcv_rejecting": MessageLookupByLibrary.simpleMessage(
+      "Đang từ chối…",
+    ),
+    "chon_mauth_rcv_title": MessageLookupByLibrary.simpleMessage(
+      "Yêu cầu nhận",
+    ),
+    "chon_mauth_req_approved": MessageLookupByLibrary.simpleMessage(
+      "Đã chấp nhận.",
+    ),
+    "chon_mauth_req_awaiting": MessageLookupByLibrary.simpleMessage(
+      "Đã gửi.\nĐang chờ phản hồi.",
+    ),
+    "chon_mauth_req_confirm_q": MessageLookupByLibrary.simpleMessage(
+      "Đúng người này không?",
+    ),
+    "chon_mauth_req_done": MessageLookupByLibrary.simpleMessage(
+      "Xác thực hoàn tất.",
+    ),
+    "chon_mauth_req_err_notfound": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy người dùng.",
+    ),
+    "chon_mauth_req_err_phone": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng nhập số điện thoại.",
+    ),
+    "chon_mauth_req_phone_prompt": MessageLookupByLibrary.simpleMessage(
+      "Nhập số điện thoại\ncủa người thân.",
+    ),
+    "chon_mauth_req_rejected": MessageLookupByLibrary.simpleMessage(
+      "Đã từ chối.",
+    ),
+    "chon_mauth_req_retry_msg": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng thử lại.",
+    ),
+    "chon_mauth_req_send": MessageLookupByLibrary.simpleMessage("Gửi yêu cầu"),
+    "chon_mauth_req_sending": MessageLookupByLibrary.simpleMessage("Đang gửi…"),
+    "chon_mauth_req_title": MessageLookupByLibrary.simpleMessage("Xác thực"),
     "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
     "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("Gia phả"),
     "chon_nav_home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
     "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("Thẻ ID"),
     "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("Xác thực"),
+    "chon_profile_edit_given": MessageLookupByLibrary.simpleMessage("Tên"),
+    "chon_profile_edit_required": MessageLookupByLibrary.simpleMessage(
+      "Bắt buộc.",
+    ),
+    "chon_profile_edit_surname": MessageLookupByLibrary.simpleMessage("Họ"),
+    "chon_profile_edit_title": MessageLookupByLibrary.simpleMessage(
+      "Sửa hồ sơ",
+    ),
+    "chon_report_empty": MessageLookupByLibrary.simpleMessage(
+      "Chưa có báo cáo.",
+    ),
+    "chon_report_err_required": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng nhập tiêu đề và nội dung.",
+    ),
+    "chon_report_failed": MessageLookupByLibrary.simpleMessage("Gửi thất bại."),
+    "chon_report_field_content": MessageLookupByLibrary.simpleMessage(
+      "Nội dung",
+    ),
+    "chon_report_field_content_hint": MessageLookupByLibrary.simpleMessage(
+      "Mô tả chi tiết vấn đề.",
+    ),
+    "chon_report_field_title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
+    "chon_report_field_title_hint": MessageLookupByLibrary.simpleMessage(
+      "Nhập tiêu đề báo cáo.",
+    ),
+    "chon_report_new": MessageLookupByLibrary.simpleMessage("Báo cáo mới"),
+    "chon_report_sending": MessageLookupByLibrary.simpleMessage(
+      "Đang gửi báo cáo…",
+    ),
+    "chon_report_submitted": MessageLookupByLibrary.simpleMessage(
+      "Đã nhận báo cáo.",
+    ),
+    "chon_report_submitted_sub": MessageLookupByLibrary.simpleMessage(
+      "Chúng tôi sẽ phản hồi sớm.",
+    ),
+    "chon_report_title": MessageLookupByLibrary.simpleMessage("Báo cáo sự cố"),
     "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
       "Được người thân xác nhận danh tính\nvà xác thực khi cần thiết.",
     ),

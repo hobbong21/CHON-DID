@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/utils/app_utils.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final colors = context.colors;
     final theme = context.theme;
     return Scaffold(
       body: BlocProvider<LoginCubit>(
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                               cubit.state.isObscureText
                                   ? Icons.visibility_off
                                   : Icons.visibility,
-                              color: colors.secondaryText,
+                              color: ChonColors.textSecondary,
                             ),
                           ),
                         ),

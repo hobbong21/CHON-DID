@@ -301,13 +301,40 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkOut": MessageLookupByLibrary.simpleMessage("체크아웃"),
     "checkOutConfirmed": MessageLookupByLibrary.simpleMessage("체크아웃\n완료"),
     "children": MessageLookupByLibrary.simpleMessage("자녀"),
+    "chon_action_approve": MessageLookupByLibrary.simpleMessage("승인"),
+    "chon_action_attach": MessageLookupByLibrary.simpleMessage("파일 첨부"),
+    "chon_action_attached": MessageLookupByLibrary.simpleMessage("첨부됨"),
+    "chon_action_back": MessageLookupByLibrary.simpleMessage("뒤로"),
+    "chon_action_close": MessageLookupByLibrary.simpleMessage("닫기"),
     "chon_action_confirm": MessageLookupByLibrary.simpleMessage("확인"),
+    "chon_action_continue": MessageLookupByLibrary.simpleMessage("계속"),
+    "chon_action_finish": MessageLookupByLibrary.simpleMessage("완료"),
     "chon_action_next": MessageLookupByLibrary.simpleMessage("다음"),
+    "chon_action_recapture": MessageLookupByLibrary.simpleMessage("다시 촬영"),
+    "chon_action_reject": MessageLookupByLibrary.simpleMessage("거절"),
     "chon_action_retry": MessageLookupByLibrary.simpleMessage("다시 시도"),
     "chon_action_save": MessageLookupByLibrary.simpleMessage("저장하기"),
+    "chon_action_search_again": MessageLookupByLibrary.simpleMessage("다시 검색"),
     "chon_action_send": MessageLookupByLibrary.simpleMessage("보내기"),
     "chon_action_skip": MessageLookupByLibrary.simpleMessage("건너뛰기"),
     "chon_action_start": MessageLookupByLibrary.simpleMessage("시작하기"),
+    "chon_chat_empty_body": MessageLookupByLibrary.simpleMessage(
+      "가족 관계, 신원 인증, 가계도에 대해\n질문해 보세요.",
+    ),
+    "chon_chat_empty_title": MessageLookupByLibrary.simpleMessage(
+      "CHON AI에 무엇이든 물어보세요",
+    ),
+    "chon_chat_input_hint": MessageLookupByLibrary.simpleMessage("메시지를 입력하세요"),
+    "chon_chat_title": MessageLookupByLibrary.simpleMessage("CHON AI"),
+    "chon_contact_completed": MessageLookupByLibrary.simpleMessage("통화가 끝났어요."),
+    "chon_contact_connecting": MessageLookupByLibrary.simpleMessage("연결 중…"),
+    "chon_contact_failed": MessageLookupByLibrary.simpleMessage("연결할 수 없어요."),
+    "chon_contact_idle_prompt": MessageLookupByLibrary.simpleMessage(
+      "연락할 가족을 선택해주세요.",
+    ),
+    "chon_contact_title": MessageLookupByLibrary.simpleMessage("연락하기"),
+    "chon_ft_empty": MessageLookupByLibrary.simpleMessage("가족 정보가 없습니다."),
+    "chon_ft_title": MessageLookupByLibrary.simpleMessage("가계도"),
     "chon_home_banner": MessageLookupByLibrary.simpleMessage(
       "상호인증으로 CHON ID를 만들어보세요.",
     ),
@@ -323,11 +350,173 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
       "나를 확인 받는\nCHON DID 튜토리얼",
     ),
+    "chon_id_gen_capture_back": MessageLookupByLibrary.simpleMessage(
+      "신분증 뒷면을 가이드 안에 맞춰주세요",
+    ),
+    "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
+      "신분증 앞면을 가이드 안에 맞춰주세요",
+    ),
+    "chon_id_gen_done": MessageLookupByLibrary.simpleMessage("CHON ID가 발급되었어요"),
+    "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage(
+      "필수 정보가 누락되었습니다.",
+    ),
+    "chon_id_gen_field_address": MessageLookupByLibrary.simpleMessage("주소"),
+    "chon_id_gen_field_authority": MessageLookupByLibrary.simpleMessage("발급기관"),
+    "chon_id_gen_field_id": MessageLookupByLibrary.simpleMessage(
+      "주민등록번호 / 외국인등록번호",
+    ),
+    "chon_id_gen_field_id_label": MessageLookupByLibrary.simpleMessage("ID 번호"),
+    "chon_id_gen_field_issued": MessageLookupByLibrary.simpleMessage("발급일"),
+    "chon_id_gen_field_name": MessageLookupByLibrary.simpleMessage("성명"),
+    "chon_id_gen_field_name_hint": MessageLookupByLibrary.simpleMessage(
+      "신분증 상의 이름",
+    ),
+    "chon_id_gen_intro_body": MessageLookupByLibrary.simpleMessage(
+      "신분증 정보 입력과 촬영을 통해\n나의 CHON ID를 만들어 보세요.",
+    ),
+    "chon_id_gen_intro_title": MessageLookupByLibrary.simpleMessage(
+      "CHON ID 발급을\n시작할게요",
+    ),
+    "chon_id_gen_ocr_err": MessageLookupByLibrary.simpleMessage(
+      "신분증을 인식하지 못했어요. 다시 촬영해주세요.",
+    ),
+    "chon_id_gen_ocr_no_result": MessageLookupByLibrary.simpleMessage(
+      "자동 인식 결과가 없어요. 직접 입력하셨다면 그대로 진행하세요.",
+    ),
+    "chon_id_gen_ocr_title": MessageLookupByLibrary.simpleMessage(
+      "인식 결과를 확인해주세요",
+    ),
+    "chon_id_gen_pick_type": MessageLookupByLibrary.simpleMessage(
+      "발급할 ID 종류를 선택해주세요",
+    ),
+    "chon_id_gen_prep_start": MessageLookupByLibrary.simpleMessage("촬영 시작"),
+    "chon_id_gen_prep_tip1": MessageLookupByLibrary.simpleMessage(
+      "어두운 배경에서 촬영해주세요.",
+    ),
+    "chon_id_gen_prep_tip2": MessageLookupByLibrary.simpleMessage(
+      "빛이 반사되지 않도록 방향을 조정하세요.",
+    ),
+    "chon_id_gen_prep_tip3": MessageLookupByLibrary.simpleMessage(
+      "신분증 모서리가 가이드 안에 들어오게 해주세요.",
+    ),
+    "chon_id_gen_prep_title": MessageLookupByLibrary.simpleMessage(
+      "촬영 전 확인해주세요",
+    ),
+    "chon_id_gen_reenter": MessageLookupByLibrary.simpleMessage("다시 입력"),
+    "chon_id_gen_review_finish": MessageLookupByLibrary.simpleMessage("발급하기"),
+    "chon_id_gen_review_title": MessageLookupByLibrary.simpleMessage(
+      "확인하시고 발급을 완료하세요",
+    ),
+    "chon_id_gen_title": MessageLookupByLibrary.simpleMessage("신분증 발급"),
+    "chon_id_gen_type_family": MessageLookupByLibrary.simpleMessage("가족관계증명서"),
+    "chon_id_gen_type_resident": MessageLookupByLibrary.simpleMessage(
+      "주민/외국인등록증",
+    ),
+    "chon_id_gen_type_taekwondo": MessageLookupByLibrary.simpleMessage(
+      "태권도 단증",
+    ),
+    "chon_id_gen_verified_fail": MessageLookupByLibrary.simpleMessage(
+      "확인할 수 없어요",
+    ),
+    "chon_id_gen_verified_ok": MessageLookupByLibrary.simpleMessage("확인되었어요"),
+    "chon_mauth_off_intro": MessageLookupByLibrary.simpleMessage(
+      "오프라인에서 가족과 서로의\nCHON ID를 확인할 수 있어요.",
+    ),
+    "chon_mauth_off_my_qr": MessageLookupByLibrary.simpleMessage("내 QR"),
+    "chon_mauth_off_no_payload": MessageLookupByLibrary.simpleMessage(
+      "이 카드는 QR 정보가 없습니다.",
+    ),
+    "chon_mauth_off_scan": MessageLookupByLibrary.simpleMessage("상대 QR 스캔하기"),
+    "chon_mauth_off_scan_prompt": MessageLookupByLibrary.simpleMessage(
+      "상대방의 QR을 사각형 안에 맞춰주세요.",
+    ),
+    "chon_mauth_off_scan_sub": MessageLookupByLibrary.simpleMessage(
+      "카메라로 상대방의 QR을 인식합니다.",
+    ),
+    "chon_mauth_off_scan_title": MessageLookupByLibrary.simpleMessage("QR 스캔"),
+    "chon_mauth_off_show": MessageLookupByLibrary.simpleMessage("내 QR 보여주기"),
+    "chon_mauth_off_show_prompt": MessageLookupByLibrary.simpleMessage(
+      "상대방에게 이 QR을 보여주세요.",
+    ),
+    "chon_mauth_off_show_sub": MessageLookupByLibrary.simpleMessage(
+      "상대방이 내 QR을 스캔합니다.",
+    ),
+    "chon_mauth_off_title": MessageLookupByLibrary.simpleMessage("오프라인 상호인증"),
+    "chon_mauth_off_verified": MessageLookupByLibrary.simpleMessage("인증되었습니다"),
+    "chon_mauth_off_verifying": MessageLookupByLibrary.simpleMessage("확인 중…"),
+    "chon_mauth_rcv_anonymous": MessageLookupByLibrary.simpleMessage("익명"),
+    "chon_mauth_rcv_approved": MessageLookupByLibrary.simpleMessage("승인 완료"),
+    "chon_mauth_rcv_approving": MessageLookupByLibrary.simpleMessage(
+      "승인 처리 중…",
+    ),
+    "chon_mauth_rcv_detail": MessageLookupByLibrary.simpleMessage("요청 상세"),
+    "chon_mauth_rcv_empty": MessageLookupByLibrary.simpleMessage(
+      "받은 요청이 없습니다.",
+    ),
+    "chon_mauth_rcv_rejected": MessageLookupByLibrary.simpleMessage("거절 완료"),
+    "chon_mauth_rcv_rejecting": MessageLookupByLibrary.simpleMessage(
+      "거절 처리 중…",
+    ),
+    "chon_mauth_rcv_title": MessageLookupByLibrary.simpleMessage("받은 인증 요청"),
+    "chon_mauth_req_approved": MessageLookupByLibrary.simpleMessage("승인되었습니다."),
+    "chon_mauth_req_awaiting": MessageLookupByLibrary.simpleMessage(
+      "요청을 보냈어요.\n상대방의 응답을 기다려주세요.",
+    ),
+    "chon_mauth_req_confirm_q": MessageLookupByLibrary.simpleMessage(
+      "이 분 맞으신가요?",
+    ),
+    "chon_mauth_req_done": MessageLookupByLibrary.simpleMessage("인증이 완료되었어요."),
+    "chon_mauth_req_err_notfound": MessageLookupByLibrary.simpleMessage(
+      "해당 사용자를 찾지 못했습니다.",
+    ),
+    "chon_mauth_req_err_phone": MessageLookupByLibrary.simpleMessage(
+      "전화번호를 입력해주세요.",
+    ),
+    "chon_mauth_req_phone_prompt": MessageLookupByLibrary.simpleMessage(
+      "인증할 가족의\n전화번호를 입력해주세요.",
+    ),
+    "chon_mauth_req_rejected": MessageLookupByLibrary.simpleMessage("거절되었습니다."),
+    "chon_mauth_req_retry_msg": MessageLookupByLibrary.simpleMessage(
+      "다음에 다시 시도해주세요.",
+    ),
+    "chon_mauth_req_send": MessageLookupByLibrary.simpleMessage("요청 보내기"),
+    "chon_mauth_req_sending": MessageLookupByLibrary.simpleMessage(
+      "요청을 보내고 있어요…",
+    ),
+    "chon_mauth_req_title": MessageLookupByLibrary.simpleMessage("상호 인증"),
     "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
     "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("가계도"),
     "chon_nav_home": MessageLookupByLibrary.simpleMessage("홈"),
     "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("신분증"),
     "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("상호인증"),
+    "chon_profile_edit_given": MessageLookupByLibrary.simpleMessage("이름"),
+    "chon_profile_edit_required": MessageLookupByLibrary.simpleMessage(
+      "필수 항목입니다.",
+    ),
+    "chon_profile_edit_surname": MessageLookupByLibrary.simpleMessage("성"),
+    "chon_profile_edit_title": MessageLookupByLibrary.simpleMessage("프로필 수정"),
+    "chon_report_empty": MessageLookupByLibrary.simpleMessage("이전 신고가 없습니다."),
+    "chon_report_err_required": MessageLookupByLibrary.simpleMessage(
+      "제목과 내용을 입력해주세요.",
+    ),
+    "chon_report_failed": MessageLookupByLibrary.simpleMessage("전송에 실패했어요."),
+    "chon_report_field_content": MessageLookupByLibrary.simpleMessage("내용"),
+    "chon_report_field_content_hint": MessageLookupByLibrary.simpleMessage(
+      "발생한 문제를 자세히 적어주세요.",
+    ),
+    "chon_report_field_title": MessageLookupByLibrary.simpleMessage("제목"),
+    "chon_report_field_title_hint": MessageLookupByLibrary.simpleMessage(
+      "신고 제목을 입력해주세요.",
+    ),
+    "chon_report_new": MessageLookupByLibrary.simpleMessage("새 신고하기"),
+    "chon_report_sending": MessageLookupByLibrary.simpleMessage("신고를 보내는 중…"),
+    "chon_report_submitted": MessageLookupByLibrary.simpleMessage(
+      "신고가 접수되었어요.",
+    ),
+    "chon_report_submitted_sub": MessageLookupByLibrary.simpleMessage(
+      "확인 후 빠른 시일 내에 답변 드리겠습니다.",
+    ),
+    "chon_report_title": MessageLookupByLibrary.simpleMessage("문제 신고"),
     "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
       "내 신분을 가족·인척에게\n확인 받고, 필요한 곳에 인증해 보세요.",
     ),

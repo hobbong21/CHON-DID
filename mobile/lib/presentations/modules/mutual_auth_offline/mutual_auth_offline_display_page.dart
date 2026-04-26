@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/self_id/list_card_info_model.dart';
 import 'package:base_flutter/presentations/modules/mutual_auth_offline/cubit/mutual_auth_offline_cubit.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class _MutualAuthOfflineDisplayPageState
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
           centerTitle: true,
-          title: Text('내 QR', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_mauth_off_my_qr, style: ChonTextStyles.cardTitle()),
         ),
         body: BlocBuilder<MutualAuthOfflineCubit, MutualAuthOfflineState>(
           builder: (context, state) {
@@ -92,7 +93,7 @@ class _DisplayBody extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              '상대방에게 이 QR을 보여주세요.',
+              S.current.chon_mauth_off_show_prompt,
               style: ChonTextStyles.body(
                   size: 14, color: ChonColors.textSecondary),
               textAlign: TextAlign.center,

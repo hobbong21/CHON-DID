@@ -16,7 +16,7 @@ class InputChat extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
-        color: colors.background,
+        color: ChonColors.bgPage,
       ),
       child: TextField(
         controller: controller,

@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/family/relation_model.dart';
 import 'package:base_flutter/presentations/modules/mutual_auth_receive/cubit/mutual_auth_receive_cubit.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class MutualAuthReceivePage extends StatelessWidget {
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
           centerTitle: true,
-          title: Text('받은 인증 요청', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_mauth_rcv_title, style: ChonTextStyles.cardTitle()),
         ),
         body: BlocBuilder<MutualAuthReceiveCubit, MutualAuthReceiveState>(
           builder: (context, state) {
@@ -65,7 +66,7 @@ class _RequestList extends StatelessWidget {
         child: Text(
           state.errorMessage.isNotEmpty
               ? state.errorMessage
-              : '받은 요청이 없습니다.',
+              : S.current.chon_mauth_rcv_empty,
           style: ChonTextStyles.body(
               size: 14, color: ChonColors.textSecondary),
         ),
@@ -115,7 +116,7 @@ class _RequestRow extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      request.certOwnerName ?? '익명',
+                      request.certOwnerName ?? S.current.chon_mauth_rcv_anonymous,
                       style: ChonTextStyles.cardTitle().copyWith(fontSize: 16),
                     ),
                     const SizedBox(height: 4),
@@ -199,7 +200,7 @@ class _DetailSheet extends StatelessWidget {
                     Expanded(
                       child: OutlinedButton(
                         onPressed: cubit.reject,
-                        child: const Text('거절'),
+                        child: Text(S.current.chon_action_reject),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -210,7 +211,7 @@ class _DetailSheet extends StatelessWidget {
                           backgroundColor: ChonColors.brandPrimary,
                           foregroundColor: ChonColors.textInverse,
                         ),
-                        child: const Text('승인'),
+                        child: Text(S.current.chon_action_approve),
                       ),
                     ),
                   ],
@@ -231,7 +232,7 @@ class _DetailSheet extends StatelessWidget {
                     backgroundColor: ChonColors.brandPrimary,
                     foregroundColor: ChonColors.textInverse,
                   ),
-                  child: const Text('확인'),
+                  child: Text(S.current.chon_action_confirm),
                 ),
             ],
           ),
@@ -243,15 +244,15 @@ class _DetailSheet extends StatelessWidget {
   String _title(MutualAuthReceiveState s) {
     switch (s.stage) {
       case MutualAuthReceiveStage.approved:
-        return '승인 완료';
+        return S.current.chon_mauth_rcv_approved;
       case MutualAuthReceiveStage.rejected:
-        return '거절 완료';
+        return S.current.chon_mauth_rcv_rejected;
       case MutualAuthReceiveStage.approving:
-        return '승인 처리 중…';
+        return S.current.chon_mauth_rcv_approving;
       case MutualAuthReceiveStage.rejecting:
-        return '거절 처리 중…';
+        return S.current.chon_mauth_rcv_rejecting;
       case MutualAuthReceiveStage.idle:
-        return '요청 상세';
+        return S.current.chon_mauth_rcv_detail;
     }
   }
 }

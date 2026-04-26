@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/self_id/list_card_info_model.dart';
 import 'package:base_flutter/presentations/modules/profile_edit/cubit/profile_edit_cubit.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 ///
 /// ```
 /// ┌────────────────────────────────┐
-/// │ AppBar — '프로필 수정'            │
+/// │ AppBar — S.current.chon_profile_edit_title            │
 /// ├────────────────────────────────┤
 /// │   [ avatar / file picker ]      │
 /// │                                  │
@@ -65,7 +66,7 @@ class _ProfileEditV2PageState extends State<ProfileEditV2Page> {
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
           centerTitle: true,
-          title: Text('프로필 수정', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_profile_edit_title, style: ChonTextStyles.cardTitle()),
         ),
         body: Form(
           key: widget.cubit.formKey,
@@ -80,14 +81,14 @@ class _ProfileEditV2PageState extends State<ProfileEditV2Page> {
                     const SizedBox(height: 32),
                     _LabeledField(
                       key: const Key('profileEdit.surname'),
-                      label: '성',
+                      label: S.current.chon_profile_edit_surname,
                       controller: widget.cubit.surnameController,
                       hint: '예: 김',
                     ),
                     const SizedBox(height: 16),
                     _LabeledField(
                       key: const Key('profileEdit.name'),
-                      label: '이름',
+                      label: S.current.chon_profile_edit_given,
                       controller: widget.cubit.nameController,
                       hint: '예: 영희',
                     ),
@@ -223,7 +224,7 @@ class _LabeledField extends StatelessWidget {
             ),
           ),
           validator: (value) => (value == null || value.trim().isEmpty)
-              ? '필수 항목입니다.'
+              ? S.current.chon_profile_edit_required
               : null,
         ),
       ],
@@ -263,7 +264,7 @@ class _SaveButton extends StatelessWidget {
                 ),
               )
             : Text(
-                '저장하기',
+                S.current.chon_action_save,
                 style: ChonTextStyles.actionLabel(
                         color: ChonColors.textInverse)
                     .copyWith(fontSize: 16, height: 1.0),

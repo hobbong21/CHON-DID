@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/family/relation_model.dart';
 import 'package:base_flutter/presentations/modules/mutual_auth_request/cubit/mutual_auth_request_cubit.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class MutualAuthRequestPage extends StatelessWidget {
           backgroundColor: ChonColors.bgPage,
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
-          title: Text('상호 인증', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_mauth_req_title, style: ChonTextStyles.cardTitle()),
           centerTitle: true,
         ),
         body: SafeArea(
@@ -50,7 +51,7 @@ class MutualAuthRequestPage extends StatelessWidget {
                 case MutualAuthRequestStage.confirm:
                   return _ConfirmStep(state: state, cubit: cubit);
                 case MutualAuthRequestStage.sending:
-                  return const _LoadingStep(label: '요청을 보내고 있어요…');
+                  return _LoadingStep(label: S.current.chon_mauth_req_sending);
                 case MutualAuthRequestStage.awaiting:
                   return _AwaitingStep(cubit: cubit);
                 case MutualAuthRequestStage.responded:
@@ -94,7 +95,7 @@ class _SearchStepState extends State<_SearchStep> {
         children: [
           SizedBox(height: 24.h),
           Text(
-            '인증할 가족의\n전화번호를 입력해주세요.',
+            S.current.chon_mauth_req_phone_prompt,
             style: ChonTextStyles.cardTitle(),
           ),
           SizedBox(height: 24.h),
@@ -126,7 +127,7 @@ class _SearchStepState extends State<_SearchStep> {
           const Spacer(),
           _PrimaryButton(
             key: const Key('mutualAuth.search.next'),
-            label: '다음',
+            label: S.current.chon_action_next,
             onPressed:
                 widget.state.isLoading ? null : () => widget.cubit.search(),
             isLoading: widget.state.isLoading,
@@ -152,7 +153,7 @@ class _ConfirmStep extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(height: 24.h),
-          Text('이 분 맞으신가요?', style: ChonTextStyles.cardTitle()),
+          Text(S.current.chon_mauth_req_confirm_q, style: ChonTextStyles.cardTitle()),
           SizedBox(height: 24.h),
           Container(
             padding: EdgeInsets.all(16.r),
@@ -185,7 +186,7 @@ class _ConfirmStep extends StatelessWidget {
           ],
           const Spacer(),
           _PrimaryButton(
-            label: '요청 보내기',
+            label: S.current.chon_mauth_req_send,
             onPressed: () => cubit.sendRequest(
               gender: GenderE.male,
               certOwnerId: t?.certOwnerId ?? 0,
@@ -194,7 +195,7 @@ class _ConfirmStep extends StatelessWidget {
           SizedBox(height: 8.h),
           TextButton(
             onPressed: cubit.reset,
-            child: Text('다시 검색',
+            child: Text(S.current.chon_action_search_again,
                 style: ChonTextStyles.body(
                     size: 14, color: ChonColors.textTertiary)),
           ),
@@ -240,7 +241,7 @@ class _AwaitingStep extends StatelessWidget {
               size: 80.r, color: ChonColors.brandPrimary),
           SizedBox(height: 16.h),
           Text(
-            '요청을 보냈어요.\n상대방의 응답을 기다려주세요.',
+            S.current.chon_mauth_req_awaiting,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 18.sp),
           ),
@@ -286,12 +287,12 @@ class _RespondedStep extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
           Text(
-            approved ? '승인되었습니다.' : '거절되었습니다.',
+            approved ? S.current.chon_mauth_req_approved : S.current.chon_mauth_req_rejected,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 18.sp),
           ),
           const Spacer(),
-          _PrimaryButton(label: '확인', onPressed: cubit.finish),
+          _PrimaryButton(label: S.current.chon_action_confirm, onPressed: cubit.finish),
           SizedBox(height: 16.h),
         ],
       ),
@@ -314,7 +315,7 @@ class _DoneStep extends StatelessWidget {
                 size: 96, color: ChonColors.brandPrimary),
             SizedBox(height: 16.h),
             Text(
-              state.wasApproved == true ? '인증이 완료되었어요.' : '다음에 다시 시도해주세요.',
+              state.wasApproved == true ? S.current.chon_mauth_req_done : S.current.chon_mauth_req_retry_msg,
               textAlign: TextAlign.center,
               style: ChonTextStyles.cardTitle().copyWith(fontSize: 18.sp),
             ),

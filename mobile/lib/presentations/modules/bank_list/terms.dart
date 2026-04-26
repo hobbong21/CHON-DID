@@ -1,6 +1,7 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/storage/app_shared_preferences.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/generated/assets.gen.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/home/home_page.dart';
@@ -45,7 +46,7 @@ class _TermsState extends State<Terms> {
                     padding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                     decoration: BoxDecoration(
-                      color: colors.white,
+                      color: ChonColors.bgSurface,
                       borderRadius: BorderRadius.circular(16.r),
                     ),
                     child: Text(S.current.accountRegistrationTerms),
@@ -60,7 +61,7 @@ class _TermsState extends State<Terms> {
                   agreed = !agreed;
                 });
               },
-              activeColor: colors.primary,
+              activeColor: ChonColors.brandPrimary,
               checkColor: Colors.white,
               side: BorderSide(
                 color: Colors.grey,

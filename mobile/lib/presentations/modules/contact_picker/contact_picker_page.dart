@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_colors.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
 import 'package:base_flutter/data/models/family/relation_model.dart';
 import 'package:base_flutter/flavors.dart';
@@ -178,7 +179,7 @@ class _ContactPickerPageState extends State<ContactPickerPage> {
                             left: 0,
                             right: 0,
                             child: Container(
-                              color: colors.background,
+                              color: ChonColors.bgPage,
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
                               child: Container(
                                 height: 100.h,
@@ -232,7 +233,7 @@ class _ContactPickerPageState extends State<ContactPickerPage> {
                       cubit.selectedNode?.model.isCollapsed == true
                           ? Icons.open_in_full
                           : Icons.close_fullscreen,
-                      color: colors.secondaryText,
+                      color: ChonColors.textSecondary,
                     ),
                   ),
                 if (cubit.selectedNode != null)
@@ -335,7 +336,7 @@ class _SharedBottomBar extends StatelessWidget {
 
     return Expanded(
       child: Material(
-        color: colors.background,
+        color: ChonColors.bgPage,
         child: InkWell(
           onTap: onTap,
           child: Column(

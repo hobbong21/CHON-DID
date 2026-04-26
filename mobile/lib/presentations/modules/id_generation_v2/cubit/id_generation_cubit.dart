@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:base_flutter/core/utils/datetime_utils.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/data/models/self_id/create_card_model.dart';
 import 'package:base_flutter/data/models/self_id/list_card_info_model.dart';
 import 'package:base_flutter/domain/repositories/ocr_repo.dart';
@@ -95,7 +96,7 @@ class IdGenerationCubit extends Cubit<IdGenerationState> {
       if (card == null) {
         emit(state.copyWith(
           isLoading: false,
-          errorMessage: '신분증을 인식하지 못했어요. 다시 촬영해주세요.',
+          errorMessage: S.current.chon_id_gen_ocr_err,
         ));
         return;
       }
@@ -118,7 +119,7 @@ class IdGenerationCubit extends Cubit<IdGenerationState> {
 
   Future<void> submit() async {
     if (state.fullName.isEmpty || state.idNumber.isEmpty) {
-      emit(state.copyWith(errorMessage: '필수 정보가 누락되었습니다.'));
+      emit(state.copyWith(errorMessage: S.current.chon_id_gen_err_required));
       return;
     }
     emit(state.copyWith(isLoading: true, errorMessage: ''));

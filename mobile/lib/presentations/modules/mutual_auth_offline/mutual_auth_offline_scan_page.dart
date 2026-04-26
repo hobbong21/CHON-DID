@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/mutual_auth_offline/cubit/mutual_auth_offline_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,7 +74,7 @@ class _MutualAuthOfflineScanPageState
               foregroundColor: ChonColors.textPrimary,
               elevation: 0,
               centerTitle: true,
-              title: Text('QR 스캔', style: ChonTextStyles.cardTitle()),
+              title: Text(S.current.chon_mauth_off_scan_title, style: ChonTextStyles.cardTitle()),
             ),
             body: state.stage == MutualAuthOfflineStage.result
                 ? _ResultBody(state: state, cubit: widget.cubit)
@@ -143,10 +144,10 @@ class _ScannerOverlay extends StatelessWidget {
               ),
               child: Text(
                 isLoading
-                    ? '확인 중…'
+                    ? S.current.chon_mauth_off_verifying
                     : (errorMessage.isNotEmpty
                         ? errorMessage
-                        : '상대방의 QR을 사각형 안에 맞춰주세요.'),
+                        : S.current.chon_mauth_off_scan_prompt),
                 style: const TextStyle(
                   fontFamily: 'Pretendard',
                   fontSize: 13,
@@ -180,7 +181,7 @@ class _ResultBody extends StatelessWidget {
               size: 80, color: ChonColors.brandPrimary),
           const SizedBox(height: 16),
           Text(
-            '인증되었습니다',
+            S.current.chon_mauth_off_verified,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 22),
           ),
@@ -194,7 +195,7 @@ class _ResultBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('이름',
+                Text(S.current.chon_profile_edit_given,
                     style: ChonTextStyles.body(
                         size: 12, color: ChonColors.textTertiary)),
                 Text(card?.name ?? '-',
@@ -219,7 +220,7 @@ class _ResultBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-            child: const Text('확인'),
+            child: Text(S.current.chon_action_confirm),
           ),
         ],
       ),

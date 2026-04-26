@@ -1,4 +1,5 @@
 import 'package:base_flutter/data/models/report/report_model.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/domain/repositories/report_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -67,7 +68,7 @@ class ReportV2Cubit extends Cubit<ReportV2State> {
 
   Future<void> submit() async {
     if (state.title.trim().isEmpty || state.content.trim().isEmpty) {
-      emit(state.copyWith(errorMessage: '제목과 내용을 입력해주세요.'));
+      emit(state.copyWith(errorMessage: S.current.chon_report_err_required));
       return;
     }
     emit(state.copyWith(stage: ReportV2Stage.submitting, isLoading: true));

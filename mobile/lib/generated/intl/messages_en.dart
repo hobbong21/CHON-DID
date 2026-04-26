@@ -335,13 +335,52 @@ class MessageLookup extends MessageLookupByLibrary {
       "Check-out\nconfirmed",
     ),
     "children": MessageLookupByLibrary.simpleMessage("Children"),
+    "chon_action_approve": MessageLookupByLibrary.simpleMessage("Approve"),
+    "chon_action_attach": MessageLookupByLibrary.simpleMessage("Attach file"),
+    "chon_action_attached": MessageLookupByLibrary.simpleMessage("Attached"),
+    "chon_action_back": MessageLookupByLibrary.simpleMessage("Back"),
+    "chon_action_close": MessageLookupByLibrary.simpleMessage("Close"),
     "chon_action_confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "chon_action_continue": MessageLookupByLibrary.simpleMessage("Continue"),
+    "chon_action_finish": MessageLookupByLibrary.simpleMessage("Finish"),
     "chon_action_next": MessageLookupByLibrary.simpleMessage("Next"),
+    "chon_action_recapture": MessageLookupByLibrary.simpleMessage(
+      "Retake photo",
+    ),
+    "chon_action_reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "chon_action_retry": MessageLookupByLibrary.simpleMessage("Try again"),
     "chon_action_save": MessageLookupByLibrary.simpleMessage("Save"),
+    "chon_action_search_again": MessageLookupByLibrary.simpleMessage(
+      "Search again",
+    ),
     "chon_action_send": MessageLookupByLibrary.simpleMessage("Send"),
     "chon_action_skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "chon_action_start": MessageLookupByLibrary.simpleMessage("Get started"),
+    "chon_chat_empty_body": MessageLookupByLibrary.simpleMessage(
+      "Ask about family relations,\nverification, family tree.",
+    ),
+    "chon_chat_empty_title": MessageLookupByLibrary.simpleMessage(
+      "Ask CHON AI anything",
+    ),
+    "chon_chat_input_hint": MessageLookupByLibrary.simpleMessage(
+      "Type a message",
+    ),
+    "chon_chat_title": MessageLookupByLibrary.simpleMessage("CHON AI"),
+    "chon_contact_completed": MessageLookupByLibrary.simpleMessage(
+      "Call ended.",
+    ),
+    "chon_contact_connecting": MessageLookupByLibrary.simpleMessage(
+      "Connecting…",
+    ),
+    "chon_contact_failed": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t connect.",
+    ),
+    "chon_contact_idle_prompt": MessageLookupByLibrary.simpleMessage(
+      "Pick a family member to call.",
+    ),
+    "chon_contact_title": MessageLookupByLibrary.simpleMessage("Contact"),
+    "chon_ft_empty": MessageLookupByLibrary.simpleMessage("No family info."),
+    "chon_ft_title": MessageLookupByLibrary.simpleMessage("Family tree"),
     "chon_home_banner": MessageLookupByLibrary.simpleMessage(
       "Create your CHON ID through mutual auth.",
     ),
@@ -363,11 +402,227 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
       "CHON DID\nTutorial",
     ),
+    "chon_id_gen_capture_back": MessageLookupByLibrary.simpleMessage(
+      "Align the back of the ID inside the guide",
+    ),
+    "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
+      "Align the front of the ID inside the guide",
+    ),
+    "chon_id_gen_done": MessageLookupByLibrary.simpleMessage(
+      "Your CHON ID is issued",
+    ),
+    "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage(
+      "Required information missing.",
+    ),
+    "chon_id_gen_field_address": MessageLookupByLibrary.simpleMessage(
+      "Address",
+    ),
+    "chon_id_gen_field_authority": MessageLookupByLibrary.simpleMessage(
+      "Issuing authority",
+    ),
+    "chon_id_gen_field_id": MessageLookupByLibrary.simpleMessage(
+      "Resident / Foreigner ID number",
+    ),
+    "chon_id_gen_field_id_label": MessageLookupByLibrary.simpleMessage(
+      "ID number",
+    ),
+    "chon_id_gen_field_issued": MessageLookupByLibrary.simpleMessage(
+      "Issued date",
+    ),
+    "chon_id_gen_field_name": MessageLookupByLibrary.simpleMessage("Full name"),
+    "chon_id_gen_field_name_hint": MessageLookupByLibrary.simpleMessage(
+      "Name on the ID",
+    ),
+    "chon_id_gen_intro_body": MessageLookupByLibrary.simpleMessage(
+      "Enter ID info and capture\nphotos to create your CHON ID.",
+    ),
+    "chon_id_gen_intro_title": MessageLookupByLibrary.simpleMessage(
+      "Let\'s start issuing\nyour CHON ID",
+    ),
+    "chon_id_gen_ocr_err": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t read the ID. Please retake.",
+    ),
+    "chon_id_gen_ocr_no_result": MessageLookupByLibrary.simpleMessage(
+      "No auto-read result. If you typed it manually, continue.",
+    ),
+    "chon_id_gen_ocr_title": MessageLookupByLibrary.simpleMessage(
+      "Confirm what we read",
+    ),
+    "chon_id_gen_pick_type": MessageLookupByLibrary.simpleMessage(
+      "Pick the ID type",
+    ),
+    "chon_id_gen_prep_start": MessageLookupByLibrary.simpleMessage(
+      "Start capturing",
+    ),
+    "chon_id_gen_prep_tip1": MessageLookupByLibrary.simpleMessage(
+      "Shoot against a dark background.",
+    ),
+    "chon_id_gen_prep_tip2": MessageLookupByLibrary.simpleMessage(
+      "Adjust angle to avoid glare.",
+    ),
+    "chon_id_gen_prep_tip3": MessageLookupByLibrary.simpleMessage(
+      "Place the ID inside the guide.",
+    ),
+    "chon_id_gen_prep_title": MessageLookupByLibrary.simpleMessage(
+      "Before you capture",
+    ),
+    "chon_id_gen_reenter": MessageLookupByLibrary.simpleMessage(
+      "Re-enter info",
+    ),
+    "chon_id_gen_review_finish": MessageLookupByLibrary.simpleMessage(
+      "Issue ID",
+    ),
+    "chon_id_gen_review_title": MessageLookupByLibrary.simpleMessage(
+      "Review and finish",
+    ),
+    "chon_id_gen_title": MessageLookupByLibrary.simpleMessage("Issue ID"),
+    "chon_id_gen_type_family": MessageLookupByLibrary.simpleMessage(
+      "Family relation cert.",
+    ),
+    "chon_id_gen_type_resident": MessageLookupByLibrary.simpleMessage(
+      "Resident / Foreigner card",
+    ),
+    "chon_id_gen_type_taekwondo": MessageLookupByLibrary.simpleMessage(
+      "Taekwondo certificate",
+    ),
+    "chon_id_gen_verified_fail": MessageLookupByLibrary.simpleMessage(
+      "Could not verify",
+    ),
+    "chon_id_gen_verified_ok": MessageLookupByLibrary.simpleMessage("Verified"),
+    "chon_mauth_off_intro": MessageLookupByLibrary.simpleMessage(
+      "Verify each other\'s CHON ID\nin person, offline.",
+    ),
+    "chon_mauth_off_my_qr": MessageLookupByLibrary.simpleMessage("My QR"),
+    "chon_mauth_off_no_payload": MessageLookupByLibrary.simpleMessage(
+      "This card has no QR payload.",
+    ),
+    "chon_mauth_off_scan": MessageLookupByLibrary.simpleMessage(
+      "Scan their QR",
+    ),
+    "chon_mauth_off_scan_prompt": MessageLookupByLibrary.simpleMessage(
+      "Align the QR within the box.",
+    ),
+    "chon_mauth_off_scan_sub": MessageLookupByLibrary.simpleMessage(
+      "Use the camera to read their QR.",
+    ),
+    "chon_mauth_off_scan_title": MessageLookupByLibrary.simpleMessage(
+      "QR scan",
+    ),
+    "chon_mauth_off_show": MessageLookupByLibrary.simpleMessage("Show my QR"),
+    "chon_mauth_off_show_prompt": MessageLookupByLibrary.simpleMessage(
+      "Show this QR to your counterpart.",
+    ),
+    "chon_mauth_off_show_sub": MessageLookupByLibrary.simpleMessage(
+      "The other party scans my QR.",
+    ),
+    "chon_mauth_off_title": MessageLookupByLibrary.simpleMessage(
+      "Offline mutual auth",
+    ),
+    "chon_mauth_off_verified": MessageLookupByLibrary.simpleMessage("Verified"),
+    "chon_mauth_off_verifying": MessageLookupByLibrary.simpleMessage(
+      "Verifying…",
+    ),
+    "chon_mauth_rcv_anonymous": MessageLookupByLibrary.simpleMessage("Unknown"),
+    "chon_mauth_rcv_approved": MessageLookupByLibrary.simpleMessage(
+      "Approval complete",
+    ),
+    "chon_mauth_rcv_approving": MessageLookupByLibrary.simpleMessage(
+      "Approving…",
+    ),
+    "chon_mauth_rcv_detail": MessageLookupByLibrary.simpleMessage(
+      "Request detail",
+    ),
+    "chon_mauth_rcv_empty": MessageLookupByLibrary.simpleMessage(
+      "No requests yet.",
+    ),
+    "chon_mauth_rcv_rejected": MessageLookupByLibrary.simpleMessage(
+      "Rejection complete",
+    ),
+    "chon_mauth_rcv_rejecting": MessageLookupByLibrary.simpleMessage(
+      "Rejecting…",
+    ),
+    "chon_mauth_rcv_title": MessageLookupByLibrary.simpleMessage(
+      "Received requests",
+    ),
+    "chon_mauth_req_approved": MessageLookupByLibrary.simpleMessage(
+      "Approved.",
+    ),
+    "chon_mauth_req_awaiting": MessageLookupByLibrary.simpleMessage(
+      "Request sent.\nWaiting for the other party.",
+    ),
+    "chon_mauth_req_confirm_q": MessageLookupByLibrary.simpleMessage(
+      "Is this the right person?",
+    ),
+    "chon_mauth_req_done": MessageLookupByLibrary.simpleMessage(
+      "Authentication complete.",
+    ),
+    "chon_mauth_req_err_notfound": MessageLookupByLibrary.simpleMessage(
+      "User not found.",
+    ),
+    "chon_mauth_req_err_phone": MessageLookupByLibrary.simpleMessage(
+      "Please enter a phone number.",
+    ),
+    "chon_mauth_req_phone_prompt": MessageLookupByLibrary.simpleMessage(
+      "Enter the phone number\nof the family to verify.",
+    ),
+    "chon_mauth_req_rejected": MessageLookupByLibrary.simpleMessage(
+      "Rejected.",
+    ),
+    "chon_mauth_req_retry_msg": MessageLookupByLibrary.simpleMessage(
+      "Please try again later.",
+    ),
+    "chon_mauth_req_send": MessageLookupByLibrary.simpleMessage("Send request"),
+    "chon_mauth_req_sending": MessageLookupByLibrary.simpleMessage(
+      "Sending request…",
+    ),
+    "chon_mauth_req_title": MessageLookupByLibrary.simpleMessage("Mutual auth"),
     "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
     "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("Family tree"),
     "chon_nav_home": MessageLookupByLibrary.simpleMessage("Home"),
     "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("ID card"),
     "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("Mutual auth"),
+    "chon_profile_edit_given": MessageLookupByLibrary.simpleMessage(
+      "Given name",
+    ),
+    "chon_profile_edit_required": MessageLookupByLibrary.simpleMessage(
+      "Required.",
+    ),
+    "chon_profile_edit_surname": MessageLookupByLibrary.simpleMessage(
+      "Surname",
+    ),
+    "chon_profile_edit_title": MessageLookupByLibrary.simpleMessage(
+      "Edit profile",
+    ),
+    "chon_report_empty": MessageLookupByLibrary.simpleMessage(
+      "No prior reports.",
+    ),
+    "chon_report_err_required": MessageLookupByLibrary.simpleMessage(
+      "Please enter a title and content.",
+    ),
+    "chon_report_failed": MessageLookupByLibrary.simpleMessage("Send failed."),
+    "chon_report_field_content": MessageLookupByLibrary.simpleMessage(
+      "Content",
+    ),
+    "chon_report_field_content_hint": MessageLookupByLibrary.simpleMessage(
+      "Describe the problem in detail.",
+    ),
+    "chon_report_field_title": MessageLookupByLibrary.simpleMessage("Title"),
+    "chon_report_field_title_hint": MessageLookupByLibrary.simpleMessage(
+      "Enter the report title.",
+    ),
+    "chon_report_new": MessageLookupByLibrary.simpleMessage("New report"),
+    "chon_report_sending": MessageLookupByLibrary.simpleMessage(
+      "Sending report…",
+    ),
+    "chon_report_submitted": MessageLookupByLibrary.simpleMessage(
+      "Your report was received.",
+    ),
+    "chon_report_submitted_sub": MessageLookupByLibrary.simpleMessage(
+      "We\'ll get back to you soon.",
+    ),
+    "chon_report_title": MessageLookupByLibrary.simpleMessage(
+      "Report a problem",
+    ),
     "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
       "Get your identity verified by family\nand authenticate where needed.",
     ),

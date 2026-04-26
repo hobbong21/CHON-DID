@@ -1,4 +1,5 @@
 import 'package:base_flutter/data/models/family/relation_model.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/domain/repositories/relation_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -34,7 +35,7 @@ class MutualAuthRequestCubit extends Cubit<MutualAuthRequestState> {
   Future<void> search() async {
     final phone = state.phoneInput.trim();
     if (phone.isEmpty) {
-      emit(state.copyWith(errorMessage: '전화번호를 입력해주세요.'));
+      emit(state.copyWith(errorMessage: S.current.chon_mauth_req_err_phone));
       return;
     }
 
@@ -45,7 +46,7 @@ class MutualAuthRequestCubit extends Cubit<MutualAuthRequestState> {
       if (target == null) {
         emit(state.copyWith(
           isLoading: false,
-          errorMessage: '해당 사용자를 찾지 못했습니다.',
+          errorMessage: S.current.chon_mauth_req_err_notfound,
         ));
         return;
       }

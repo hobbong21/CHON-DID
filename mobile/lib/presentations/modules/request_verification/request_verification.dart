@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/data/models/self_id/list_card_info_model.dart';
 import 'package:base_flutter/generated/assets.gen.dart';
 import 'package:base_flutter/generated/l10n.dart';
@@ -352,7 +353,7 @@ class _RequestVerificationState extends State<RequestVerification> {
                                                   ? S.current.checkOriginal
                                                   : S.current.copyLink,
                                       style: textTheme.titleMedium?.copyWith(
-                                          color: colors.secondaryText),
+                                          color: ChonColors.textSecondary),
                                     )),
                               ),
                             ),

@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/bank_create/cubit/bank_cubit.dart';
 import 'package:base_flutter/presentations/widgets/header.dart';
@@ -77,7 +78,7 @@ class _BankListPageState extends State<BankListPage> {
                               backgroundColor: isSelected
                                   ? colors.darkYellow
                                   : colors.lightYellow,
-                              foregroundColor: colors.secondaryText,
+                              foregroundColor: ChonColors.textSecondary,
                               overlayColor: colors.darkYellow,
                               padding: EdgeInsets.zero,
                               shape: RoundedRectangleBorder(

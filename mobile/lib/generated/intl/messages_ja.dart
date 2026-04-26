@@ -293,13 +293,42 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkOut": MessageLookupByLibrary.simpleMessage("チェックアウト"),
     "checkOutConfirmed": MessageLookupByLibrary.simpleMessage("チェックアウト\n完了"),
     "children": MessageLookupByLibrary.simpleMessage("子供"),
+    "chon_action_approve": MessageLookupByLibrary.simpleMessage("承認"),
+    "chon_action_attach": MessageLookupByLibrary.simpleMessage("ファイル添付"),
+    "chon_action_attached": MessageLookupByLibrary.simpleMessage("添付済み"),
+    "chon_action_back": MessageLookupByLibrary.simpleMessage("戻る"),
+    "chon_action_close": MessageLookupByLibrary.simpleMessage("閉じる"),
     "chon_action_confirm": MessageLookupByLibrary.simpleMessage("確認"),
+    "chon_action_continue": MessageLookupByLibrary.simpleMessage("続ける"),
+    "chon_action_finish": MessageLookupByLibrary.simpleMessage("完了"),
     "chon_action_next": MessageLookupByLibrary.simpleMessage("次へ"),
+    "chon_action_recapture": MessageLookupByLibrary.simpleMessage("撮り直す"),
+    "chon_action_reject": MessageLookupByLibrary.simpleMessage("拒否"),
     "chon_action_retry": MessageLookupByLibrary.simpleMessage("再試行"),
     "chon_action_save": MessageLookupByLibrary.simpleMessage("保存"),
+    "chon_action_search_again": MessageLookupByLibrary.simpleMessage("再検索"),
     "chon_action_send": MessageLookupByLibrary.simpleMessage("送信"),
     "chon_action_skip": MessageLookupByLibrary.simpleMessage("スキップ"),
     "chon_action_start": MessageLookupByLibrary.simpleMessage("始める"),
+    "chon_chat_empty_body": MessageLookupByLibrary.simpleMessage(
+      "家族関係、本人確認、家系図について\n質問してください。",
+    ),
+    "chon_chat_empty_title": MessageLookupByLibrary.simpleMessage(
+      "CHON AIに何でも聞いてください",
+    ),
+    "chon_chat_input_hint": MessageLookupByLibrary.simpleMessage("メッセージを入力"),
+    "chon_chat_title": MessageLookupByLibrary.simpleMessage("CHON AI"),
+    "chon_contact_completed": MessageLookupByLibrary.simpleMessage(
+      "通話が終了しました。",
+    ),
+    "chon_contact_connecting": MessageLookupByLibrary.simpleMessage("接続中…"),
+    "chon_contact_failed": MessageLookupByLibrary.simpleMessage("接続できません。"),
+    "chon_contact_idle_prompt": MessageLookupByLibrary.simpleMessage(
+      "連絡する家族を選択してください。",
+    ),
+    "chon_contact_title": MessageLookupByLibrary.simpleMessage("連絡"),
+    "chon_ft_empty": MessageLookupByLibrary.simpleMessage("家族情報がありません。"),
+    "chon_ft_title": MessageLookupByLibrary.simpleMessage("家系図"),
     "chon_home_banner": MessageLookupByLibrary.simpleMessage(
       "相互認証でCHON IDを作成しましょう。",
     ),
@@ -317,11 +346,167 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
       "CHON DID\nチュートリアル",
     ),
+    "chon_id_gen_capture_back": MessageLookupByLibrary.simpleMessage(
+      "身分証の裏面をガイド内に合わせてください",
+    ),
+    "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
+      "身分証の表面をガイド内に合わせてください",
+    ),
+    "chon_id_gen_done": MessageLookupByLibrary.simpleMessage("CHON IDが発行されました"),
+    "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage(
+      "必須情報が不足しています。",
+    ),
+    "chon_id_gen_field_address": MessageLookupByLibrary.simpleMessage("住所"),
+    "chon_id_gen_field_authority": MessageLookupByLibrary.simpleMessage("発行機関"),
+    "chon_id_gen_field_id": MessageLookupByLibrary.simpleMessage(
+      "住民登録番号/外国人登録番号",
+    ),
+    "chon_id_gen_field_id_label": MessageLookupByLibrary.simpleMessage("ID番号"),
+    "chon_id_gen_field_issued": MessageLookupByLibrary.simpleMessage("発行日"),
+    "chon_id_gen_field_name": MessageLookupByLibrary.simpleMessage("氏名"),
+    "chon_id_gen_field_name_hint": MessageLookupByLibrary.simpleMessage(
+      "身分証上の氏名",
+    ),
+    "chon_id_gen_intro_body": MessageLookupByLibrary.simpleMessage(
+      "身分証情報の入力と撮影で\nCHON IDを作成しましょう。",
+    ),
+    "chon_id_gen_intro_title": MessageLookupByLibrary.simpleMessage(
+      "CHON IDの発行を\n始めましょう",
+    ),
+    "chon_id_gen_ocr_err": MessageLookupByLibrary.simpleMessage(
+      "身分証を認識できません。再撮影してください。",
+    ),
+    "chon_id_gen_ocr_no_result": MessageLookupByLibrary.simpleMessage(
+      "自動認識結果がありません。",
+    ),
+    "chon_id_gen_ocr_title": MessageLookupByLibrary.simpleMessage(
+      "認識結果を確認してください",
+    ),
+    "chon_id_gen_pick_type": MessageLookupByLibrary.simpleMessage(
+      "発行するID種類を選択してください",
+    ),
+    "chon_id_gen_prep_start": MessageLookupByLibrary.simpleMessage("撮影開始"),
+    "chon_id_gen_prep_tip1": MessageLookupByLibrary.simpleMessage(
+      "暗い背景で撮影してください。",
+    ),
+    "chon_id_gen_prep_tip2": MessageLookupByLibrary.simpleMessage(
+      "光が反射しないよう角度を調整してください。",
+    ),
+    "chon_id_gen_prep_tip3": MessageLookupByLibrary.simpleMessage(
+      "身分証の角がガイド内に収まるようにしてください。",
+    ),
+    "chon_id_gen_prep_title": MessageLookupByLibrary.simpleMessage("撮影前にご確認"),
+    "chon_id_gen_reenter": MessageLookupByLibrary.simpleMessage("再入力"),
+    "chon_id_gen_review_finish": MessageLookupByLibrary.simpleMessage("発行する"),
+    "chon_id_gen_review_title": MessageLookupByLibrary.simpleMessage(
+      "確認して発行を完了してください",
+    ),
+    "chon_id_gen_title": MessageLookupByLibrary.simpleMessage("身分証発行"),
+    "chon_id_gen_type_family": MessageLookupByLibrary.simpleMessage("家族関係証明書"),
+    "chon_id_gen_type_resident": MessageLookupByLibrary.simpleMessage(
+      "住民/外国人登録証",
+    ),
+    "chon_id_gen_type_taekwondo": MessageLookupByLibrary.simpleMessage(
+      "テコンドー段証",
+    ),
+    "chon_id_gen_verified_fail": MessageLookupByLibrary.simpleMessage(
+      "確認できません",
+    ),
+    "chon_id_gen_verified_ok": MessageLookupByLibrary.simpleMessage("確認されました"),
+    "chon_mauth_off_intro": MessageLookupByLibrary.simpleMessage(
+      "オフラインで互いの\nCHON IDを確認できます。",
+    ),
+    "chon_mauth_off_my_qr": MessageLookupByLibrary.simpleMessage("自分のQR"),
+    "chon_mauth_off_no_payload": MessageLookupByLibrary.simpleMessage(
+      "このカードにはQR情報がありません。",
+    ),
+    "chon_mauth_off_scan": MessageLookupByLibrary.simpleMessage("相手のQRをスキャン"),
+    "chon_mauth_off_scan_prompt": MessageLookupByLibrary.simpleMessage(
+      "QRを四角の中に合わせてください。",
+    ),
+    "chon_mauth_off_scan_sub": MessageLookupByLibrary.simpleMessage(
+      "カメラで相手のQRを読み取ります。",
+    ),
+    "chon_mauth_off_scan_title": MessageLookupByLibrary.simpleMessage("QRスキャン"),
+    "chon_mauth_off_show": MessageLookupByLibrary.simpleMessage("自分のQRを表示"),
+    "chon_mauth_off_show_prompt": MessageLookupByLibrary.simpleMessage(
+      "このQRを相手に見せてください。",
+    ),
+    "chon_mauth_off_show_sub": MessageLookupByLibrary.simpleMessage(
+      "相手があなたのQRをスキャンします。",
+    ),
+    "chon_mauth_off_title": MessageLookupByLibrary.simpleMessage("オフライン相互認証"),
+    "chon_mauth_off_verified": MessageLookupByLibrary.simpleMessage("認証完了"),
+    "chon_mauth_off_verifying": MessageLookupByLibrary.simpleMessage("確認中…"),
+    "chon_mauth_rcv_anonymous": MessageLookupByLibrary.simpleMessage("不明"),
+    "chon_mauth_rcv_approved": MessageLookupByLibrary.simpleMessage("承認完了"),
+    "chon_mauth_rcv_approving": MessageLookupByLibrary.simpleMessage("承認処理中…"),
+    "chon_mauth_rcv_detail": MessageLookupByLibrary.simpleMessage("リクエスト詳細"),
+    "chon_mauth_rcv_empty": MessageLookupByLibrary.simpleMessage(
+      "リクエストはありません。",
+    ),
+    "chon_mauth_rcv_rejected": MessageLookupByLibrary.simpleMessage("拒否完了"),
+    "chon_mauth_rcv_rejecting": MessageLookupByLibrary.simpleMessage("拒否処理中…"),
+    "chon_mauth_rcv_title": MessageLookupByLibrary.simpleMessage("受信したリクエスト"),
+    "chon_mauth_req_approved": MessageLookupByLibrary.simpleMessage("承認されました。"),
+    "chon_mauth_req_awaiting": MessageLookupByLibrary.simpleMessage(
+      "リクエストを送信しました。\n相手の応答をお待ちください。",
+    ),
+    "chon_mauth_req_confirm_q": MessageLookupByLibrary.simpleMessage(
+      "この方で合っていますか?",
+    ),
+    "chon_mauth_req_done": MessageLookupByLibrary.simpleMessage("認証が完了しました。"),
+    "chon_mauth_req_err_notfound": MessageLookupByLibrary.simpleMessage(
+      "ユーザーが見つかりません。",
+    ),
+    "chon_mauth_req_err_phone": MessageLookupByLibrary.simpleMessage(
+      "電話番号を入力してください。",
+    ),
+    "chon_mauth_req_phone_prompt": MessageLookupByLibrary.simpleMessage(
+      "認証する家族の\n電話番号を入力してください。",
+    ),
+    "chon_mauth_req_rejected": MessageLookupByLibrary.simpleMessage("拒否されました。"),
+    "chon_mauth_req_retry_msg": MessageLookupByLibrary.simpleMessage(
+      "後ほど再試行してください。",
+    ),
+    "chon_mauth_req_send": MessageLookupByLibrary.simpleMessage("リクエスト送信"),
+    "chon_mauth_req_sending": MessageLookupByLibrary.simpleMessage(
+      "リクエストを送信中…",
+    ),
+    "chon_mauth_req_title": MessageLookupByLibrary.simpleMessage("相互認証"),
     "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
     "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("家系図"),
     "chon_nav_home": MessageLookupByLibrary.simpleMessage("ホーム"),
     "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("身分証"),
     "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("相互認証"),
+    "chon_profile_edit_given": MessageLookupByLibrary.simpleMessage("名"),
+    "chon_profile_edit_required": MessageLookupByLibrary.simpleMessage(
+      "必須項目です。",
+    ),
+    "chon_profile_edit_surname": MessageLookupByLibrary.simpleMessage("姓"),
+    "chon_profile_edit_title": MessageLookupByLibrary.simpleMessage("プロフィール編集"),
+    "chon_report_empty": MessageLookupByLibrary.simpleMessage("過去の報告はありません。"),
+    "chon_report_err_required": MessageLookupByLibrary.simpleMessage(
+      "タイトルと内容を入力してください。",
+    ),
+    "chon_report_failed": MessageLookupByLibrary.simpleMessage("送信に失敗しました。"),
+    "chon_report_field_content": MessageLookupByLibrary.simpleMessage("内容"),
+    "chon_report_field_content_hint": MessageLookupByLibrary.simpleMessage(
+      "発生した問題を詳しく記入してください。",
+    ),
+    "chon_report_field_title": MessageLookupByLibrary.simpleMessage("タイトル"),
+    "chon_report_field_title_hint": MessageLookupByLibrary.simpleMessage(
+      "報告のタイトルを入力してください。",
+    ),
+    "chon_report_new": MessageLookupByLibrary.simpleMessage("新規報告"),
+    "chon_report_sending": MessageLookupByLibrary.simpleMessage("報告を送信中…"),
+    "chon_report_submitted": MessageLookupByLibrary.simpleMessage(
+      "報告を受け付けました。",
+    ),
+    "chon_report_submitted_sub": MessageLookupByLibrary.simpleMessage(
+      "確認後、迅速にご返信いたします。",
+    ),
+    "chon_report_title": MessageLookupByLibrary.simpleMessage("問題を報告"),
     "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
       "身分を家族・親族に\n確認してもらい、必要な場所で認証しましょう。",
     ),

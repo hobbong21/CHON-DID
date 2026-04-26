@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,14 +27,14 @@ enum ChonNavTab {
 /// The widget assumes you size icons to 24×24 (or 22×22 inside the FAB to
 /// account for the rounded background).
 class ChonBottomNavigationBar extends StatelessWidget {
-  const ChonBottomNavigationBar({
+  ChonBottomNavigationBar({
     super.key,
     required this.selected,
     required this.onTap,
     required this.iconBuilder,
-    this.labels = const _DefaultLabels(),
+    ChonNavLabels? labels,
     this.elevation = 0,
-  });
+  }) : labels = labels ?? _DefaultLabels();
 
   /// Currently selected tab. Pass `ChonNavTab.idCard` to highlight the FAB.
   final ChonNavTab selected;
@@ -223,13 +224,18 @@ class ChonNavLabels {
   final String familyTree;
 }
 
+/// Resolves localized labels at build time. Defaults pull from the
+/// generated `S` class so all six locales work without the caller
+/// supplying labels manually. `const _DefaultLabels()` was the previous
+/// implementation; it had to become a factory because `S.current.x` is
+/// not a const expression.
 class _DefaultLabels extends ChonNavLabels {
-  const _DefaultLabels()
+  _DefaultLabels()
       : super(
-          home: '홈',
-          chon: 'CHON',
-          idCard: '신분증',
-          mutualAuth: '상호인증',
-          familyTree: '가계도',
+          home: S.current.chon_nav_home,
+          chon: S.current.chon_nav_chon,
+          idCard: S.current.chon_nav_id_card,
+          mutualAuth: S.current.chon_nav_mutual,
+          familyTree: S.current.chon_nav_family_tree,
         );
 }

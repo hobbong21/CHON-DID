@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/inproc_contact_v2/cubit/inproc_contact_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +25,7 @@ class InProcContactPage extends StatelessWidget {
           foregroundColor: ChonColors.textPrimary,
           elevation: 0,
           centerTitle: true,
-          title: Text('연락하기', style: ChonTextStyles.cardTitle()),
+          title: Text(S.current.chon_contact_title, style: ChonTextStyles.cardTitle()),
         ),
         body: BlocBuilder<InProcContactCubit, InProcContactState>(
           builder: (context, state) {
@@ -53,7 +54,7 @@ class _IdleBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Text(
-          '연락할 가족을 선택해주세요.',
+          S.current.chon_contact_idle_prompt,
           style: ChonTextStyles.body(
               size: 14, color: ChonColors.textSecondary),
         ),
@@ -78,7 +79,7 @@ class _InProgressBody extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Text(
-            '연결 중…',
+            S.current.chon_contact_connecting,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 22),
           ),
@@ -96,7 +97,7 @@ class _InProgressBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-            child: const Text('취소'),
+            child: Text(S.current.chon_action_close),
           ),
           const SizedBox(height: 16),
         ],
@@ -121,7 +122,7 @@ class _CompletedBody extends StatelessWidget {
               size: 96, color: ChonColors.brandPrimary),
           const SizedBox(height: 24),
           Text(
-            '통화가 끝났어요.',
+            S.current.chon_contact_completed,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 22),
           ),
@@ -141,7 +142,7 @@ class _CompletedBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-            child: const Text('확인'),
+            child: Text(S.current.chon_action_confirm),
           ),
           const SizedBox(height: 16),
         ],
@@ -166,7 +167,7 @@ class _FailedBody extends StatelessWidget {
               size: 96, color: Color(0xFFE24B4A)),
           const SizedBox(height: 24),
           Text(
-            '연결할 수 없어요.',
+            S.current.chon_contact_failed,
             textAlign: TextAlign.center,
             style: ChonTextStyles.cardTitle().copyWith(fontSize: 22),
           ),
@@ -189,7 +190,7 @@ class _FailedBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-            child: const Text('다시 시도'),
+            child: Text(S.current.chon_action_retry),
           ),
           const SizedBox(height: 16),
         ],

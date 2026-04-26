@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/data/models/self_id/list_card_info_model.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/modules/verification_finish/verification_finish_page.dart';
@@ -210,7 +211,7 @@ class _CheckInOutPageState extends State<CheckInOutPage> {
                                                 ),
                                               ),
                                               SizedBox(height: 12.r),
-                                              Logo(color: colors.secondaryText),
+                                              Logo(color: ChonColors.textSecondary),
                                               SizedBox(height: 12.r),
                                             ],
                                           ),
@@ -244,7 +245,7 @@ class _CheckInOutPageState extends State<CheckInOutPage> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: colors.lightYellow,
-                            foregroundColor: colors.secondaryText,
+                            foregroundColor: ChonColors.textSecondary,
                             overlayColor: colors.darkYellow,
                           ),
                           child: Text(S.current.checkOut),

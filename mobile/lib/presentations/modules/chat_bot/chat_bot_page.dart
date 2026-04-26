@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/data/models/chatbot/message_model.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/presentations/widgets/header.dart';
@@ -56,7 +57,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: colors.background,
+          backgroundColor: ChonColors.bgPage,
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Column(

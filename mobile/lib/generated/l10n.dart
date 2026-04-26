@@ -4353,6 +4353,1001 @@ class S {
       args: [],
     );
   }
+
+  /// `Back`
+  String get chon_action_back {
+    return Intl.message('Back', name: 'chon_action_back', desc: '', args: []);
+  }
+
+  /// `Continue`
+  String get chon_action_continue {
+    return Intl.message(
+      'Continue',
+      name: 'chon_action_continue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get chon_action_close {
+    return Intl.message('Close', name: 'chon_action_close', desc: '', args: []);
+  }
+
+  /// `Approve`
+  String get chon_action_approve {
+    return Intl.message(
+      'Approve',
+      name: 'chon_action_approve',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reject`
+  String get chon_action_reject {
+    return Intl.message(
+      'Reject',
+      name: 'chon_action_reject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish`
+  String get chon_action_finish {
+    return Intl.message(
+      'Finish',
+      name: 'chon_action_finish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search again`
+  String get chon_action_search_again {
+    return Intl.message(
+      'Search again',
+      name: 'chon_action_search_again',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retake photo`
+  String get chon_action_recapture {
+    return Intl.message(
+      'Retake photo',
+      name: 'chon_action_recapture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach file`
+  String get chon_action_attach {
+    return Intl.message(
+      'Attach file',
+      name: 'chon_action_attach',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attached`
+  String get chon_action_attached {
+    return Intl.message(
+      'Attached',
+      name: 'chon_action_attached',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mutual auth`
+  String get chon_mauth_req_title {
+    return Intl.message(
+      'Mutual auth',
+      name: 'chon_mauth_req_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the phone number\nof the family to verify.`
+  String get chon_mauth_req_phone_prompt {
+    return Intl.message(
+      'Enter the phone number\nof the family to verify.',
+      name: 'chon_mauth_req_phone_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is this the right person?`
+  String get chon_mauth_req_confirm_q {
+    return Intl.message(
+      'Is this the right person?',
+      name: 'chon_mauth_req_confirm_q',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send request`
+  String get chon_mauth_req_send {
+    return Intl.message(
+      'Send request',
+      name: 'chon_mauth_req_send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sending request…`
+  String get chon_mauth_req_sending {
+    return Intl.message(
+      'Sending request…',
+      name: 'chon_mauth_req_sending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request sent.\nWaiting for the other party.`
+  String get chon_mauth_req_awaiting {
+    return Intl.message(
+      'Request sent.\nWaiting for the other party.',
+      name: 'chon_mauth_req_awaiting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Approved.`
+  String get chon_mauth_req_approved {
+    return Intl.message(
+      'Approved.',
+      name: 'chon_mauth_req_approved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rejected.`
+  String get chon_mauth_req_rejected {
+    return Intl.message(
+      'Rejected.',
+      name: 'chon_mauth_req_rejected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authentication complete.`
+  String get chon_mauth_req_done {
+    return Intl.message(
+      'Authentication complete.',
+      name: 'chon_mauth_req_done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please try again later.`
+  String get chon_mauth_req_retry_msg {
+    return Intl.message(
+      'Please try again later.',
+      name: 'chon_mauth_req_retry_msg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a phone number.`
+  String get chon_mauth_req_err_phone {
+    return Intl.message(
+      'Please enter a phone number.',
+      name: 'chon_mauth_req_err_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User not found.`
+  String get chon_mauth_req_err_notfound {
+    return Intl.message(
+      'User not found.',
+      name: 'chon_mauth_req_err_notfound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Received requests`
+  String get chon_mauth_rcv_title {
+    return Intl.message(
+      'Received requests',
+      name: 'chon_mauth_rcv_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No requests yet.`
+  String get chon_mauth_rcv_empty {
+    return Intl.message(
+      'No requests yet.',
+      name: 'chon_mauth_rcv_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request detail`
+  String get chon_mauth_rcv_detail {
+    return Intl.message(
+      'Request detail',
+      name: 'chon_mauth_rcv_detail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Approval complete`
+  String get chon_mauth_rcv_approved {
+    return Intl.message(
+      'Approval complete',
+      name: 'chon_mauth_rcv_approved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rejection complete`
+  String get chon_mauth_rcv_rejected {
+    return Intl.message(
+      'Rejection complete',
+      name: 'chon_mauth_rcv_rejected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Approving…`
+  String get chon_mauth_rcv_approving {
+    return Intl.message(
+      'Approving…',
+      name: 'chon_mauth_rcv_approving',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rejecting…`
+  String get chon_mauth_rcv_rejecting {
+    return Intl.message(
+      'Rejecting…',
+      name: 'chon_mauth_rcv_rejecting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get chon_mauth_rcv_anonymous {
+    return Intl.message(
+      'Unknown',
+      name: 'chon_mauth_rcv_anonymous',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offline mutual auth`
+  String get chon_mauth_off_title {
+    return Intl.message(
+      'Offline mutual auth',
+      name: 'chon_mauth_off_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify each other's CHON ID\nin person, offline.`
+  String get chon_mauth_off_intro {
+    return Intl.message(
+      'Verify each other\'s CHON ID\nin person, offline.',
+      name: 'chon_mauth_off_intro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show my QR`
+  String get chon_mauth_off_show {
+    return Intl.message(
+      'Show my QR',
+      name: 'chon_mauth_off_show',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The other party scans my QR.`
+  String get chon_mauth_off_show_sub {
+    return Intl.message(
+      'The other party scans my QR.',
+      name: 'chon_mauth_off_show_sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan their QR`
+  String get chon_mauth_off_scan {
+    return Intl.message(
+      'Scan their QR',
+      name: 'chon_mauth_off_scan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use the camera to read their QR.`
+  String get chon_mauth_off_scan_sub {
+    return Intl.message(
+      'Use the camera to read their QR.',
+      name: 'chon_mauth_off_scan_sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My QR`
+  String get chon_mauth_off_my_qr {
+    return Intl.message(
+      'My QR',
+      name: 'chon_mauth_off_my_qr',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show this QR to your counterpart.`
+  String get chon_mauth_off_show_prompt {
+    return Intl.message(
+      'Show this QR to your counterpart.',
+      name: 'chon_mauth_off_show_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This card has no QR payload.`
+  String get chon_mauth_off_no_payload {
+    return Intl.message(
+      'This card has no QR payload.',
+      name: 'chon_mauth_off_no_payload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QR scan`
+  String get chon_mauth_off_scan_title {
+    return Intl.message(
+      'QR scan',
+      name: 'chon_mauth_off_scan_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Align the QR within the box.`
+  String get chon_mauth_off_scan_prompt {
+    return Intl.message(
+      'Align the QR within the box.',
+      name: 'chon_mauth_off_scan_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verifying…`
+  String get chon_mauth_off_verifying {
+    return Intl.message(
+      'Verifying…',
+      name: 'chon_mauth_off_verifying',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verified`
+  String get chon_mauth_off_verified {
+    return Intl.message(
+      'Verified',
+      name: 'chon_mauth_off_verified',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get chon_contact_title {
+    return Intl.message(
+      'Contact',
+      name: 'chon_contact_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick a family member to call.`
+  String get chon_contact_idle_prompt {
+    return Intl.message(
+      'Pick a family member to call.',
+      name: 'chon_contact_idle_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connecting…`
+  String get chon_contact_connecting {
+    return Intl.message(
+      'Connecting…',
+      name: 'chon_contact_connecting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call ended.`
+  String get chon_contact_completed {
+    return Intl.message(
+      'Call ended.',
+      name: 'chon_contact_completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couldn't connect.`
+  String get chon_contact_failed {
+    return Intl.message(
+      'Couldn\'t connect.',
+      name: 'chon_contact_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit profile`
+  String get chon_profile_edit_title {
+    return Intl.message(
+      'Edit profile',
+      name: 'chon_profile_edit_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get chon_profile_edit_surname {
+    return Intl.message(
+      'Surname',
+      name: 'chon_profile_edit_surname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Given name`
+  String get chon_profile_edit_given {
+    return Intl.message(
+      'Given name',
+      name: 'chon_profile_edit_given',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required.`
+  String get chon_profile_edit_required {
+    return Intl.message(
+      'Required.',
+      name: 'chon_profile_edit_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report a problem`
+  String get chon_report_title {
+    return Intl.message(
+      'Report a problem',
+      name: 'chon_report_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No prior reports.`
+  String get chon_report_empty {
+    return Intl.message(
+      'No prior reports.',
+      name: 'chon_report_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New report`
+  String get chon_report_new {
+    return Intl.message(
+      'New report',
+      name: 'chon_report_new',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get chon_report_field_title {
+    return Intl.message(
+      'Title',
+      name: 'chon_report_field_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the report title.`
+  String get chon_report_field_title_hint {
+    return Intl.message(
+      'Enter the report title.',
+      name: 'chon_report_field_title_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content`
+  String get chon_report_field_content {
+    return Intl.message(
+      'Content',
+      name: 'chon_report_field_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe the problem in detail.`
+  String get chon_report_field_content_hint {
+    return Intl.message(
+      'Describe the problem in detail.',
+      name: 'chon_report_field_content_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sending report…`
+  String get chon_report_sending {
+    return Intl.message(
+      'Sending report…',
+      name: 'chon_report_sending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your report was received.`
+  String get chon_report_submitted {
+    return Intl.message(
+      'Your report was received.',
+      name: 'chon_report_submitted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We'll get back to you soon.`
+  String get chon_report_submitted_sub {
+    return Intl.message(
+      'We\'ll get back to you soon.',
+      name: 'chon_report_submitted_sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send failed.`
+  String get chon_report_failed {
+    return Intl.message(
+      'Send failed.',
+      name: 'chon_report_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a title and content.`
+  String get chon_report_err_required {
+    return Intl.message(
+      'Please enter a title and content.',
+      name: 'chon_report_err_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CHON AI`
+  String get chon_chat_title {
+    return Intl.message('CHON AI', name: 'chon_chat_title', desc: '', args: []);
+  }
+
+  /// `Ask CHON AI anything`
+  String get chon_chat_empty_title {
+    return Intl.message(
+      'Ask CHON AI anything',
+      name: 'chon_chat_empty_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ask about family relations,\nverification, family tree.`
+  String get chon_chat_empty_body {
+    return Intl.message(
+      'Ask about family relations,\nverification, family tree.',
+      name: 'chon_chat_empty_body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type a message`
+  String get chon_chat_input_hint {
+    return Intl.message(
+      'Type a message',
+      name: 'chon_chat_input_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issue ID`
+  String get chon_id_gen_title {
+    return Intl.message(
+      'Issue ID',
+      name: 'chon_id_gen_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's start issuing\nyour CHON ID`
+  String get chon_id_gen_intro_title {
+    return Intl.message(
+      'Let\'s start issuing\nyour CHON ID',
+      name: 'chon_id_gen_intro_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter ID info and capture\nphotos to create your CHON ID.`
+  String get chon_id_gen_intro_body {
+    return Intl.message(
+      'Enter ID info and capture\nphotos to create your CHON ID.',
+      name: 'chon_id_gen_intro_body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name`
+  String get chon_id_gen_field_name {
+    return Intl.message(
+      'Full name',
+      name: 'chon_id_gen_field_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name on the ID`
+  String get chon_id_gen_field_name_hint {
+    return Intl.message(
+      'Name on the ID',
+      name: 'chon_id_gen_field_name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resident / Foreigner ID number`
+  String get chon_id_gen_field_id {
+    return Intl.message(
+      'Resident / Foreigner ID number',
+      name: 'chon_id_gen_field_id',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verified`
+  String get chon_id_gen_verified_ok {
+    return Intl.message(
+      'Verified',
+      name: 'chon_id_gen_verified_ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not verify`
+  String get chon_id_gen_verified_fail {
+    return Intl.message(
+      'Could not verify',
+      name: 'chon_id_gen_verified_fail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re-enter info`
+  String get chon_id_gen_reenter {
+    return Intl.message(
+      'Re-enter info',
+      name: 'chon_id_gen_reenter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick the ID type`
+  String get chon_id_gen_pick_type {
+    return Intl.message(
+      'Pick the ID type',
+      name: 'chon_id_gen_pick_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resident / Foreigner card`
+  String get chon_id_gen_type_resident {
+    return Intl.message(
+      'Resident / Foreigner card',
+      name: 'chon_id_gen_type_resident',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Family relation cert.`
+  String get chon_id_gen_type_family {
+    return Intl.message(
+      'Family relation cert.',
+      name: 'chon_id_gen_type_family',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Taekwondo certificate`
+  String get chon_id_gen_type_taekwondo {
+    return Intl.message(
+      'Taekwondo certificate',
+      name: 'chon_id_gen_type_taekwondo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Before you capture`
+  String get chon_id_gen_prep_title {
+    return Intl.message(
+      'Before you capture',
+      name: 'chon_id_gen_prep_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shoot against a dark background.`
+  String get chon_id_gen_prep_tip1 {
+    return Intl.message(
+      'Shoot against a dark background.',
+      name: 'chon_id_gen_prep_tip1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adjust angle to avoid glare.`
+  String get chon_id_gen_prep_tip2 {
+    return Intl.message(
+      'Adjust angle to avoid glare.',
+      name: 'chon_id_gen_prep_tip2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place the ID inside the guide.`
+  String get chon_id_gen_prep_tip3 {
+    return Intl.message(
+      'Place the ID inside the guide.',
+      name: 'chon_id_gen_prep_tip3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start capturing`
+  String get chon_id_gen_prep_start {
+    return Intl.message(
+      'Start capturing',
+      name: 'chon_id_gen_prep_start',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Align the front of the ID inside the guide`
+  String get chon_id_gen_capture_front {
+    return Intl.message(
+      'Align the front of the ID inside the guide',
+      name: 'chon_id_gen_capture_front',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Align the back of the ID inside the guide`
+  String get chon_id_gen_capture_back {
+    return Intl.message(
+      'Align the back of the ID inside the guide',
+      name: 'chon_id_gen_capture_back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm what we read`
+  String get chon_id_gen_ocr_title {
+    return Intl.message(
+      'Confirm what we read',
+      name: 'chon_id_gen_ocr_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No auto-read result. If you typed it manually, continue.`
+  String get chon_id_gen_ocr_no_result {
+    return Intl.message(
+      'No auto-read result. If you typed it manually, continue.',
+      name: 'chon_id_gen_ocr_no_result',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review and finish`
+  String get chon_id_gen_review_title {
+    return Intl.message(
+      'Review and finish',
+      name: 'chon_id_gen_review_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issue ID`
+  String get chon_id_gen_review_finish {
+    return Intl.message(
+      'Issue ID',
+      name: 'chon_id_gen_review_finish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your CHON ID is issued`
+  String get chon_id_gen_done {
+    return Intl.message(
+      'Your CHON ID is issued',
+      name: 'chon_id_gen_done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ID number`
+  String get chon_id_gen_field_id_label {
+    return Intl.message(
+      'ID number',
+      name: 'chon_id_gen_field_id_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get chon_id_gen_field_address {
+    return Intl.message(
+      'Address',
+      name: 'chon_id_gen_field_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issued date`
+  String get chon_id_gen_field_issued {
+    return Intl.message(
+      'Issued date',
+      name: 'chon_id_gen_field_issued',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issuing authority`
+  String get chon_id_gen_field_authority {
+    return Intl.message(
+      'Issuing authority',
+      name: 'chon_id_gen_field_authority',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required information missing.`
+  String get chon_id_gen_err_required {
+    return Intl.message(
+      'Required information missing.',
+      name: 'chon_id_gen_err_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couldn't read the ID. Please retake.`
+  String get chon_id_gen_ocr_err {
+    return Intl.message(
+      'Couldn\'t read the ID. Please retake.',
+      name: 'chon_id_gen_ocr_err',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Family tree`
+  String get chon_ft_title {
+    return Intl.message(
+      'Family tree',
+      name: 'chon_ft_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No family info.`
+  String get chon_ft_empty {
+    return Intl.message(
+      'No family info.',
+      name: 'chon_ft_empty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

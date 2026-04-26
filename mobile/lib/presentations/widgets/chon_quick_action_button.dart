@@ -1,4 +1,5 @@
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -124,47 +125,47 @@ class ChonQuickActionGrid extends StatelessWidget {
 class ChonQuickActions {
   ChonQuickActions._();
 
-  /// 연락하기 (가계도) — calls/contact entry.
+  /// Contact entry (gift to family tree).
   static ChonQuickActionButton contact({
     required Widget icon,
     required VoidCallback onTap,
   }) =>
       ChonQuickActionButton(
         icon: icon,
-        label: '연락하기\n(가계도)',
+        label: S.current.chon_home_q_contact,
         onTap: onTap,
       );
 
-  /// 프로필 수정 — edit profile entry.
+  /// Edit profile entry.
   static ChonQuickActionButton editProfile({
     required Widget icon,
     required VoidCallback onTap,
   }) =>
       ChonQuickActionButton(
         icon: icon,
-        label: '프로필 수정',
+        label: S.current.chon_home_q_edit_profile,
         onTap: onTap,
       );
 
-  /// QR 코드 — show / scan QR.
+  /// QR code — show / scan.
   static ChonQuickActionButton qrCode({
     required Widget icon,
     required VoidCallback onTap,
   }) =>
       ChonQuickActionButton(
         icon: icon,
-        label: 'QR 코드',
+        label: S.current.chon_home_q_qr,
         onTap: onTap,
       );
 
-  /// 고객센터 — support / report a problem.
+  /// Support / report a problem.
   static ChonQuickActionButton support({
     required Widget icon,
     required VoidCallback onTap,
   }) =>
       ChonQuickActionButton(
         icon: icon,
-        label: '고객센터',
+        label: S.current.chon_home_q_support,
         onTap: onTap,
       );
 }

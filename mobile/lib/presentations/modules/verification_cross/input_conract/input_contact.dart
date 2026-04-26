@@ -75,7 +75,7 @@ class _InputContactState extends State<InputContact> {
                         enabled:
                             state.relation.status == StatusRelationE.unVerified,
                         hintText: S.current.enter,
-                        fillColor: colors.background,
+                        fillColor: ChonColors.bgPage,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
                           borderSide: BorderSide(color: borderColor, width: 3),
@@ -116,7 +116,7 @@ class _InputContactState extends State<InputContact> {
                           : colors.darkYellow,
                       foregroundColor: cubit.state.relation.relationType != null
                           ? colors.white
-                          : colors.secondaryText,
+                          : ChonColors.textSecondary,
                       overlayColor: colors.primary,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100.r)),

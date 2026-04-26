@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/theme/chon_design_tokens.dart';
 import 'package:base_flutter/generated/assets.gen.dart';
 import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/injector.dart';
@@ -89,7 +90,7 @@ class _SelfIdListState extends State<SelfIdList> {
                                 : colors.lightYellow,
                             foregroundColor: !state.selectMode
                                 ? colors.white
-                                : colors.secondaryText,
+                                : ChonColors.textSecondary,
                           ),
                           child: Text(!state.selectMode
                               ? S.current.action_select
@@ -112,7 +113,7 @@ class _SelfIdListState extends State<SelfIdList> {
                                   : colors.lightYellow,
                               foregroundColor: state.selectMode
                                   ? colors.white
-                                  : colors.secondaryText,
+                                  : ChonColors.textSecondary,
                             ),
                             child: Text(
                               !state.selectMode

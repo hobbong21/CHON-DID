@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- OG Meta Tags — rich preview in KakaoTalk, iMessage, SMS, etc. -->
+    <meta property="og:title" content="CHON 본인 인증 초대">
+    <meta property="og:description" content="보이스피싱 방지를 위해 CHON에서 본인 인증 후 전화해 주세요. 인증된 전화만 안전하게 받을 수 있습니다.">
+    <meta property="og:image" content="https://chon-images-dev.s3.ap-northeast-2.amazonaws.com/public/chon_og_image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://app.chon.ai/mcrs-api/invite.html">
+    <meta property="og:site_name" content="CHON selfid">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CHON 본인 인증 초대">
+    <meta name="twitter:description" content="보이스피싱 방지를 위해 CHON에서 본인 인증 후 전화해 주세요.">
+    <meta name="twitter:image" content="https://chon-images-dev.s3.ap-northeast-2.amazonaws.com/public/chon_og_image.png">
+
+    <title>CHON 본인 인증 초대</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 48px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .shield {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #e53935, #c62828);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 8px 32px rgba(198, 40, 40, 0.4);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .warning-box {
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        .warning-box p {
+            font-size: 14px;
+            color: #ffd54f;
+            line-height: 1.5;
+        }
+        .warning-box .icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #e8a838, #d4892a);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 48px;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 24px rgba(232, 168, 56, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(232, 168, 56, 0.4);
+        }
+        .footer {
+            margin-top: 32px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+        .steps {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        .step-num {
+            min-width: 28px;
+            height: 28px;
+            background: rgba(232, 168, 56, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #e8a838;
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+        .step-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="shield">🛡️</div>
+        <h1>CHON 본인 인증 요청</h1>
+        <p class="subtitle">
+            상대방이 보이스피싱 방지를 위해<br>
+            <strong>인증된 전화만 받고 있습니다.</strong>
+        </p>
+
+        <div class="warning-box">
+            <p><span class="icon">⚠️</span> 이 번호로 전화하신 상대방은 CHON 콜 실드를 사용하고 있습니다. 본인 인증 후 다시 전화해 주세요.</p>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-text">CHON 앱을 다운로드합니다</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-text">신분증으로 본인 인증을 완료합니다</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-text">인증 완료 후 다시 전화하면<br>✅ 인증 마크가 표시됩니다</div>
+            </div>
+        </div>
+
+        <a href="https://play.google.com/store/apps/details?id=com.chondid.app" class="download-btn">
+            CHON 다운로드
+        </a>
+
+        <p class="footer">
+            CHON selfid — DID 기반 본인 인증 플랫폼<br>
+            보이스피싱 없는 안전한 통화 환경
+        </p>
+    </div>
+
+    <script>
+        // Auto-redirect to app store based on platform
+        const isAndroid = /android/i.test(navigator.userAgent);
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+        if (isAndroid) {
+            // Try to open the app first, fallback to Play Store
+            window.location.href = 'chonselfid://app/invite';
+            setTimeout(() => {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.chondid.app';
+            }, 2000);
+        } else if (isIOS) {
+            // iOS App Store link (update when available)
+            // window.location.href = 'https://apps.apple.com/app/chon-selfid/id...';
+        }
+    </script>
+</body>
+</html>

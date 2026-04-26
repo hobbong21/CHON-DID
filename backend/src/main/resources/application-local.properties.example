@@ -1,0 +1,29 @@
+# Copy this file to `src/main/resources/application-local.properties` for local testing.
+# The real `application-local.properties` is gitignored.
+
+spring.datasource.url=jdbc:mariadb://localhost:3306/chondb
+spring.datasource.username=change-me
+spring.datasource.password=change-me
+
+rsa.public.key=change-me
+rsa.private.key=change-me
+encrypt.key=change-me
+
+mail.host=smtp.example.com
+mail.port=465
+mail.user=change-me
+mail.password=change-me
+
+base-url.view-image=http://localhost:8888/mcrs-api/public/image
+base-url.share-link=http://localhost:8888/mcrs-api/share/verify-link
+base-url.share-link-event=http://localhost:8888/mcrs-api/event/event-link
+app-key=chonselfid
+url.store.android=
+url.store.ios=
+
+root-folder-image=/tmp/chon-image
+url.origin=http://localhost:4200,http://localhost:8080,http://localhost:3030
+
+issuer.did.base-url=
+issuer.did.token=
+issuer.did.id=

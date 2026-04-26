@@ -1,0 +1,337 @@
+name: Mobile CI
+
+on:
+  push:
+    branches: [main, dev, stg]
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+    inputs:
+      flavor:
+        description: "Which flavor to build & distribute"
+        required: true
+        type: choice
+        default: dev
+        options:
+          - dev
+          - stg
+          - prod
+      skip_upload:
+        description: "Build only, skip distribution"
+        required: false
+        type: boolean
+        default: false
+
+env:
+  FLUTTER_VERSION: "3.29.3"
+  JAVA_VERSION: "17"
+
+jobs:
+  analyze:
+    name: Analyze & Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Create .env for CI
+        run: cp .env.example .env
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed lib/
+        continue-on-error: true
+
+      - name: Analyze code
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+        continue-on-error: true
+
+  # ──────────────────────────────────────────────────────────
+  # Dev build → Firebase App Distribution (on push to dev, token refreshed 2026-04-20)
+  # ──────────────────────────────────────────────────────────
+  build-android-dev:
+    name: Build & Distribute Android (dev)
+    runs-on: ubuntu-latest
+    needs: analyze
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/dev') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.flavor == 'dev')
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: gradle
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Create .env for CI
+        run: cp .env.example .env
+
+      - name: Set up signing
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/chon-release.jks
+          cat <<EOF > android/key.properties
+          storePassword=${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          storeFile=chon-release.jks
+          EOF
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build dev APK
+        run: |
+          flutter build apk \
+            --flavor dev \
+            --build-number=${{ github.run_number }} \
+            --dart-define=APP_FLAVOR=dev \
+            --dart-define=BUILD_SHA=${{ github.sha }} \
+            --dart-define=BUILD_NUMBER=${{ github.run_number }}
+
+      - name: Upload dev APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chon-dev-apk-${{ github.run_number }}
+          path: build/app/outputs/flutter-apk/*-dev-release.apk
+          retention-days: 14
+
+      - name: Upload to Firebase App Distribution
+        if: github.event.inputs.skip_upload != 'true'
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_DEV }}
+          token: ${{ secrets.FIREBASE_TOKEN }}
+          groups: internal-testers
+          file: build/app/outputs/flutter-apk/app-dev-release.apk
+          releaseNotes: |
+            Build #${{ github.run_number }}
+            Branch: ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
+            Message: ${{ github.event.head_commit.message }}
+
+  # ──────────────────────────────────────────────────────────
+  # Staging build → Firebase App Distribution (on push to stg)
+  # ──────────────────────────────────────────────────────────
+  build-android-stg:
+    name: Build & Distribute Android (stg)
+    runs-on: ubuntu-latest
+    needs: analyze
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/stg') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.flavor == 'stg')
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: gradle
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Create .env for CI
+        run: cp .env.example .env
+
+      - name: Set up signing
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/chon-release.jks
+          cat <<EOF > android/key.properties
+          storePassword=${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          storeFile=chon-release.jks
+          EOF
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build stg APK
+        run: |
+          flutter build apk \
+            --flavor stg \
+            --build-number=${{ github.run_number }} \
+            --dart-define=APP_FLAVOR=stg \
+            --dart-define=BUILD_SHA=${{ github.sha }} \
+            --dart-define=BUILD_NUMBER=${{ github.run_number }}
+
+      - name: Upload stg APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chon-stg-apk-${{ github.run_number }}
+          path: build/app/outputs/flutter-apk/*-stg-release.apk
+          retention-days: 14
+
+      - name: Upload to Firebase App Distribution
+        if: github.event.inputs.skip_upload != 'true'
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_STG }}
+          token: ${{ secrets.FIREBASE_TOKEN }}
+          groups: stg-testers
+          file: build/app/outputs/flutter-apk/app-stg-release.apk
+          releaseNotes: |
+            Build #${{ github.run_number }} (STAGING)
+            Branch: ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
+            Message: ${{ github.event.head_commit.message }}
+
+  # ──────────────────────────────────────────────────────────
+  # Prod build → Google Play Internal Testing (on push to main)
+  # ──────────────────────────────────────────────────────────
+  build-android-prod:
+    name: Build & Upload Android (prod)
+    runs-on: ubuntu-latest
+    needs: analyze
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.flavor == 'prod')
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: gradle
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Create .env for CI
+        run: cp .env.example .env
+
+      - name: Set up signing
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/chon-release.jks
+          cat <<EOF > android/key.properties
+          storePassword=${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          storeFile=chon-release.jks
+          EOF
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build prod AAB
+        run: |
+          flutter build appbundle \
+            --flavor prod \
+            --build-number=${{ github.run_number }} \
+            --dart-define=APP_FLAVOR=prod \
+            --dart-define=BUILD_SHA=${{ github.sha }} \
+            --dart-define=BUILD_NUMBER=${{ github.run_number }}
+
+      - name: Upload prod AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chon-prod-aab-${{ github.run_number }}
+          path: build/app/outputs/bundle/prodRelease/app-prod-release.aab
+          retention-days: 30
+
+      - name: Upload to Google Play (internal testing)
+        if: github.event.inputs.skip_upload != 'true'
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
+          packageName: com.chondid.app
+          releaseFiles: build/app/outputs/bundle/prodRelease/app-prod-release.aab
+          track: internal
+          status: draft
+
+  # ──────────────────────────────────────────────────────────
+  # iOS build (no signing yet — ready for Apple Developer account)
+  #
+  # TODO (when Apple Developer account is purchased):
+  #   1. Fix iOS bundle identifiers to match Android:
+  #        dev  → com.chondid.app.dev
+  #        stg  → com.chondid.app.stg
+  #        prod → com.chondid.app
+  #      (currently set to com.abdulkarim.chondev / com.chon.poc by vendor)
+  #   2. Create App Store Connect app + TestFlight config
+  #   3. Add these GitHub secrets:
+  #        APP_STORE_CONNECT_KEY_ID
+  #        APP_STORE_CONNECT_ISSUER_ID
+  #        APP_STORE_CONNECT_API_KEY_BASE64
+  #        IOS_CERTIFICATE_BASE64
+  #        IOS_CERTIFICATE_PASSWORD
+  #        IOS_PROVISIONING_PROFILE_BASE64
+  #   4. Uncomment the signing + TestFlight upload steps below
+  # ──────────────────────────────────────────────────────────
+  build-ios-dev:
+    name: Build iOS (dev) — no signing
+    runs-on: macos-latest
+    needs: analyze
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Create .env for CI
+        run: cp .env.example .env
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build iOS (no codesign)
+        run: |
+          flutter build ios \
+            --flavor dev \
+            --no-codesign \
+            --build-number=${{ github.run_number }} \
+            --dart-define=APP_FLAVOR=dev \
+            --dart-define=BUILD_SHA=${{ github.sha }} \
+            --dart-define=BUILD_NUMBER=${{ github.run_number }}
+
+      # ─── Uncomment when Apple Developer account is ready ───
+      #
+      # - name: Import signing certificate
+      #   uses: apple-actions/import-codesign-certs@v3
+      #   with:
+      #     p12-file-base64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+      #     p12-password: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+      #
+      # - name: Install provisioning profile
+      #   run: |
+      #     mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+      #     echo "${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}" | base64 --decode \
+      #       > ~/Library/MobileDevice/Provisioning\ Profiles/chon_dev.mobileprovision
+      #
+      # - name: Build signed IPA
+      #   run: |
+      #     flutter build ipa \
+      #       --flavor dev \
+      #       --build-number=${{ github.run_number }} \
+      #       --dart-define=APP_FLAVOR=dev \
+      #       --export-options-plist=ios/ExportOptions.plist
+      #
+      # - name: Upload to TestFlight
+      #   uses: apple-actions/upload-testflight-build@v3
+      #   with:
+      #     app-path: build/ios/ipa/*.ipa
+      #     issuer-id: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+      #     api-key-id: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+      #     api-private-key: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}

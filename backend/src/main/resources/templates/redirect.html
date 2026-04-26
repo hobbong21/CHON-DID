@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- OG Meta Tags — rich preview in KakaoTalk, iMessage, SMS, etc. -->
+    <meta property="og:title" content="CHON 상호 인증 요청">
+    <meta property="og:description" content="CHON 앱에서 신원 인증을 요청했습니다. 링크를 눌러 인증해 주세요.">
+    <meta property="og:image" content="https://chon-images-dev.s3.ap-northeast-2.amazonaws.com/public/chon_og_image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CHON selfid">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CHON 상호 인증 요청">
+    <meta name="twitter:description" content="CHON 앱에서 신원 인증을 요청했습니다. 링크를 눌러 인증해 주세요.">
+    <meta name="twitter:image" content="https://chon-images-dev.s3.ap-northeast-2.amazonaws.com/public/chon_og_image.png">
+
+    <title>CHON 상호 인증 요청</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 48px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .shield {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #1976D2, #1565C0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 8px 32px rgba(25, 118, 210, 0.4);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .info-box {
+            background: rgba(25, 118, 210, 0.15);
+            border: 1px solid rgba(25, 118, 210, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        .info-box p {
+            font-size: 14px;
+            color: #90CAF9;
+            line-height: 1.5;
+        }
+        .info-box .icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top: 4px solid #90CAF9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 32px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1976D2, #1565C0);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 48px;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 24px rgba(25, 118, 210, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(25, 118, 210, 0.4);
+        }
+        .footer {
+            margin-top: 32px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="shield">🔐</div>
+        <h1>CHON 상호 인증 요청</h1>
+        <p class="subtitle">
+            CHON 앱에서 신원 인증을 요청했습니다.<br>
+            <strong>앱이 자동으로 열립니다.</strong>
+        </p>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p class="loading-text">앱을 여는 중...</p>
+        </div>
+
+        <div class="info-box">
+            <p><span class="icon">🛡️</span> CHON은 DID 기반 본인 인증 플랫폼입니다. 안전한 신원 확인을 위해 앱에서 인증을 완료해 주세요.</p>
+        </div>
+
+        <a id="store-btn" href="#" class="download-btn hidden">
+            CHON 다운로드
+        </a>
+
+        <p class="footer">
+            CHON selfid — DID 기반 본인 인증 플랫폼<br>
+            안전한 신원 확인 서비스
+        </p>
+    </div>
+
+    <script>
+        const userAgent = navigator.userAgent || navigator.vendor;
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get("token") || "default";
+
+        const appSchemeUrl = `{{appKey}}://app/{{type}}/{{verifyType}}/${token}`;
+        const androidStoreUrl = "{{androidStoreUrl}}";
+        const iosStoreUrl = "{{iosStoreUrl}}";
+
+        const isiOS =
+            /iPhone|iPad|iPod/i.test(userAgent) ||
+            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        const isAndroid =
+            /Android/i.test(userAgent) ||
+            navigator.userAgentData?.platform === "Android";
+
+        // Try to open app
+        window.location.href = appSchemeUrl;
+
+        let fallbackTimeout;
+
+        const cancelFallback = () => {
+            if (fallbackTimeout) clearTimeout(fallbackTimeout);
+        };
+
+        window.addEventListener("pagehide", cancelFallback);
+        window.addEventListener("blur", cancelFallback);
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) cancelFallback();
+        });
+
+        // After 2 seconds, show download button if app didn't open
+        fallbackTimeout = setTimeout(() => {
+            document.getElementById("loading").classList.add("hidden");
+            const btn = document.getElementById("store-btn");
+            btn.classList.remove("hidden");
+
+            if (isAndroid && androidStoreUrl) {
+                btn.href = androidStoreUrl;
+                window.location.href = androidStoreUrl;
+            } else if (isiOS && iosStoreUrl) {
+                btn.href = iosStoreUrl;
+                window.location.href = iosStoreUrl;
+            } else {
+                btn.href = "https://play.google.com/store/apps/details?id=com.chondid.app";
+                btn.classList.remove("hidden");
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

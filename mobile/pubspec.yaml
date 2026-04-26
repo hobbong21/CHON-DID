@@ -1,0 +1,143 @@
+name: base_flutter
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  go_router: ^16.1.0
+  dio: ^5.9.0
+  bloc: ^9.0.0
+  flutter_bloc: ^9.1.1
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.2.0
+  flutter_secure_storage: ^9.2.4
+  get_it: ^8.2.0
+  http: ^1.5.0
+  intl: any
+  intl_utils: ^2.8.11
+  image: ^4.5.4
+  shared_preferences: ^2.5.3
+  shimmer: ^3.0.0
+  url_launcher: ^6.3.2
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  retrofit: ^4.6.0
+  loader_overlay: ^5.0.0
+  device_info_plus: ^11.3.0
+  image_picker: ^1.2.0
+  file_picker: ^10.3.2
+  path_provider: ^2.1.5
+  google_fonts: ^6.3.0
+  flutter_dotenv: ^6.0.0
+  photo_view: ^0.15.0
+  mime: ^2.0.0
+  country_picker: ^2.0.27
+  mobile_scanner: ^5.1.1
+  qr_flutter: ^4.1.0
+  app_links: ^6.3.3
+  table_calendar: ^3.1.3
+  share_plus: ^12.0.1
+  dropdown_button2: ^2.3.9
+  permission_handler: ^12.0.1
+  camera: ^0.11.2
+  flutter_contacts: ^1.1.9+2
+  google_mlkit_barcode_scanning: ^0.12.0
+  carousel_slider: ^5.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  retrofit_generator: ^9.6.0
+  freezed: ^3.0.6
+  json_serializable: ^6.9.5
+  flutter_gen_runner: ^5.11.0
+  build_runner: ^2.4.15
+  flutter_flavorizr: ^2.3.1
+
+flavorizr:
+  flavors:
+    dev:
+      app:
+        name: "Chon selfid (dev)"
+        icon: "assets/images/icon.png"
+      android:
+        applicationId: "com.chondid.app.dev"
+      ios:
+        bundleId: "com.chon.poc"
+    
+    stg:
+      app:
+        name: "Chon selfid (stg)"
+        icon: "assets/images/icon.png"
+      android:
+        applicationId: "com.chondid.app.stg"
+      ios:
+        bundleId: "com.chon.poc"
+
+    prod:
+      app:
+        name: "Chon selfid"
+        icon: "assets/images/icon.png"
+      android:
+        applicationId: "com.chondid.app"
+      ios:
+        bundleId: "com.chon.poc"
+
+  instructions:
+    - assets:download
+    - assets:extract
+    - android:androidManifest
+    - android:flavorizrGradle
+    - android:buildGradle
+    - android:dummyAssets
+    - android:icons
+    - ios:podfile
+    - ios:xcconfig
+    - ios:buildTargets
+    - ios:schema
+    - ios:dummyAssets
+    - ios:icons
+    - ios:plist
+    - ios:launchScreen
+    - macos:podfile
+    - macos:xcconfig
+    - macos:configs
+    - macos:buildTargets
+    - macos:schema
+    - macos:dummyAssets
+    - macos:icons
+    - macos:plist
+    - google:firebase
+    - huawei:agconnect
+    - assets:clean
+
+flutter_gen:
+  output: lib/generated/
+  integrations:
+    flutter_svg: true
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+    - .env
+  
+  fonts:
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/PretendardVariable.ttf
+
+flutter_intl:
+  enabled: true

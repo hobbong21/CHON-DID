@@ -1,0 +1,21 @@
+android {
+    flavorDimensions += "flavor-type"
+
+    productFlavors {
+        dev {
+            dimension "flavor-type"
+            applicationId "com.chondid.app.dev"
+            resValue "string", "app_name", "Chon selfid (dev)"
+        }
+        stg {
+            dimension "flavor-type"
+            applicationId "com.chondid.app.stg"
+            resValue "string", "app_name", "Chon selfid (stg)"
+        }
+        prod {
+            dimension "flavor-type"
+            applicationId "com.chondid.app"
+            resValue "string", "app_name", "Chon selfid"
+        }
+    }
+}

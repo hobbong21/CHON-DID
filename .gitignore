@@ -1,0 +1,55 @@
+# =========================
+# Root-level monorepo ignore
+# =========================
+# Per-subproject ignores live in backend/.gitignore and mobile/.gitignore.
+# This file covers OS noise, IDE files, and a safety net for secrets.
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Environment / secrets (safety net — do not commit)
+.env
+.env.*
+!.env.example
+**/application-local.properties
+**/key.properties
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.p8
+**/*.mobileprovision
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Build outputs (subproject .gitignore files cover these too)
+**/target/
+**/build/
+**/.gradle/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.fvm/
+
+# Terraform local state (infra/terraform handles its own ignore too)
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+!**/*.tfvars.example
+
+# Sandbox-leftover and duplicate artifacts (delete locally, but ignore as a safety net)
+.git_BROKEN_DELETE_ME/
+backend/chon-mobile-main/

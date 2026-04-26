@@ -1,0 +1,10 @@
+.git
+.idea
+*.iml
+*.iws
+*.ipr
+target/
+.vscode/
+.env
+.env.local
+src/main/resources/application-local.properties

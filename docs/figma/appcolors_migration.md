@@ -110,6 +110,40 @@ grep -roh "colors\.\w\+" mobile/lib/presentations | sort | uniq -c | sort -rn | 
 1. **이번 세션은 Phase 1까지** — `app_colors.dart`에 `chonBgPage` 같은 alias 추가. 기존 동작 100% 유지하면서 새 코드가 깨끗하게 진입
 2. **다음 세션부터** Phase 2 deprecation
 3. **그 다음 세션**부터 모듈별 Phase 3 마이그레이션 (1주일에 1~2 모듈 권장)
+4. **Phase 4 (2026-04-26 완료)** — `@Deprecated` 4개 텍스트 필드(`blackText` / `primaryText` / `secondaryText` / `greyText`) 사용처 0건 도달 후 필드 자체를 삭제. `AppColors.light()` 팩토리에서도 제거. analyzer 경고가 사라지고 파레트가 한 단계 더 깨끗해짐.
+
+### Phase 4 — 완료 기록 (2026-04-26)
+
+| 변경 | 위치 |
+|------|------|
+| `color.secondaryText` (12회) → `color.chonTextSecondary` | `mobile/lib/core/theme/app_theme.dart` |
+| `color.blackText` → `color.chonTextPrimary` | `mobile/lib/core/theme/app_theme.dart:123` |
+| `colors.secondaryText` (2회) → `colors.chonTextSecondary` | `mobile/lib/presentations/modules/check_in_out/check_in_out_page.dart` |
+| 4개 deprecated 필드 + 생성자 매개변수 + 팩토리 값 삭제 | `mobile/lib/core/theme/app_colors.dart` |
+
+→ 외부 사용처 0건 확인(`grep -rn "\\.\\(blackText\\|primaryText\\|secondaryText\\|greyText\\)\\b" mobile/lib`) 후 제거. legacy 화면들도 이제 textSecondary/Primary/Tertiary가 *Figma 값*(#5A5A5A, #1E1E1E, #8E8E93)으로 렌더됨 — 벤더 값(#4B5563, #374151, #9E9E9E)에서 미세하게 시프트하지만 디자인 정합성 회복.
+
+남은 deprecated 마커 후보(다음 Phase 5에서 정리할 만한 것):
+- ~~`AppColorsChonAlias` extension 자체를 점진 제거하고 직접 `ChonColors.X` import으로 통일~~ ✅ Phase 5 완료
+- legacy 화면들 색상 전반(`bg/page` `#FFFDF7` vs Figma `#F5F5F5` 톤 차이) 정렬
+
+### Phase 5 — 완료 기록 (2026-04-26)
+
+`AppColorsChonAlias` extension (14 alias getter) 의 실제 사용처는 2개 파일 13곳 뿐이었음:
+- `app_theme.dart` — `color.chonTextSecondary` (12회) + `color.chonTextPrimary` (1회)
+- `check_in_out_page.dart` — `colors.chonTextSecondary` (1회 — Phase 4에서 이미 통합 후 1곳)
+
+| 변경 | 위치 |
+|------|------|
+| `color.chonTextSecondary` (12) → `ChonColors.textSecondary` | `mobile/lib/core/theme/app_theme.dart` |
+| `color.chonTextPrimary` (1) → `ChonColors.textPrimary` | `mobile/lib/core/theme/app_theme.dart` |
+| `colors.chonTextSecondary` (1) → `ChonColors.textSecondary` | `mobile/lib/presentations/modules/check_in_out/check_in_out_page.dart` |
+| `import 'chon_design_tokens.dart'` 추가 | `mobile/lib/core/theme/app_theme.dart` |
+| `AppColorsChonAlias` extension 전체 (14 getter) 삭제 | `mobile/lib/core/theme/app_colors.dart` |
+
+→ 검증 (`grep -rn "chonBgPage\|chonBgSurface\|chonBrandPrimary\|...\|AppColorsChonAlias" mobile/lib`): 잔여 사용처 0건. 코멘트만 남음.
+
+이제 모든 화면이 `import 'package:base_flutter/core/theme/chon_design_tokens.dart'` 한 줄로 canonical 토큰을 직접 사용. `AppColors` 자체는 여전히 살아있지만(non-text 토큰 — primary/border/grey 등) 텍스트 색상 영역에서는 ChonColors 가 단일 진실 원천(SSOT).
 
 ## 각 v2 페이지 토큰 적용 현황 (이미 완료)
 

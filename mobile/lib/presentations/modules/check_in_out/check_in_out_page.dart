@@ -193,15 +193,13 @@ class _CheckInOutPageState extends State<CheckInOutPage> {
                                                                   '',
                                                           size: 88.r,
                                                           eyeStyle: QrEyeStyle(
-                                                            color: colors
-                                                                .secondaryText,
+                                                            color: ChonColors.textSecondary,
                                                             eyeShape: QrEyeShape
                                                                 .square,
                                                           ),
                                                           dataModuleStyle:
                                                               QrDataModuleStyle(
-                                                            color: colors
-                                                                .secondaryText,
+                                                            color: ChonColors.textSecondary,
                                                             dataModuleShape:
                                                                 QrDataModuleShape
                                                                     .square,

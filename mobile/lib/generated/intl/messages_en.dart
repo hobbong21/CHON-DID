@@ -408,6 +408,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
       "Align the front of the ID inside the guide",
     ),
+    "chon_id_gen_capture_tip": MessageLookupByLibrary.simpleMessage(
+      "Shoot against a dark background.\nAdjust the angle so light does not reflect.",
+    ),
+    "chon_id_gen_field_phone":
+        MessageLookupByLibrary.simpleMessage("Phone number"),
+    "chon_id_gen_ocr_form_title": MessageLookupByLibrary.simpleMessage(
+      "Enter the personal information\nfor your CHON ID",
+    ),
+    "chon_id_gen_ocr_form_subtitle_prefix":
+        MessageLookupByLibrary.simpleMessage("If anything looks wrong, please "),
+    "chon_id_gen_ocr_form_subtitle_edit":
+        MessageLookupByLibrary.simpleMessage("edit"),
+    "chon_id_gen_ocr_form_subtitle_suffix":
+        MessageLookupByLibrary.simpleMessage(" it."),
+    "chon_id_gen_review_form_title": MessageLookupByLibrary.simpleMessage(
+      "Enter the additional information\nfor your CHON ID",
+    ),
     "chon_id_gen_done": MessageLookupByLibrary.simpleMessage(
       "Your CHON ID is issued",
     ),

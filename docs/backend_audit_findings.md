@@ -11,13 +11,15 @@
 
 📁 `backend/src/main/java/com/chon/api/controller/RelationController.java:38`
 
-### 2. `SelfIdRepo.createCardSecond` `@Deprecated` 마커
+### 2. `SelfIdRepo.createCardSecond` 제거 (2026-04-26 마감)
 
-백엔드에 `@PostMapping("/create/card-second")` 매핑이 없는데 mobile에 정의되어 있어서 호출 시 404. 다행히 *호출처도 0건* (dead code 상태).
+**1차 조치 (이전 세션):** `@Deprecated('Backend endpoint /identifier/create/card-second is not yet implemented')` 마커 추가 — analyzer 경고로 향후 사용 시도 차단.
 
-**조치:** mobile 메서드에 `@Deprecated('Backend endpoint /identifier/create/card-second is not yet implemented')` 추가. analyzer 경고로 향후 사용 시도 차단. 백엔드 추가되면 deprecation 마커만 떼면 됨.
+**2차 조치 (이번 세션, 마감):** 호출처 0건 dead code로 확정 → 메서드, `.g.dart` 구현, `ApiEndpoints.createSecond` 상수 모두 삭제. 백엔드에서 추후 추가될 경우 `git revert` 또는 git history 참조하여 재추가 가능 (코드는 단순한 retrofit POST 매핑이라 재구성 비용 작음).
 
-📁 `mobile/lib/domain/repositories/self_id_repo.dart:29-37`
+📁 `mobile/lib/domain/repositories/self_id_repo.dart` — 메서드 본문 삭제, NOTE 주석으로 history 보존
+📁 `mobile/lib/domain/repositories/self_id_repo.g.dart` — 생성된 구현 함께 삭제 (다음 build_runner 실행 시 일관 유지)
+📁 `mobile/lib/data/data_source/remote/api_endpoints.dart` — `createSecond` 상수 삭제, NOTE 주석 보존
 
 ## 🟡 정책 이슈 — 백엔드 PR 또는 보안 검토 필요
 
@@ -48,11 +50,15 @@ oauth2.ignore-urls=/auth/login,/auth/login/2fa,/auth/refresh,/auth/logout,
 
 → **액션:** 보안 책임자에게 위 3개 경로의 무인증 허용이 의도된 정책인지 확인. 의도되지 않았으면 ignore-urls에서 제거 + 401 응답 처리.
 
-### 4. `verifyDid` 응답 schema 호환성
+### 4. `verifyDid` 응답 schema 호환성 (2026-04-26 사전 분석 완료)
 
-mobile은 `Future<CardInfoItem> verifyDid(...)`로 받는데, backend `VerifyController.@GetMapping("/verify-did")`의 실제 응답 wrapper(`ResponseData<...>` vs raw)와 모바일 모델(`CardInfoItem`) JSON 스키마 일치 여부 확인 필요.
+mobile 은 `Future<CardInfoItem> verifyDid(...)`로 받는데, backend 는 `VerifyDIDDTO` (4 필드만) 반환.
 
-→ **액션:** Postman / Swagger UI에서 `GET /verify/verify-did?token=<sample>` 호출 → 응답 JSON과 [`CardInfoItem` Freezed 정의](../mobile/lib/data/models/self_id/list_card_info_model.dart)의 `@JsonKey` 필드 매칭 검증.
+🔴 **확인된 mismatch**: 18 필드 중 3 필드(`txId`, `blockHeight`, `did`)만 일치. mobile 의 `name`, `idNumber`, `imgPath` 등은 항상 null 로 들어와서 `mutual_auth_offline_scan_page` 가 "이름: -" 로 렌더되고 있을 가능성 높음.
+
+→ **상세 분석 + 수정 옵션 (A/B/C) + Postman 검증 절차**: [`docs/verify_did_schema_audit.md`](./verify_did_schema_audit.md)
+
+→ **다음 액션**: 백엔드/모바일 팀이 옵션 A (backend 확장 — 사용자 UX 회복) 또는 B (mobile 모델 축소 — schema 정확성) 중 결정. 결정 시 회귀 integration test 추가 권장.
 
 ## 🔍 다음 세션 추가 검토 후보
 
@@ -60,9 +66,9 @@ mobile은 `Future<CardInfoItem> verifyDid(...)`로 받는데, backend `VerifyCon
 
 라우터 v2 라우트들에 `redirect: AuthGuard.guard` 적용 — `/v2/idGeneration` 같은 경로도 토큰 필수. 그런데 `/identifier/create/card`(백엔드)는 토큰 없이도 호출 가능하므로 모바일 `Routes.idGenerationV2`까지 도달 *전*에 토큰 발급되는 흐름이 보장돼야 합니다.
 
-### B. `createCardSecond` 백엔드 구현 여부
+### B. `createCardSecond` 백엔드 구현 여부 (2026-04-26 종결)
 
-비즈니스 로직: 첫 카드 발급(`/create/card`) → "second" pass에서 보강 정보 저장? 아니면 두 번째 카드(예: 가족 카드)? 인계 가능한 비즈니스 컨텍스트 확보 후 backend service 메서드로 추가.
+✅ **결정:** mobile dead code 제거 (위 항목 2 참조). 비즈니스 컨텍스트가 명확해진 이후 필요해지면 backend + mobile 양쪽을 같이 추가하는 흐름으로 재시작.
 
 ### C. CI에서 endpoint 매트릭스 자동 검증
 
@@ -80,3 +86,13 @@ mobile은 `Future<CardInfoItem> verifyDid(...)`로 받는데, backend `VerifyCon
 | `backend/src/main/java/com/chon/api/controller/RelationController.java` | `delete/{id}` → `/delete/{id}` (slash 통일) |
 | `mobile/lib/domain/repositories/self_id_repo.dart` | `createCardSecond`에 `@Deprecated` 마커 + 주석 |
 | `docs/backend_audit_findings.md` (이 파일) | 정책 이슈 3, 4 인계 |
+
+## 변경 요약 (2026-04-26 추가 마감 작업)
+
+| 파일 | 변경 |
+|------|------|
+| `mobile/lib/domain/repositories/self_id_repo.dart` | `createCardSecond` 메서드 삭제 — NOTE 주석으로 history 보존 |
+| `mobile/lib/domain/repositories/self_id_repo.g.dart` | 생성 구현 함께 삭제 |
+| `mobile/lib/data/data_source/remote/api_endpoints.dart` | `createSecond` 상수 삭제 |
+| `docs/backend_endpoint_audit.md` | `createCardSecond` 행 — 종결 표시 |
+| `docs/backend_audit_findings.md` (이 파일) | 후속 후보 B 종결 |

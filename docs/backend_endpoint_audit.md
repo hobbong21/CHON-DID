@@ -11,7 +11,7 @@
 | 모바일 메서드 | 모바일 path | 백엔드 컨트롤러 | 상태 |
 |----------|---------|---------------|------|
 | `createCard` | `POST /identifier/create/card` | `CardInfoController` `@PostMapping("/create/card")` | ✅ |
-| `createCardSecond` | `POST /identifier/create/card-second` | `CardInfoController` (`/create/card-second` 매핑은 확인 필요) | ⚠️ 추후 확인 |
+| ~~`createCardSecond`~~ | ~~`POST /identifier/create/card-second`~~ | ~~`CardInfoController`~~ | ❎ 2026-04-26 mobile dead code 제거 |
 | `updateSelfId` | `POST /identifier/update/card` | `CardInfoController` `@PostMapping("/update/card")` | ✅ |
 | `getListCardInfo` | `GET /identifier/list-card-info` | `CardInfoController` `@GetMapping(value = "/list-card-info")` | ✅ |
 | `getSelfIdDetail` | `GET /identifier/card-info/{id}` | `CardInfoController` `@GetMapping("/card-info/{id}")` | ✅ |
@@ -75,15 +75,15 @@
 
 ## ⚠️ 잠재적 이슈
 
-### 1. `createCardSecond` (`/identifier/create/card-second`)
+### 1. ~~`createCardSecond` (`/identifier/create/card-second`)~~ ✅ 2026-04-26 종결
 
-모바일 `SelfIdRepo`에 정의된 메서드인데 grep 결과 백엔드 컨트롤러에 명시적인 `@PostMapping("/create/card-second")` 매핑이 안 보임. 확인 필요:
+mobile에 정의되어 있었으나 호출처 0건의 dead code였음. 백엔드 컨트롤러에 매핑이 추가될 계획이 없음을 확인하고 mobile에서 완전 제거:
 
-```bash
-grep -nA 3 "create/card-second\|createSecond" backend/src/main/java/com/chon/api/controller/CardInfoController.java
-```
+- `SelfIdRepo.createCardSecond` 메서드 삭제
+- `self_id_repo.g.dart`의 생성 구현 삭제
+- `ApiEndpoints.createSecond` 상수 삭제
 
-없으면 backend 추가가 필요한 영역. 모바일 v2 플로우 중 ID Generation의 second-pass (재발급 / 갱신)를 쓸 경우 영향.
+향후 두 번째 pass 발급 비즈니스 요구가 생기면 backend 매핑 + mobile 메서드를 동시 추가하는 방식으로 재시작. git history(`git log -- mobile/lib/domain/repositories/self_id_repo.dart`)에 retrofit POST 매핑 코드가 단순하게 남아있음.
 
 ### 2. `getInitRelationList` (`initRelationList` 상수, `/identifier/init-family-tree`)
 

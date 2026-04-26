@@ -74,35 +74,6 @@ class _SelfIdRepo implements SelfIdRepo {
   }
 
   @override
-  Future<CreateCardData> createCardSecond({
-    required CreateCardRequest body,
-  }) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = body;
-    final _options = _setStreamType<CreateCardData>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/identifier/create/card-second',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CreateCardData _value;
-    try {
-      _value = CreateCardData.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
   Future<void> updateSelfId({required CreateCardRequest selfidModel}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

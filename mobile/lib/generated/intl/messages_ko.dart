@@ -356,6 +356,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
       "신분증 앞면을 가이드 안에 맞춰주세요",
     ),
+    "chon_id_gen_capture_tip": MessageLookupByLibrary.simpleMessage(
+      "어두운 배경에서 촬영해주세요.\n빛이 반사되지 않도록 방향을 조정해 주세요.",
+    ),
+    "chon_id_gen_field_phone": MessageLookupByLibrary.simpleMessage("전화번호"),
+    "chon_id_gen_ocr_form_title": MessageLookupByLibrary.simpleMessage(
+      "ID 생성에 입력할\n개인정보를 입력해주세요",
+    ),
+    "chon_id_gen_ocr_form_subtitle_prefix":
+        MessageLookupByLibrary.simpleMessage("스캔 내용이 틀린부분은 "),
+    "chon_id_gen_ocr_form_subtitle_edit":
+        MessageLookupByLibrary.simpleMessage("수정"),
+    "chon_id_gen_ocr_form_subtitle_suffix":
+        MessageLookupByLibrary.simpleMessage(" 해주세요"),
+    "chon_id_gen_review_form_title": MessageLookupByLibrary.simpleMessage(
+      "ID 생성에 입력할\n추가 정보를 입력해주세요",
+    ),
     "chon_id_gen_done": MessageLookupByLibrary.simpleMessage("CHON ID가 발급되었어요"),
     "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage(
       "필수 정보가 누락되었습니다.",

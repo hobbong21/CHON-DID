@@ -308,6 +308,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
       "將身分證正面對準指引框",
     ),
+    "chon_id_gen_capture_tip": MessageLookupByLibrary.simpleMessage(
+      "請在深色背景下拍攝。\n調整方向避免反光。",
+    ),
+    "chon_id_gen_field_phone": MessageLookupByLibrary.simpleMessage("電話號碼"),
+    "chon_id_gen_ocr_form_title": MessageLookupByLibrary.simpleMessage(
+      "請輸入用於產生 ID 的\n個人資訊",
+    ),
+    "chon_id_gen_ocr_form_subtitle_prefix":
+        MessageLookupByLibrary.simpleMessage("如有錯誤,請"),
+    "chon_id_gen_ocr_form_subtitle_edit":
+        MessageLookupByLibrary.simpleMessage("修改"),
+    "chon_id_gen_ocr_form_subtitle_suffix":
+        MessageLookupByLibrary.simpleMessage(""),
+    "chon_id_gen_review_form_title": MessageLookupByLibrary.simpleMessage(
+      "請輸入用於產生 ID 的\n附加資訊",
+    ),
     "chon_id_gen_done": MessageLookupByLibrary.simpleMessage("CHON ID 已簽發"),
     "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage("缺少必填資訊。"),
     "chon_id_gen_field_address": MessageLookupByLibrary.simpleMessage("地址"),

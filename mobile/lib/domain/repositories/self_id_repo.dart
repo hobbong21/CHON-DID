@@ -26,16 +26,11 @@ abstract class SelfIdRepo {
     @Body() required CreateCardRequest body,
   });
 
-  // ⚠️ Backend mapping NOT implemented as of 2026-04-26.
-  // Mobile defines this method but no caller currently invokes it. Once the
-  // backend `@PostMapping("/create/card-second")` is added in
-  // `CardInfoController`, drop the @Deprecated marker.
-  // See `docs/backend_endpoint_audit.md`.
-  @Deprecated('Backend endpoint /identifier/create/card-second is not yet implemented')
-  @POST(ApiEndpoints.createSecond)
-  Future<CreateCardData> createCardSecond({
-    @Body() required CreateCardRequest body,
-  });
+  // NOTE: `createCardSecond` (POST /identifier/create/card-second) was
+  // removed on 2026-04-26 — the backend never implemented the endpoint and
+  // there were zero callers in the mobile app. If the backend adds it later,
+  // re-add this method and the matching `ApiEndpoints.createSecond` constant.
+  // See `docs/backend_endpoint_audit.md` for the full audit trail.
 
   @POST(ApiEndpoints.updateSelfId)
   Future<void> updateSelfId({

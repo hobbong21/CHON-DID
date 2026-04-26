@@ -424,6 +424,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
       "Căn mặt trước của ID vào khung",
     ),
+    "chon_id_gen_capture_tip": MessageLookupByLibrary.simpleMessage(
+      "Hãy chụp trên nền tối.\nĐiều chỉnh hướng để tránh phản chiếu.",
+    ),
+    "chon_id_gen_field_phone":
+        MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+    "chon_id_gen_ocr_form_title": MessageLookupByLibrary.simpleMessage(
+      "Nhập thông tin cá nhân\ncho CHON ID",
+    ),
+    "chon_id_gen_ocr_form_subtitle_prefix":
+        MessageLookupByLibrary.simpleMessage("Nếu có sai sót, vui lòng "),
+    "chon_id_gen_ocr_form_subtitle_edit":
+        MessageLookupByLibrary.simpleMessage("chỉnh sửa"),
+    "chon_id_gen_ocr_form_subtitle_suffix":
+        MessageLookupByLibrary.simpleMessage(" lại"),
+    "chon_id_gen_review_form_title": MessageLookupByLibrary.simpleMessage(
+      "Nhập thông tin bổ sung\ncho CHON ID",
+    ),
     "chon_id_gen_done": MessageLookupByLibrary.simpleMessage(
       "Đã phát hành CHON ID",
     ),

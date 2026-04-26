@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
+import 'chon_design_tokens.dart';
 
 abstract class BaseThemes {
   late ThemeData _light;
@@ -77,7 +78,7 @@ abstract class BaseThemes {
             fontFamily: 'Pretendard',
             fontSize: 16.0.sp,
             fontWeight: FontWeight.w400,
-            color: color.secondaryText),
+            color: ChonColors.textSecondary),
         backgroundColor: color.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
@@ -91,7 +92,7 @@ abstract class BaseThemes {
             fontFamily: 'Pretendard', color: color.black, fontSize: 45.sp),
         displaySmall: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 36.sp),
         headlineLarge: TextStyle(
             fontFamily: 'Pretendard',
@@ -105,7 +106,7 @@ abstract class BaseThemes {
             fontSize: 28.sp),
         headlineSmall: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontWeight: FontWeight.w700,
             fontSize: 24.sp),
         titleLarge: TextStyle(
@@ -120,32 +121,32 @@ abstract class BaseThemes {
             fontSize: 16.sp),
         titleSmall: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.blackText,
+            color: ChonColors.textPrimary,
             fontWeight: FontWeight.w500,
             fontSize: 14.sp),
         bodyLarge: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 16.sp),
         bodyMedium: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 14.sp),
         bodySmall: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 12.sp),
         labelLarge: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 14.sp),
         labelMedium: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 12.sp),
         labelSmall: TextStyle(
             fontFamily: 'Pretendard',
-            color: color.secondaryText,
+            color: ChonColors.textSecondary,
             fontSize: 11.sp),
       )),
       hintColor: color.hintText,
@@ -237,7 +238,7 @@ abstract class BaseThemes {
           textStyle: TextStyle(
               fontFamily: 'Pretendard',
               fontSize: 18.sp,
-              color: color.secondaryText,
+              color: ChonColors.textSecondary,
               fontWeight: FontWeight.w500),
           padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 6.h),
           shape: RoundedRectangleBorder(

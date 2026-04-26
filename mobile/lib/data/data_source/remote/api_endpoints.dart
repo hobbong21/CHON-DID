@@ -10,7 +10,8 @@ final class ApiEndpoints {
 
   // SELF ID
   static const String createSelfId = '/identifier/create/card';
-  static const String createSecond = '/identifier/create/card-second';
+  // `createSecond` removed 2026-04-26 — backend never implemented
+  // `/identifier/create/card-second` and the mobile method had zero callers.
   static const String updateSelfId = '/identifier/update/card';
 
   static const String createVerifier = '/identifier/create/verifier';

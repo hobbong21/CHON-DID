@@ -5219,6 +5219,76 @@ class S {
     );
   }
 
+  /// `Shoot against a dark background.\nAdjust the angle so light does not reflect.`
+  String get chon_id_gen_capture_tip {
+    return Intl.message(
+      'Shoot against a dark background.\nAdjust the angle so light does not reflect.',
+      name: 'chon_id_gen_capture_tip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get chon_id_gen_field_phone {
+    return Intl.message(
+      'Phone number',
+      name: 'chon_id_gen_field_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the personal information\nfor your CHON ID`
+  String get chon_id_gen_ocr_form_title {
+    return Intl.message(
+      'Enter the personal information\nfor your CHON ID',
+      name: 'chon_id_gen_ocr_form_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If anything looks wrong, please `
+  String get chon_id_gen_ocr_form_subtitle_prefix {
+    return Intl.message(
+      'If anything looks wrong, please ',
+      name: 'chon_id_gen_ocr_form_subtitle_prefix',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `edit`
+  String get chon_id_gen_ocr_form_subtitle_edit {
+    return Intl.message(
+      'edit',
+      name: 'chon_id_gen_ocr_form_subtitle_edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` it.`
+  String get chon_id_gen_ocr_form_subtitle_suffix {
+    return Intl.message(
+      ' it.',
+      name: 'chon_id_gen_ocr_form_subtitle_suffix',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the additional information\nfor your CHON ID`
+  String get chon_id_gen_review_form_title {
+    return Intl.message(
+      'Enter the additional information\nfor your CHON ID',
+      name: 'chon_id_gen_review_form_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm what we read`
   String get chon_id_gen_ocr_title {
     return Intl.message(

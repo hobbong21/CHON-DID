@@ -7,6 +7,8 @@
 
 이 인덱스는 페이지 안의 모든 섹션과 핵심 화면을 정리한 것입니다. 화면 단위 디자인 명세는 [home_spec.md](./home_spec.md)를 참고. 스크린샷은 채팅 위젯에서 인라인으로 보여드렸지만 Figma MCP의 URL은 단명이라 영구 보존이 필요하면 Figma 데스크톱에서 직접 export하시거나 fileKey + nodeId로 재요청해야 합니다.
 
+> **디자인 회귀 가드:** 9개 v2 페이지에 골든 테스트(픽셀 스냅샷)를 적용했습니다. 디자인 토큰을 변경하거나 새 페이지를 v2화할 때는 [`mobile/test/golden/README.md`](../../mobile/test/golden/README.md)의 워크플로(`flutter test test/golden --update-goldens`)를 따라 골든을 재생성하고 PR에서 PNG diff를 검토해야 합니다.
+
 ## 디자인 토큰 (페이지 전체에서 추출)
 
 ### Color

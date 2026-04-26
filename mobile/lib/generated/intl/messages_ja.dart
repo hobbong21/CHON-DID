@@ -352,6 +352,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
       "身分証の表面をガイド内に合わせてください",
     ),
+    "chon_id_gen_capture_tip": MessageLookupByLibrary.simpleMessage(
+      "暗い背景で撮影してください。\n光が反射しないよう向きを調整してください。",
+    ),
+    "chon_id_gen_field_phone": MessageLookupByLibrary.simpleMessage("電話番号"),
+    "chon_id_gen_ocr_form_title": MessageLookupByLibrary.simpleMessage(
+      "ID作成のための\n個人情報を入力してください",
+    ),
+    "chon_id_gen_ocr_form_subtitle_prefix":
+        MessageLookupByLibrary.simpleMessage("スキャン内容に誤りがあれば"),
+    "chon_id_gen_ocr_form_subtitle_edit":
+        MessageLookupByLibrary.simpleMessage("修正"),
+    "chon_id_gen_ocr_form_subtitle_suffix":
+        MessageLookupByLibrary.simpleMessage("してください"),
+    "chon_id_gen_review_form_title": MessageLookupByLibrary.simpleMessage(
+      "ID作成のための\n追加情報を入力してください",
+    ),
     "chon_id_gen_done": MessageLookupByLibrary.simpleMessage("CHON IDが発行されました"),
     "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage(
       "必須情報が不足しています。",

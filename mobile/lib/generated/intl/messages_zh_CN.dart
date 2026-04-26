@@ -310,6 +310,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "chon_id_gen_capture_front": MessageLookupByLibrary.simpleMessage(
       "将身份证正面对准指引框",
     ),
+    "chon_id_gen_capture_tip": MessageLookupByLibrary.simpleMessage(
+      "请在深色背景下拍摄。\n调整方向避免反光。",
+    ),
+    "chon_id_gen_field_phone": MessageLookupByLibrary.simpleMessage("电话号码"),
+    "chon_id_gen_ocr_form_title": MessageLookupByLibrary.simpleMessage(
+      "请输入用于生成 ID 的\n个人信息",
+    ),
+    "chon_id_gen_ocr_form_subtitle_prefix":
+        MessageLookupByLibrary.simpleMessage("如有错误,请"),
+    "chon_id_gen_ocr_form_subtitle_edit":
+        MessageLookupByLibrary.simpleMessage("修改"),
+    "chon_id_gen_ocr_form_subtitle_suffix":
+        MessageLookupByLibrary.simpleMessage(""),
+    "chon_id_gen_review_form_title": MessageLookupByLibrary.simpleMessage(
+      "请输入用于生成 ID 的\n附加信息",
+    ),
     "chon_id_gen_done": MessageLookupByLibrary.simpleMessage("CHON ID 已签发"),
     "chon_id_gen_err_required": MessageLookupByLibrary.simpleMessage("缺少必填信息。"),
     "chon_id_gen_field_address": MessageLookupByLibrary.simpleMessage("地址"),

@@ -38,26 +38,18 @@ class AppColors {
   /// Text ---
   final Color whiteText;
 
-  /// Vendor `#374151` differs from Figma `#1E1E1E`.
-  /// Use `ChonColors.textPrimary`. See `docs/figma/appcolors_migration.md`.
-  @Deprecated('Use ChonColors.textPrimary from chon_design_tokens.dart')
-  final Color blackText;
-
-  /// **Vendor placeholder error** — `primaryText` was set to the brand
-  /// orange `#FFA000` by mistake. Body text should be `ChonColors.textPrimary`
-  /// (`#1E1E1E`). See `docs/figma/appcolors_migration.md`.
-  @Deprecated('Vendor placeholder; use ChonColors.textPrimary instead')
-  final Color primaryText;
-
-  /// Vendor `#4B5563` differs from Figma `#5A5A5A`.
-  /// Use `ChonColors.textSecondary`.
-  @Deprecated('Use ChonColors.textSecondary from chon_design_tokens.dart')
-  final Color secondaryText;
-
-  /// Vendor `#9E9E9E` differs from Figma `#8E8E93`.
-  /// Use `ChonColors.textTertiary`.
-  @Deprecated('Use ChonColors.textTertiary from chon_design_tokens.dart')
-  final Color greyText;
+  // ---------------------------------------------------------------------------
+  // Phase 4 cleanup (2026-04-26):
+  // The four legacy text-color fields below were removed after every caller
+  // migrated to the `chon*` aliases (which return canonical Figma values).
+  //
+  //   blackText      → ChonColors.textPrimary   (#1E1E1E, was vendor #374151)
+  //   primaryText    → ChonColors.textPrimary   (was vendor placeholder #FFA000)
+  //   secondaryText  → ChonColors.textSecondary (#5A5A5A, was vendor #4B5563)
+  //   greyText       → ChonColors.textTertiary  (#8E8E93, was vendor #9E9E9E)
+  //
+  // See `docs/figma/appcolors_migration.md` for the full migration log.
+  // ---------------------------------------------------------------------------
 
   final Color blueText;
   final Color greenText;
@@ -79,10 +71,6 @@ class AppColors {
     required this.white,
     required this.black,
     required this.whiteText,
-    required this.blackText,
-    required this.primaryText,
-    required this.secondaryText,
-    required this.greyText,
     required this.labelText,
     required this.errorText,
     required this.primary,
@@ -129,16 +117,12 @@ class AppColors {
       green: Colors.green,
       greenText: Colors.green,
       whiteText: Color(0xffffffff),
-      blackText: Color(0xff374151),
       primary: Color(0xffFFA000),
       primaryGradient1: Color(0xff2563EB),
       primaryGradient2: Color(0xff1D4ED8),
       primaryGradient3: Color(0xff1E40AF),
       appBarGradient1: Color(0xff3B82F6),
       appBarGradient2: Color(0xff9333EA),
-      primaryText: Color(0xffFFA000),
-      secondaryText: Color(0xff4B5563),
-      greyText: Color(0xff9E9E9E),
       border: Color(0xffF3F4F6),
       divider: Color(0xffF1F1F1),
       grey: Colors.grey,
@@ -171,55 +155,12 @@ class AppColors {
   }
 }
 
-/// Chon design-token aliases — use these getters from existing screens
-/// that are migrating off the legacy [AppColors] palette and onto the
-/// canonical [ChonColors] (in `chon_design_tokens.dart`).
-///
-/// New screens should import [ChonColors] directly. These aliases exist
-/// only so legacy screens can switch values without changing the
-/// `context.colors.<field>` access pattern overnight.
-///
-/// See `docs/figma/appcolors_migration.md` for the full plan.
-extension AppColorsChonAlias on AppColors {
-  /// `#F5F5F5` — page background.
-  Color get chonBgPage => const Color(0xFFF5F5F5);
-
-  /// `#FFFFFF` — card / sheet surface.
-  Color get chonBgSurface => const Color(0xFFFFFFFF);
-
-  /// `#FFA000` — primary brand orange.
-  Color get chonBrandPrimary => const Color(0xFFFFA000);
-
-  /// `#FF9500` — brand accent.
-  Color get chonBrandAccent => const Color(0xFFFF9500);
-
-  /// `#0C0C16` — logo dark.
-  Color get chonBrandDark => const Color(0xFF0C0C16);
-
-  /// `#1E1E1E` — primary text.
-  Color get chonTextPrimary => const Color(0xFF1E1E1E);
-
-  /// `#5A5A5A` — secondary text / active nav label.
-  Color get chonTextSecondary => const Color(0xFF5A5A5A);
-
-  /// `#8E8E93` — tertiary / inactive nav label.
-  Color get chonTextTertiary => const Color(0xFF8E8E93);
-
-  /// `#FFFFFF` — text on dark backgrounds.
-  Color get chonTextInverse => const Color(0xFFFFFFFF);
-
-  /// `#404040` — strong icon stroke (notification bell).
-  Color get chonIconStrong => const Color(0xFF404040);
-
-  /// `#BFBFBF` — disabled icon stroke (strong).
-  Color get chonIconDisabledStrong => const Color(0xFFBFBFBF);
-
-  /// `#B4B2B3` — disabled icon stroke (soft / system nav).
-  Color get chonIconDisabledSoft => const Color(0xFFB4B2B3);
-
-  /// `#E24B4A` — semantic danger / error.
-  Color get chonSemanticDanger => const Color(0xFFE24B4A);
-
-  /// `#1D9E75` — semantic success.
-  Color get chonSemanticSuccess => const Color(0xFF1D9E75);
-}
+// `AppColorsChonAlias` extension was removed 2026-04-26 (Phase 5).
+//
+// All callers now import `ChonColors` directly from `chon_design_tokens.dart`
+// and use the canonical names (e.g. `ChonColors.textSecondary` instead of
+// `context.theme.colors.chonTextSecondary`). The alias extension served as
+// a Phase-1 compatibility shim while we migrated 44 legacy files; with
+// migration complete the indirection is now dead code.
+//
+// See `docs/figma/appcolors_migration.md` for the full migration log.

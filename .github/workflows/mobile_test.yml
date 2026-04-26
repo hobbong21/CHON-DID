@@ -1,0 +1,105 @@
+name: Mobile tests
+
+# Run unit, widget, and golden tests for the Flutter mobile app.
+#
+# Goldens are split into a separate job because:
+#   - they are platform-sensitive (must run on a single reference OS — Linux)
+#   - their failure surface (a PNG diff) is best uploaded as a downloadable
+#     artifact rather than streamed into the log
+#   - they require a one-time `--update-goldens` baseline generation that
+#     non-golden runs should not be coupled to.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'mobile/**'
+      - '.github/workflows/mobile_test.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'mobile/**'
+      - '.github/workflows/mobile_test.yml'
+
+defaults:
+  run:
+    working-directory: mobile
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # 1. Unit + widget + integration tests EXCLUDING goldens.
+  #    Fast, deterministic, no PNG comparison.
+  # ---------------------------------------------------------------------------
+  test:
+    name: Unit + widget tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.3'
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate i18n + freezed + retrofit
+        run: |
+          flutter pub run intl_utils:generate
+          flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Verify formatting
+        run: dart format --set-exit-if-changed lib test
+
+      - name: Static analysis
+        run: flutter analyze --fatal-infos
+
+      - name: Run tests (excluding goldens)
+        run: flutter test --exclude-tags golden --reporter expanded
+
+  # ---------------------------------------------------------------------------
+  # 2. Golden snapshot tests — Linux-only, separate runner.
+  #    On failure, the *failures/* PNGs are uploaded so reviewers can inspect.
+  # ---------------------------------------------------------------------------
+  golden:
+    name: Golden snapshot tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: test  # only spend golden time if the cheap tests pass
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Pull LFS blobs in case PNG goldens grow past the inline threshold.
+          # Safe no-op if no LFS objects are present.
+          lfs: true
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.3'
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate i18n + freezed + retrofit
+        run: |
+          flutter pub run intl_utils:generate
+          flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Run golden tests
+        run: flutter test --tags golden --reporter expanded
+
+      - name: Upload golden failure diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-failures-${{ github.run_id }}
+          path: mobile/test/golden/failures/
+          retention-days: 14
+          if-no-files-found: ignore

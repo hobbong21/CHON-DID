@@ -1,6 +1,12 @@
-# CHON-DID 모노레포 Push 가이드
+# CHON 모노레포 Push 가이드
 
-이 폴더(`C:\I. Program\Workspace_\DID`)를 `https://github.com/hobbong21/CHON-DID.git`에 모노레포로 push하기 위한 절차입니다.
+이 폴더(`C:\I. Program\Workspace_\DID`)를 GitHub 저장소에 모노레포로 push하기 위한 절차입니다.
+
+대상 저장소 (둘 다 같은 모노레포 내용을 받음):
+- `https://github.com/hobbong21/CHON-DID.git` — 1차 저장소
+- `https://github.com/hobbong21/chon-home.git` — 2차 저장소 (추가)
+
+> chon-home 저장소만 새로 push할 거면 [§ chon-home에도 추가 push](#chon-home에도-추가-push) 섹션으로 바로 가시면 됩니다.
 
 ## 사전 작업 (Claude가 이미 한 것)
 
@@ -100,7 +106,7 @@ git checkout main       # 작업은 dev에서 하고, main은 깨끗하게
 ## 한 줄 요약
 
 ```powershell
-# 위 단계를 한 번에:
+# CHON-DID 1차 push
 cd "C:\I. Program\Workspace_\DID"
 Remove-Item -Recurse -Force ".git_BROKEN_DELETE_ME","backend\chon-mobile-main"
 git init -b main
@@ -109,4 +115,82 @@ git remote add origin https://github.com/hobbong21/CHON-DID.git
 git push -u origin main
 git checkout -b dev ; git push -u origin dev
 git checkout main
+```
+
+## chon-home에도 추가 push
+
+CHON-DID 1차 push가 끝난 상태에서 동일 내용을 `chon-home`에도 보냅니다. 같은 커밋 히스토리가 두 저장소에 들어가는 형태입니다.
+
+> chon-home 저장소가 GitHub에 이미 만들어져 있어야 합니다 (`hobbong21/chon-home`). 비어있는 상태(README/initial commit 없음)여야 깔끔하게 들어가요. 만약 GitHub에서 만들 때 README를 같이 생성했다면 아래 *문제 해결* 표의 `non-fast-forward` 항목 참고.
+
+### 권장 — 별도 remote alias로 추가
+
+```powershell
+cd "C:\I. Program\Workspace_\DID"
+
+# 기존 origin은 CHON-DID 그대로 두고, chon-home은 별도 alias로 추가
+git remote add chon-home https://github.com/hobbong21/chon-home.git
+git remote -v
+# origin     https://github.com/hobbong21/CHON-DID.git (fetch/push)
+# chon-home  https://github.com/hobbong21/chon-home.git (fetch/push)
+
+# main, dev 둘 다 chon-home으로도 push
+git push chon-home main
+git push chon-home dev
+```
+
+이후 push할 때마다 두 저장소를 같이 동기화하려면 명령 두 줄을 매번 치면 됩니다. 한 번에 처리하고 싶으면:
+
+```powershell
+git push origin main ; git push chon-home main
+git push origin dev  ; git push chon-home dev
+```
+
+### 더 자동화 — 한 번 push로 두 저장소 동시 전송
+
+`origin`에 push URL을 두 개 등록해두면 `git push origin`만 쳐도 두 군데로 갑니다 (fetch는 첫 번째 URL만 사용):
+
+```powershell
+git remote set-url --add --push origin https://github.com/hobbong21/CHON-DID.git
+git remote set-url --add --push origin https://github.com/hobbong21/chon-home.git
+git remote -v
+# origin  https://github.com/hobbong21/CHON-DID.git (fetch)
+# origin  https://github.com/hobbong21/CHON-DID.git (push)
+# origin  https://github.com/hobbong21/chon-home.git (push)
+```
+
+이러면 `git push origin main` 한 번에 양쪽으로 갑니다. 단, **별도 remote alias 방식이 디버깅하기 더 쉽고** 한쪽이 실패해도 다른 쪽은 영향 안 받기 때문에 권장은 위쪽입니다.
+
+### chon-home만 새로 push할 때 (CHON-DID 작업 안 했음)
+
+```powershell
+cd "C:\I. Program\Workspace_\DID"
+Remove-Item -Recurse -Force ".git_BROKEN_DELETE_ME","backend\chon-mobile-main"
+git init -b main
+git add . ; git commit -m "chore: initial monorepo import (backend + mobile)"
+git remote add origin https://github.com/hobbong21/chon-home.git
+git push -u origin main
+git checkout -b dev ; git push -u origin dev
+git checkout main
+```
+
+### 추가 확인 사항 (chon-home이 비어있지 않을 때)
+
+만약 `git push chon-home main`이 다음 에러로 실패하면:
+
+```
+! [rejected]        main -> main (fetch first)
+error: failed to push some refs to '...chon-home.git'
+hint: Updates were rejected because the remote contains work that you do not have locally.
+```
+
+→ 보통 GitHub에서 새 저장소 생성 시 *Add a README* / *Add .gitignore* 옵션을 켰을 때 발생합니다. 두 가지 선택지:
+
+```powershell
+# A) chon-home의 기존 커밋(README 등)을 머지해서 받아오기
+git pull chon-home main --allow-unrelated-histories
+git push chon-home main
+
+# B) 강제 덮어쓰기 (chon-home의 기존 README가 사라짐 — 신중하게)
+git push chon-home main --force
 ```

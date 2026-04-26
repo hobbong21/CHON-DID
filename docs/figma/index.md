@@ -269,6 +269,11 @@ Figma MCP 도구로 호출:
 | Mutual Auth Offline / QR (Cubit + Entry/Display/Scan 페이지) | [`mobile/lib/presentations/modules/mutual_auth_offline/`](../../mobile/lib/presentations/modules/mutual_auth_offline) |
 | InProc Contact v2 (Cubit + 진행/완료/실패 페이지) | [`mobile/lib/presentations/modules/inproc_contact_v2/`](../../mobile/lib/presentations/modules/inproc_contact_v2) |
 | Profile Edit v2 (기존 Cubit + 새 폼 페이지) | [`mobile/lib/presentations/modules/profile_edit_v2/`](../../mobile/lib/presentations/modules/profile_edit_v2) |
+| Report v2 (Cubit 5-stage + 페이지) | [`mobile/lib/presentations/modules/report_v2/`](../../mobile/lib/presentations/modules/report_v2) |
+| AI Chat v2 (기존 Cubit + 새 페이지) | [`mobile/lib/presentations/modules/ai_chat_v2/`](../../mobile/lib/presentations/modules/ai_chat_v2) |
+| ID Generation v2 (Cubit 10-phase + shell + 핵심 phase) | [`mobile/lib/presentations/modules/id_generation_v2/`](../../mobile/lib/presentations/modules/id_generation_v2) |
+| Section 11 리네이밍 권장 | [`docs/figma/section_11_renaming.md`](./section_11_renaming.md) |
+| Section 3 ID Gen 인계 | [`docs/figma/section_3_id_gen_handoff.md`](./section_3_id_gen_handoff.md) |
 | Family Tree 인계 노트 (이전 세션) | [`docs/figma/family_tree_handoff.md`](./family_tree_handoff.md) |
 | 사용 가이드 | [`mobile/lib/presentations/widgets/README.md`](../../mobile/lib/presentations/widgets/README.md) |
 | Figma → Flutter 자동 변환 워크플로 | [`docs/figma/codegen_workflow.md`](./codegen_workflow.md) |

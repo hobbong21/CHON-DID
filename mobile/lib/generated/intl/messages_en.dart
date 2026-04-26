@@ -335,6 +335,63 @@ class MessageLookup extends MessageLookupByLibrary {
       "Check-out\nconfirmed",
     ),
     "children": MessageLookupByLibrary.simpleMessage("Children"),
+    "chon_action_confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "chon_action_next": MessageLookupByLibrary.simpleMessage("Next"),
+    "chon_action_retry": MessageLookupByLibrary.simpleMessage("Try again"),
+    "chon_action_save": MessageLookupByLibrary.simpleMessage("Save"),
+    "chon_action_send": MessageLookupByLibrary.simpleMessage("Send"),
+    "chon_action_skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "chon_action_start": MessageLookupByLibrary.simpleMessage("Get started"),
+    "chon_home_banner": MessageLookupByLibrary.simpleMessage(
+      "Create your CHON ID through mutual auth.",
+    ),
+    "chon_home_input_label": MessageLookupByLibrary.simpleMessage("Input info"),
+    "chon_home_mutual_subtitle": MessageLookupByLibrary.simpleMessage(
+      "Verify each other\nwith family and relatives",
+    ),
+    "chon_home_mutual_title": MessageLookupByLibrary.simpleMessage(
+      "Mutual auth",
+    ),
+    "chon_home_q_contact": MessageLookupByLibrary.simpleMessage(
+      "Contact\n(Tree)",
+    ),
+    "chon_home_q_edit_profile": MessageLookupByLibrary.simpleMessage(
+      "Edit profile",
+    ),
+    "chon_home_q_qr": MessageLookupByLibrary.simpleMessage("QR code"),
+    "chon_home_q_support": MessageLookupByLibrary.simpleMessage("Support"),
+    "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
+      "CHON DID\nTutorial",
+    ),
+    "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
+    "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("Family tree"),
+    "chon_nav_home": MessageLookupByLibrary.simpleMessage("Home"),
+    "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("ID card"),
+    "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("Mutual auth"),
+    "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
+      "Get your identity verified by family\nand authenticate where needed.",
+    ),
+    "chon_tutorial_s1_title": MessageLookupByLibrary.simpleMessage(
+      "Get verified\nas yourself with CHON DID",
+    ),
+    "chon_tutorial_s2_body": MessageLookupByLibrary.simpleMessage(
+      "Authenticate with your family\nto prove your relationship.",
+    ),
+    "chon_tutorial_s2_title": MessageLookupByLibrary.simpleMessage(
+      "Mutual auth\nbetween people",
+    ),
+    "chon_tutorial_s3_body": MessageLookupByLibrary.simpleMessage(
+      "Visualize your family relations\nand keep the genealogy secure.",
+    ),
+    "chon_tutorial_s3_title": MessageLookupByLibrary.simpleMessage(
+      "Family tree\nwith your loved ones",
+    ),
+    "chon_tutorial_s4_body": MessageLookupByLibrary.simpleMessage(
+      "Setup is complete.\nUse it right away.",
+    ),
+    "chon_tutorial_s4_title": MessageLookupByLibrary.simpleMessage(
+      "Ready to\nstart with CHON?",
+    ),
     "clan": MessageLookupByLibrary.simpleMessage("Clan"),
     "clanOfCertificate": MessageLookupByLibrary.simpleMessage(
       "Certificate of Clan",

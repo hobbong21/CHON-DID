@@ -293,6 +293,57 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkOut": MessageLookupByLibrary.simpleMessage("チェックアウト"),
     "checkOutConfirmed": MessageLookupByLibrary.simpleMessage("チェックアウト\n完了"),
     "children": MessageLookupByLibrary.simpleMessage("子供"),
+    "chon_action_confirm": MessageLookupByLibrary.simpleMessage("確認"),
+    "chon_action_next": MessageLookupByLibrary.simpleMessage("次へ"),
+    "chon_action_retry": MessageLookupByLibrary.simpleMessage("再試行"),
+    "chon_action_save": MessageLookupByLibrary.simpleMessage("保存"),
+    "chon_action_send": MessageLookupByLibrary.simpleMessage("送信"),
+    "chon_action_skip": MessageLookupByLibrary.simpleMessage("スキップ"),
+    "chon_action_start": MessageLookupByLibrary.simpleMessage("始める"),
+    "chon_home_banner": MessageLookupByLibrary.simpleMessage(
+      "相互認証でCHON IDを作成しましょう。",
+    ),
+    "chon_home_input_label": MessageLookupByLibrary.simpleMessage("入力情報"),
+    "chon_home_mutual_subtitle": MessageLookupByLibrary.simpleMessage(
+      "家族・親族と\n相互確認",
+    ),
+    "chon_home_mutual_title": MessageLookupByLibrary.simpleMessage("相互認証"),
+    "chon_home_q_contact": MessageLookupByLibrary.simpleMessage("連絡\n(家系図)"),
+    "chon_home_q_edit_profile": MessageLookupByLibrary.simpleMessage(
+      "プロフィール編集",
+    ),
+    "chon_home_q_qr": MessageLookupByLibrary.simpleMessage("QRコード"),
+    "chon_home_q_support": MessageLookupByLibrary.simpleMessage("サポート"),
+    "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
+      "CHON DID\nチュートリアル",
+    ),
+    "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
+    "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("家系図"),
+    "chon_nav_home": MessageLookupByLibrary.simpleMessage("ホーム"),
+    "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("身分証"),
+    "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("相互認証"),
+    "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
+      "身分を家族・親族に\n確認してもらい、必要な場所で認証しましょう。",
+    ),
+    "chon_tutorial_s1_title": MessageLookupByLibrary.simpleMessage(
+      "CHON DIDで\n本人確認",
+    ),
+    "chon_tutorial_s2_body": MessageLookupByLibrary.simpleMessage(
+      "家族と相互に認証して\n関係を証明します。",
+    ),
+    "chon_tutorial_s2_title": MessageLookupByLibrary.simpleMessage("相互認証"),
+    "chon_tutorial_s3_body": MessageLookupByLibrary.simpleMessage(
+      "家族関係を可視化し\n家系図を安全に保管します。",
+    ),
+    "chon_tutorial_s3_title": MessageLookupByLibrary.simpleMessage(
+      "家族とともに\n家系図",
+    ),
+    "chon_tutorial_s4_body": MessageLookupByLibrary.simpleMessage(
+      "準備が整いました。\n今すぐご利用ください。",
+    ),
+    "chon_tutorial_s4_title": MessageLookupByLibrary.simpleMessage(
+      "CHONを\n始めましょうか?",
+    ),
     "clan": MessageLookupByLibrary.simpleMessage("氏族"),
     "clanOfCertificate": MessageLookupByLibrary.simpleMessage("氏族証明書"),
     "close": MessageLookupByLibrary.simpleMessage("閉じる"),

@@ -255,6 +255,55 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkOut": MessageLookupByLibrary.simpleMessage("簽退"),
     "checkOutConfirmed": MessageLookupByLibrary.simpleMessage("簽退\n已確認"),
     "children": MessageLookupByLibrary.simpleMessage("子女"),
+    "chon_action_confirm": MessageLookupByLibrary.simpleMessage("確認"),
+    "chon_action_next": MessageLookupByLibrary.simpleMessage("下一步"),
+    "chon_action_retry": MessageLookupByLibrary.simpleMessage("重試"),
+    "chon_action_save": MessageLookupByLibrary.simpleMessage("儲存"),
+    "chon_action_send": MessageLookupByLibrary.simpleMessage("傳送"),
+    "chon_action_skip": MessageLookupByLibrary.simpleMessage("略過"),
+    "chon_action_start": MessageLookupByLibrary.simpleMessage("開始"),
+    "chon_home_banner": MessageLookupByLibrary.simpleMessage(
+      "透過互相認證建立你的 CHON ID。",
+    ),
+    "chon_home_input_label": MessageLookupByLibrary.simpleMessage("輸入資訊"),
+    "chon_home_mutual_subtitle": MessageLookupByLibrary.simpleMessage(
+      "與家人、親屬\n互相確認",
+    ),
+    "chon_home_mutual_title": MessageLookupByLibrary.simpleMessage("互相認證"),
+    "chon_home_q_contact": MessageLookupByLibrary.simpleMessage("聯絡\n(家譜)"),
+    "chon_home_q_edit_profile": MessageLookupByLibrary.simpleMessage("編輯資料"),
+    "chon_home_q_qr": MessageLookupByLibrary.simpleMessage("QR 碼"),
+    "chon_home_q_support": MessageLookupByLibrary.simpleMessage("客服"),
+    "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
+      "CHON DID\n教學",
+    ),
+    "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
+    "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("家譜"),
+    "chon_nav_home": MessageLookupByLibrary.simpleMessage("首頁"),
+    "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("身分證"),
+    "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("互認"),
+    "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
+      "請家人為你的身分背書,\n在需要的地方完成驗證。",
+    ),
+    "chon_tutorial_s1_title": MessageLookupByLibrary.simpleMessage(
+      "用 CHON DID\n驗證自己",
+    ),
+    "chon_tutorial_s2_body": MessageLookupByLibrary.simpleMessage(
+      "與家人互相認證\n以證明你們的關係。",
+    ),
+    "chon_tutorial_s2_title": MessageLookupByLibrary.simpleMessage("互相認證"),
+    "chon_tutorial_s3_body": MessageLookupByLibrary.simpleMessage(
+      "視覺化家族關係\n安全保管家譜。",
+    ),
+    "chon_tutorial_s3_title": MessageLookupByLibrary.simpleMessage(
+      "與家人一起\n繪製家譜",
+    ),
+    "chon_tutorial_s4_body": MessageLookupByLibrary.simpleMessage(
+      "已完成設定。\n立即開始使用。",
+    ),
+    "chon_tutorial_s4_title": MessageLookupByLibrary.simpleMessage(
+      "準備好\n開始使用 CHON 了嗎?",
+    ),
     "clan": MessageLookupByLibrary.simpleMessage("姓氏"),
     "clanOfCertificate": MessageLookupByLibrary.simpleMessage("宗族證書"),
     "close": MessageLookupByLibrary.simpleMessage("關閉"),

@@ -301,6 +301,57 @@ class MessageLookup extends MessageLookupByLibrary {
     "checkOut": MessageLookupByLibrary.simpleMessage("체크아웃"),
     "checkOutConfirmed": MessageLookupByLibrary.simpleMessage("체크아웃\n완료"),
     "children": MessageLookupByLibrary.simpleMessage("자녀"),
+    "chon_action_confirm": MessageLookupByLibrary.simpleMessage("확인"),
+    "chon_action_next": MessageLookupByLibrary.simpleMessage("다음"),
+    "chon_action_retry": MessageLookupByLibrary.simpleMessage("다시 시도"),
+    "chon_action_save": MessageLookupByLibrary.simpleMessage("저장하기"),
+    "chon_action_send": MessageLookupByLibrary.simpleMessage("보내기"),
+    "chon_action_skip": MessageLookupByLibrary.simpleMessage("건너뛰기"),
+    "chon_action_start": MessageLookupByLibrary.simpleMessage("시작하기"),
+    "chon_home_banner": MessageLookupByLibrary.simpleMessage(
+      "상호인증으로 CHON ID를 만들어보세요.",
+    ),
+    "chon_home_input_label": MessageLookupByLibrary.simpleMessage("입력 정보"),
+    "chon_home_mutual_subtitle": MessageLookupByLibrary.simpleMessage(
+      "가족, 인척과\n서로를 확인받기",
+    ),
+    "chon_home_mutual_title": MessageLookupByLibrary.simpleMessage("상호 인증"),
+    "chon_home_q_contact": MessageLookupByLibrary.simpleMessage("연락하기\n(가계도)"),
+    "chon_home_q_edit_profile": MessageLookupByLibrary.simpleMessage("프로필 수정"),
+    "chon_home_q_qr": MessageLookupByLibrary.simpleMessage("QR 코드"),
+    "chon_home_q_support": MessageLookupByLibrary.simpleMessage("고객센터"),
+    "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
+      "나를 확인 받는\nCHON DID 튜토리얼",
+    ),
+    "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
+    "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("가계도"),
+    "chon_nav_home": MessageLookupByLibrary.simpleMessage("홈"),
+    "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("신분증"),
+    "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("상호인증"),
+    "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
+      "내 신분을 가족·인척에게\n확인 받고, 필요한 곳에 인증해 보세요.",
+    ),
+    "chon_tutorial_s1_title": MessageLookupByLibrary.simpleMessage(
+      "나를 확인 받는\nCHON DID",
+    ),
+    "chon_tutorial_s2_body": MessageLookupByLibrary.simpleMessage(
+      "가족과 서로를 인증해\n관계를 증명하세요.",
+    ),
+    "chon_tutorial_s2_title": MessageLookupByLibrary.simpleMessage(
+      "서로를 인증하는\n상호 인증",
+    ),
+    "chon_tutorial_s3_body": MessageLookupByLibrary.simpleMessage(
+      "가족 관계를 시각화하고\n족보를 안전하게 보관합니다.",
+    ),
+    "chon_tutorial_s3_title": MessageLookupByLibrary.simpleMessage(
+      "나의 가족과 함께\n가계도",
+    ),
+    "chon_tutorial_s4_body": MessageLookupByLibrary.simpleMessage(
+      "준비가 끝났습니다.\n지금 바로 사용해 보세요.",
+    ),
+    "chon_tutorial_s4_title": MessageLookupByLibrary.simpleMessage(
+      "CHON과 함께\n시작해 볼까요?",
+    ),
     "clan": MessageLookupByLibrary.simpleMessage("성씨"),
     "clanOfCertificate": MessageLookupByLibrary.simpleMessage("종원증"),
     "close": MessageLookupByLibrary.simpleMessage("닫기"),

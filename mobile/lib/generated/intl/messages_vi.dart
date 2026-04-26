@@ -351,6 +351,65 @@ class MessageLookup extends MessageLookupByLibrary {
       "Đã xác nhận\nCheck-out",
     ),
     "children": MessageLookupByLibrary.simpleMessage("Con cái"),
+    "chon_action_confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+    "chon_action_next": MessageLookupByLibrary.simpleMessage("Tiếp"),
+    "chon_action_retry": MessageLookupByLibrary.simpleMessage("Thử lại"),
+    "chon_action_save": MessageLookupByLibrary.simpleMessage("Lưu"),
+    "chon_action_send": MessageLookupByLibrary.simpleMessage("Gửi"),
+    "chon_action_skip": MessageLookupByLibrary.simpleMessage("Bỏ qua"),
+    "chon_action_start": MessageLookupByLibrary.simpleMessage("Bắt đầu"),
+    "chon_home_banner": MessageLookupByLibrary.simpleMessage(
+      "Tạo CHON ID của bạn qua xác thực lẫn nhau.",
+    ),
+    "chon_home_input_label": MessageLookupByLibrary.simpleMessage(
+      "Thông tin đầu vào",
+    ),
+    "chon_home_mutual_subtitle": MessageLookupByLibrary.simpleMessage(
+      "Xác minh lẫn nhau\nvới gia đình",
+    ),
+    "chon_home_mutual_title": MessageLookupByLibrary.simpleMessage(
+      "Xác thực lẫn nhau",
+    ),
+    "chon_home_q_contact": MessageLookupByLibrary.simpleMessage(
+      "Liên hệ\n(Gia phả)",
+    ),
+    "chon_home_q_edit_profile": MessageLookupByLibrary.simpleMessage(
+      "Sửa hồ sơ",
+    ),
+    "chon_home_q_qr": MessageLookupByLibrary.simpleMessage("Mã QR"),
+    "chon_home_q_support": MessageLookupByLibrary.simpleMessage("Hỗ trợ"),
+    "chon_home_tutorial_card": MessageLookupByLibrary.simpleMessage(
+      "Hướng dẫn\nCHON DID",
+    ),
+    "chon_nav_chon": MessageLookupByLibrary.simpleMessage("CHON"),
+    "chon_nav_family_tree": MessageLookupByLibrary.simpleMessage("Gia phả"),
+    "chon_nav_home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+    "chon_nav_id_card": MessageLookupByLibrary.simpleMessage("Thẻ ID"),
+    "chon_nav_mutual": MessageLookupByLibrary.simpleMessage("Xác thực"),
+    "chon_tutorial_s1_body": MessageLookupByLibrary.simpleMessage(
+      "Được người thân xác nhận danh tính\nvà xác thực khi cần thiết.",
+    ),
+    "chon_tutorial_s1_title": MessageLookupByLibrary.simpleMessage(
+      "Xác minh\nbản thân với CHON DID",
+    ),
+    "chon_tutorial_s2_body": MessageLookupByLibrary.simpleMessage(
+      "Xác thực với gia đình\nđể chứng minh mối quan hệ.",
+    ),
+    "chon_tutorial_s2_title": MessageLookupByLibrary.simpleMessage(
+      "Xác thực lẫn nhau",
+    ),
+    "chon_tutorial_s3_body": MessageLookupByLibrary.simpleMessage(
+      "Trực quan hóa quan hệ gia đình\nvà lưu trữ gia phả an toàn.",
+    ),
+    "chon_tutorial_s3_title": MessageLookupByLibrary.simpleMessage(
+      "Cây gia phả\nvới gia đình",
+    ),
+    "chon_tutorial_s4_body": MessageLookupByLibrary.simpleMessage(
+      "Cài đặt đã hoàn tất.\nSử dụng ngay bây giờ.",
+    ),
+    "chon_tutorial_s4_title": MessageLookupByLibrary.simpleMessage(
+      "Sẵn sàng\nbắt đầu với CHON?",
+    ),
     "clan": MessageLookupByLibrary.simpleMessage("Dòng họ"),
     "clanOfCertificate": MessageLookupByLibrary.simpleMessage(
       "Giấy chứng nhận dòng họ",

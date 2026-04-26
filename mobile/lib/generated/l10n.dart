@@ -4098,6 +4098,261 @@ class S {
       args: [],
     );
   }
+
+  /// `Next`
+  String get chon_action_next {
+    return Intl.message('Next', name: 'chon_action_next', desc: '', args: []);
+  }
+
+  /// `Skip`
+  String get chon_action_skip {
+    return Intl.message('Skip', name: 'chon_action_skip', desc: '', args: []);
+  }
+
+  /// `Get started`
+  String get chon_action_start {
+    return Intl.message(
+      'Get started',
+      name: 'chon_action_start',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get chon_action_confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'chon_action_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get chon_action_retry {
+    return Intl.message(
+      'Try again',
+      name: 'chon_action_retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get chon_action_save {
+    return Intl.message('Save', name: 'chon_action_save', desc: '', args: []);
+  }
+
+  /// `Send`
+  String get chon_action_send {
+    return Intl.message('Send', name: 'chon_action_send', desc: '', args: []);
+  }
+
+  /// `Get verified\nas yourself with CHON DID`
+  String get chon_tutorial_s1_title {
+    return Intl.message(
+      'Get verified\nas yourself with CHON DID',
+      name: 'chon_tutorial_s1_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get your identity verified by family\nand authenticate where needed.`
+  String get chon_tutorial_s1_body {
+    return Intl.message(
+      'Get your identity verified by family\nand authenticate where needed.',
+      name: 'chon_tutorial_s1_body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mutual auth\nbetween people`
+  String get chon_tutorial_s2_title {
+    return Intl.message(
+      'Mutual auth\nbetween people',
+      name: 'chon_tutorial_s2_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authenticate with your family\nto prove your relationship.`
+  String get chon_tutorial_s2_body {
+    return Intl.message(
+      'Authenticate with your family\nto prove your relationship.',
+      name: 'chon_tutorial_s2_body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Family tree\nwith your loved ones`
+  String get chon_tutorial_s3_title {
+    return Intl.message(
+      'Family tree\nwith your loved ones',
+      name: 'chon_tutorial_s3_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visualize your family relations\nand keep the genealogy secure.`
+  String get chon_tutorial_s3_body {
+    return Intl.message(
+      'Visualize your family relations\nand keep the genealogy secure.',
+      name: 'chon_tutorial_s3_body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ready to\nstart with CHON?`
+  String get chon_tutorial_s4_title {
+    return Intl.message(
+      'Ready to\nstart with CHON?',
+      name: 'chon_tutorial_s4_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setup is complete.\nUse it right away.`
+  String get chon_tutorial_s4_body {
+    return Intl.message(
+      'Setup is complete.\nUse it right away.',
+      name: 'chon_tutorial_s4_body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create your CHON ID through mutual auth.`
+  String get chon_home_banner {
+    return Intl.message(
+      'Create your CHON ID through mutual auth.',
+      name: 'chon_home_banner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CHON DID\nTutorial`
+  String get chon_home_tutorial_card {
+    return Intl.message(
+      'CHON DID\nTutorial',
+      name: 'chon_home_tutorial_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mutual auth`
+  String get chon_home_mutual_title {
+    return Intl.message(
+      'Mutual auth',
+      name: 'chon_home_mutual_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify each other\nwith family and relatives`
+  String get chon_home_mutual_subtitle {
+    return Intl.message(
+      'Verify each other\nwith family and relatives',
+      name: 'chon_home_mutual_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input info`
+  String get chon_home_input_label {
+    return Intl.message(
+      'Input info',
+      name: 'chon_home_input_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact\n(Tree)`
+  String get chon_home_q_contact {
+    return Intl.message(
+      'Contact\n(Tree)',
+      name: 'chon_home_q_contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit profile`
+  String get chon_home_q_edit_profile {
+    return Intl.message(
+      'Edit profile',
+      name: 'chon_home_q_edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QR code`
+  String get chon_home_q_qr {
+    return Intl.message('QR code', name: 'chon_home_q_qr', desc: '', args: []);
+  }
+
+  /// `Support`
+  String get chon_home_q_support {
+    return Intl.message(
+      'Support',
+      name: 'chon_home_q_support',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get chon_nav_home {
+    return Intl.message('Home', name: 'chon_nav_home', desc: '', args: []);
+  }
+
+  /// `CHON`
+  String get chon_nav_chon {
+    return Intl.message('CHON', name: 'chon_nav_chon', desc: '', args: []);
+  }
+
+  /// `ID card`
+  String get chon_nav_id_card {
+    return Intl.message(
+      'ID card',
+      name: 'chon_nav_id_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mutual auth`
+  String get chon_nav_mutual {
+    return Intl.message(
+      'Mutual auth',
+      name: 'chon_nav_mutual',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Family tree`
+  String get chon_nav_family_tree {
+    return Intl.message(
+      'Family tree',
+      name: 'chon_nav_family_tree',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

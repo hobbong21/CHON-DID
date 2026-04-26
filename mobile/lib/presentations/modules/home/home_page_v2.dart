@@ -1,5 +1,6 @@
 import 'package:base_flutter/app/app_cubit.dart';
 import 'package:base_flutter/core/theme/chon_design_tokens.dart';
+import 'package:base_flutter/generated/l10n.dart';
 import 'package:base_flutter/injector.dart';
 import 'package:base_flutter/presentations/modules/home/cubit/home_cubit.dart';
 import 'package:base_flutter/presentations/modules/self_id_list_choose/self_id_list_choose.dart';
@@ -368,7 +369,7 @@ class _Banner extends StatelessWidget {
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  '상호인증으로 CHON ID를 만들어보세요.',
+                  S.current.chon_home_banner,
                   style: ChonTextStyles.body(size: 16),
                 ),
               ),
@@ -426,7 +427,7 @@ class _TutorialCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '나를 확인 받는\nCHON DID 튜토리얼',
+              S.current.chon_home_tutorial_card,
               style: ChonTextStyles.cardTitle(color: ChonColors.textInverse),
             ),
             Container(
@@ -474,9 +475,10 @@ class _MutualAuthCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('상호 인증', style: ChonTextStyles.cardTitle()),
+                  Text(S.current.chon_home_mutual_title,
+                      style: ChonTextStyles.cardTitle()),
                   Text(
-                    '가족, 인척과\n서로를 확인받기',
+                    S.current.chon_home_mutual_subtitle,
                     style: ChonTextStyles.body(
                         size: 14, color: ChonColors.textSecondary, height: 1.1),
                   ),

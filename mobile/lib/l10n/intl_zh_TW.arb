@@ -27,11 +27,9 @@
     "EVENT_NOT_EXISTED": "事件不存在",
     "EVENT_MUST_BE_CHECK_IN_BEFORE": "事件必須先簽到",
     "PHONE_NUMBER_NOT_EXIST": "電話號碼不存在",
-
     "VALIDATE_BANK_ACCOUNT_NOT_NULL": "銀行帳戶不能為空",
     "VALIDATE_BANK_REF_BANK_NOT_NULL": "參考銀行不能為空",
     "VALIDATE_BANK_ID_NOT_NULL": "銀行 ID 不能為空",
-
     "VALIDATE_CLAN_CLAN_NAME_NOT_NULL": "部落名稱不能為空",
     "VALIDATE_CLAN_PHONE_NUMBER_NOT_NULL": "電話號碼不能為空",
     "VALIDATE_CLAN_PHONE_NUMBER_INVALID_FORMAT": "聯絡電話必須以國家代碼（如 +84、+1）開頭，後接空格與 8~12 位數字（例如 +84 123456789）",
@@ -42,11 +40,9 @@
     "VALIDATE_CLAN_SE_NOT_NULL": "Se 不能為空",
     "VALIDATE_CLAN_BIRTH_NOT_NULL": "出生地不能為空",
     "VALIDATE_CLAN_PERSONAL_NAME_NOT_NULL": "個人姓名不能為空",
-
     "VALIDATE_RAW_DATA_NOT_NULL": "原始資料不能為空",
     "VALIDATE_SIGNATURE_NOT_NULL": "簽名不能為空",
     "VALIDATE_PUBLIC_KEY_NOT_NULL": "公開金鑰不能為空",
-
     "VALIDATE_TEAKWONDO_NAME_NOT_NULL": "姓名不能為空",
     "VALIDATE_TEAKWONDO_IMAGE_BASE64_NOT_NULL": "圖片 base64 不能為空",
     "VALIDATE_TEAKWONDO_IMAGE_BASE64_INVALID_FORMAT": "圖片必須為有效的 base64 格式（data:image/<type>;base64,...），且大小不超過 10MB",
@@ -56,7 +52,6 @@
     "VALIDATE_TEAKWONDO_LEVEL_NUMBER_NOT_NULL": "等級編號不能為空",
     "VALIDATE_TEAKWONDO_ISSUE_DATE_NOT_NULL": "發行日期不能為空",
     "VALIDATE_TEAKWONDO_ISSUE_DATE_INVALID_FORMAT": "發行日期必須為 yyyy-MM-dd 格式",
-
     "ID_NUMBER_NOT_NULL": "身分證號不能為空",
     "ID_NUMBER_INVALID_FORMAT": "身分證號只能包含數字",
     "GENDER_NOT_NULL": "性別不能為空",
@@ -71,7 +66,6 @@
     "IMG_BASE64_NOT_NULL": "imgBase64 不能為空",
     "IMG_BASE64_INVALID_FORMAT": "圖片必須為有效的 base64 格式",
     "VALIDATE_CARD_CARD_ID_NOT_NULL": "卡片 ID 不能為空",
-
     "EVENT_CERTIFICATE_INVALID": "憑證無效",
     "EVENT_CERTIFICATE_IS_NOT_CONFIRMED": "憑證尚未確認",
     "VALIDATE_EVENT_ID_NOT_NULL": "事件 ID 不能為空",
@@ -87,7 +81,6 @@
     "NOT_FOUND": "找不到",
     "REQUEST_TIMEOUT": "請求逾時",
     "UNKNOWN": "未知錯誤",
-
     "hello": "你好",
     "home": "首頁",
     "settings": "設定",
@@ -99,7 +92,6 @@
     "password": "密碼",
     "pleaseEnterUsername": "請輸入帳號",
     "pleaseEnterPassword": "請輸入密碼",
-
     "account": "ID (電子信箱)",
     "signIn": "登入",
     "signUp": "註冊",
@@ -261,7 +253,7 @@
     "ownedIdList": "已擁有的 ID 列表",
     "selectIdToSubmit": "請選擇要提交的 ID (證件)",
     "enter": "輸入",
-    "relationship": "關係",  
+    "relationship": "關係",
     "duplicateNameSelectNumber": "存在重名。請選擇序號。",
     "enterNameAndRelationship": "請輸入姓名並\n設定「關係」",
     "sendTextMessage": "發送簡訊",
@@ -286,7 +278,6 @@
     "privacyPolicy": "隱私權政策",
     "reportProblem": "回報問題",
     "bankInfo": "銀行資訊",
-
     "grandfather": "祖父",
     "grandmother": "祖母",
     "maternalGrandfather": "外祖父",
@@ -336,7 +327,6 @@
     "familyEditInstruction": "點擊家庭圖示並按下「新增/刪除」按鈕即可編輯。",
     "select": "選擇",
     "delete": "刪除",
-    "add": "新增",
     "groupCall": "群組通話",
     "groupChat": "群組聊天",
     "album": "相簿",
@@ -351,7 +341,6 @@
     "cameraNotInitialized": "相機未初始化",
     "appLanguage": "應用語言",
     "systemDefault": "系統預設",
-    "confirm": "確認",
     "error": "錯誤",
     "copied": "已複製",
     "fillAllRequiredFields": "請填寫所有必填欄位",
@@ -360,115 +349,81 @@
     "residentNumberSecondPartInvalid": "身分證後7位必須正確",
     "noCardsFound": "暫無卡片",
     "updateFailed": "無法更新",
-    "mutualAuthentication": "相互認證",
     "success": "成功",
     "ownerName": "{name}, ",
     "confirmRelationSuffix": "是{relation}。\n請確認。",
     "termsMainTitle": "Chon 使用條款",
     "termsScrollDown": "向下捲動",
     "termsConfirm": "確認",
-
     "termsCheckboxPrivacyRequired": "(必選) 同意蒐集與使用個人資訊",
     "termsCheckboxThirdPartyRequired": "(必選) 同意向第三方提供個人資訊（相互認證/家譜功能）",
     "termsCheckboxMarketingOptional": "(選填) 同意接收行銷資訊（電子郵件/簡訊/推播）",
-
     "termsPrivacyConsentTitle": "Chon 個人資訊蒐集與使用同意書",
     "termsPurposeTitle": "1) 蒐集與使用目的",
     "termsPurposeContent": "Chon Inc.（以下簡稱「本公司」）基於以下目的蒐集與使用個人資訊：\n• 會員註冊及帳戶管理（身分識別、實名認證、登入、防止詐欺）\n• 相互認證及關係（家人/朋友/組織等）連結、家譜建立與管理\n• 服務營運、資安保障、品質改善\n• 客戶諮詢與客訴處理",
-
     "termsItemsTitle": "2) 蒐集與使用的個人資訊項目",
     "termsItemsContent": "本公司在服務所需範圍內蒐集以下資訊：\n(A) 帳戶必要項目\n• 電子郵件或手機號碼\n• 密碼（加密）或認證權杖\n• 顯示名稱（姓名/暱稱）\n• 內部識別碼 (UID)\n(B) 相互認證/家譜功能相關項目\n• 用戶輸入的關係資訊\n• 認證資訊（邀請碼、權杖）\n• 公開的個人檔案（照片、簡介）\n(C) 自動蒐集項目\n• 存取紀錄、IP位址、裝置資訊、Cookie",
-
     "termsRetentionTitle": "3) 保存與使用期間",
     "termsRetentionContent": "原則上，個人資訊將保存至會員註銷為止。法律法規另有規定者除外。",
-
     "termsAddendumTitle": "附則",
     "termsAddendumContent": "1. 本條款自 [2026.02.01] 起生效。\n2. 施行日前加入的會員亦適用本條款。",
-
     "termsRefusalTitle": "4) 拒絕權及不利影響",
     "termsRefusalContent": "您有權拒絕同意。但若拒絕必要項目，可能會限制服務使用（如註冊、相互認證等）。",
-
     "termsMarketingInfoTitle": "5) 選填同意（行銷）",
     "termsMarketingInfoContent": "即使不同意此項目，您仍可使用基本服務。\n生效日期：2026.02.01\n公司：Chon Inc.\n• 代表人：Shin Geun-young\n• 地址：309, 3F, 464 Gangnam-daero, Gangnam-gu, Seoul",
-
     "termsThirdPartyTitle": "同意向第三方提供個人資訊",
     "termsThirdPartyContent": "本公司如下向第三方（包括其他會員）提供個人資訊：",
-
     "termsRecipientTitle": "1) 接收方",
     "termsRecipientContent": "• 已建立相互認證的其他會員\n• 指定為家譜共享對象的會員",
-
     "termsProvisionPurposeTitle": "2) 提供目的",
     "termsProvisionPurposeContent": "• 執行相互認證及確認結果\n• 連結關係\n• 顯示和閱覽家譜",
-
     "termsProvisionItemsTitle": "3) 提供項目",
     "termsProvisionItemsContent": "僅提供會員設定為公開/共享的資訊：\n• 顯示名稱\n• 公開個人檔案\n• 關係資料\n• 家譜資料\n※ 除非您主動共享，否則不會提供聯絡方式（電話/電子郵件）。",
-
     "termsRecipientRetentionTitle": "4) 接收方的保存期間",
     "termsRecipientRetentionContent": "• 在關係連結或共享設定保持期間，接收方可以查閱和使用。\n• 如果關係被刪除或取消共享，資訊將停止顯示。",
-
     "termsThirdPartyRefusalTitle": "5) 拒絕權（第三方提供）",
     "termsThirdPartyRefusalContent": "您可以拒絕向第三方提供資訊。但這對於相互認證和家譜功能是必要的，拒絕將導致無法使用相關功能。",
-
     "termsMarketingConsentDetailTitle": "[選填] 行銷同意詳情",
     "termsMarketingConsentDetailContent": "不同意也可使用服務。\n• 目的：活動、促銷、新功能通知\n• 項目：電子郵件、手機號碼、推播權杖\n• 期間：直至撤回同意或註銷",
     "serviceTermsTitle": "Chon 使用條款",
     "serviceTermsHeaderTitle": "Chon 服務使用條款",
     "serviceTermsHeaderContent": "施行日期：2026.02.01\n版本：v1.0\n公司名稱：Chon Inc. (“公司”)\n服務名稱：Chon (“服務”)",
-    
     "serviceTermsArt1Title": "第1條（目的）",
     "serviceTermsArt1Content": "本條款旨在規定公司與使用者（包括會員）之間關於使用公司提供的Chon服務的權利、義務及責任事項、使用條件與程序以及其他必要事項。",
-    
     "serviceTermsArt2Title": "第2條（定義）",
     "serviceTermsArt2Content": "1. 服務：指公司提供的Chon App/Web及相關各項服務。\n2. 使用者：指存取服務並根據本條款使用公司提供服務的個人。\n3. 會員：指同意本條款、建立帳戶並使用服務的個人。\n4. 帳戶：指會員為識別身分及使用服務而設定的登入手段（電子郵件/手機號碼/社群登入等）及其附帶資訊。\n5. 內容：指會員在服務內發布、註冊、上傳、傳輸的文字、圖片、文件（含PDF）、連結、資料（含家譜/關係圖/個人檔案資訊）及其他資訊。\n6. 相互認證：指服務為確認和連結會員之間的特定關係（家人/朋友/組織等）而提供的認證程序或功能。\n7. 付費服務：指公司有償提供的訂閱、使用券、附加功能等（如適用）。",
-    
     "serviceTermsArt3Title": "第3條（條款的效力及適用）",
     "serviceTermsArt3Content": "1. 本條款在服務畫面（初始畫面或連結畫面）發布或以其他方式通知，並經會員同意後生效。\n2. 公司可在不違反相關法律法規的範圍內修訂本條款。\n3. 本條款未盡事宜及解釋，遵循相關法律法規及公司另行制定的營運政策/指南、一般商業慣例。",
-    
     "serviceTermsArt4Title": "第4條（條款的變更及通知）",
     "serviceTermsArt4Content": "1. 公司修訂條款時，將在服務內公告施行日期、修訂內容及修訂理由。\n2. 對於重要變更或對使用者不利的變更，公司將設定合理的期間（例如：至少30日前）進行公告，必要時進行單獨通知。\n3. 不同意變更條款的會員，可在變更條款生效前終止使用合約（註銷會員）。",
-    
     "serviceTermsArt5Title": "第5條（會員註冊及帳戶管理）",
     "serviceTermsArt5Content": "1. 會員註冊在使用者同意條款並完成公司規定的程序（建立帳戶、實名認證等）後成立。\n2. 會員應保持帳戶資訊的最新性，因提供虛假資訊或盜用他人資訊而產生的不利後果由會員承擔。\n3. 會員有責任管理帳戶/密碼（或認證手段），如懷疑被第三方使用，應立即通知公司。",
-    
     "serviceTermsArt6Title": "第6條（未成年人的使用）",
     "serviceTermsArt6Content": "1. 未滿14歲兒童的會員註冊及個人資訊相關程序遵循法定代理人同意等相關法律法規（根據服務政策可能限制註冊）。\n2. 公司必要時可要求進行年齡驗證或法定代理人同意。",
-    
     "serviceTermsArt7Title": "第7條（服務提供及變更）",
     "serviceTermsArt7Content": "1. 公司可提供以下服務：\na. 基於相互認證的關係（家人/朋友/組織等）連結及管理功能\nb. 家譜/關係圖建立、閱覽、共享功能\nc. 個人檔案/ID（身分/人脈）構成及顯示功能\nd. 文件/圖片上傳及整理功能（含PDF）\ne. 基於AI的搜尋/摘要/問答等附加功能（如適用）\n2. 公司可變更或中斷全部或部分服務，並在重大變更或中斷時提前公告。\n3. 公司可根據營運或技術需要進行維護，維護時間將在服務畫面公告。",
-    
     "serviceTermsArt8Title": "第8條（相互認證及關係資料的特則）",
     "serviceTermsArt8Content": "1. 相互認證是輔助確認會員間關係的功能，公司不保證會員間實際關係的法律效力或真實性。\n2. 未經他人同意，會員不得輸入或發布有關他人的敏感資訊（如：身分證字號等）。\n3. 關係資料（家譜/關係圖）由會員輸入及互動生成，由此產生的糾紛原則上由當事人之間解決。除非法律認定責任，公司無義務介入。",
-    
     "serviceTermsArt9Title": "第9條（內容的權利及使用授權）",
     "serviceTermsArt9Content": "1. 內容的權利原則上歸屬於生成/註冊該內容的會員。\n2. 會員授予公司非獨家使用授權，允許公司在營運、提供、改進服務所需的範圍內儲存、複製、傳輸、轉換（如：格式轉換/搜尋索引）及顯示該內容。\n3. 會員保證對上傳的文件、圖片、文字等擁有合法權利或已獲得使用授權。\n4. 公司如欲利用內容改進AI功能等，將履行相關法律法規要求的另行通知/同意程序（如必要）。",
-    
     "serviceTermsArt10Title": "第10條（禁止行為）",
     "serviceTermsArt10Content": "使用者不得進行以下行為：\n1. 盜用帳戶、盜用名義、冒充他人\n2. 發布違法資訊、侵犯版權、淫穢/非法拍攝物相關行為\n3. 誘發服務或伺服器過載或侵犯安全的行為\n4. 透過自動化手段未經授權蒐集/抓取/爬取（公司允許範圍除外）\n5. 侵犯他人權利（肖像權、個人資訊、名譽等）\n6. 其他違反法律法規或違背公序良俗的行為",
-    
     "serviceTermsArt11Title": "第11條（使用限制及合約終止）",
     "serviceTermsArt11Content": "1. 會員違反本條款或營運政策時，公司可視違規程度採取警告、刪除/屏蔽內容、限制功能、暫停使用、永久暫停使用（註銷帳戶）等措施。\n2. 會員可隨時透過服務內程序終止使用合約（註銷會員）。\n3. 使用限制或終止後，根據相關法律法規及公司保管政策，部分資訊可能會保存一定期限，具體遵循隱私權政策。",
-    
     "serviceTermsArt12Title": "第12條（付費服務及結算）",
     "serviceTermsArt12Content": "1. 付費服務的內容、資費、結算方式、提供期間、退款標準等遵循另行指南（服務畫面/結算頁面/退款政策）。\n2. 訂閱型服務的自動續費、解約、退款條件可能同時適用結算手段及應用商店政策（如：App Store/Play Store）與公司政策。",
-    
     "serviceTermsArt13Title": "第13條（免責及責任限制）",
     "serviceTermsArt13Content": "1. 因天災、戰爭、停電、通信網故障、第三方服務故障等不可抗力導致無法提供服務時，公司不承擔責任。\n2. 除非法律認定責任，公司對使用者間糾紛、使用者輸入資訊的準確性、相互認證結果的可靠性、內容的合法性不承擔責任。\n3. 提供AI功能時，AI的輸出僅供參考（可能存在錯誤），最終判斷和責任由使用者承擔。",
-    
     "serviceTermsArt14Title": "第14條（通知）",
     "serviceTermsArt14Content": "1. 公司可透過會員註冊的電子郵件/手機號碼/App推播/服務內通知等合理方式進行通知。\n2. 因會員未保持聯絡方式最新導致未收到通知，由此產生的不利後果由會員承擔。",
-    
     "serviceTermsArt15Title": "第15條（個人資訊保護）",
     "serviceTermsArt15Content": "關於個人資訊的處理（蒐集、使用、提供、委託、銷毀等）遵循隱私權政策及相關同意程序。僅使用條款不代替個人資訊同意。",
-    
     "serviceTermsArt16Title": "第16條（適用法律及管轄）",
     "serviceTermsArt16Content": "1. 本條款根據大韓民國法律解釋和適用。\n2. 關於服務使用發生糾紛時，優先透過當事人協商解決，協商不成時，首爾中央地方法院為專屬管轄法院（或民事訴訟法上的管轄法院）。",
-    
     "serviceTermsAddendumTitle": "附則",
     "serviceTermsAddendumContent": "1. 本條款自 [2026.02.01] 起施行。\n2. 本條款也適用於施行日前加入的會員（法律法規有限制的除外）。",
-    
     "serviceTermsCompanyInfoTitle": "公司資訊",
     "serviceTermsCompanyInfoContent": "• 名稱：Chon Inc.\n• 代表人：Shin Geun-young\n• 註冊號：196-86-03544\n• 地址：309, 3F, 464 Gangnam-daero, Gangnam-gu, Seoul\n• 客服：010-3420-8691 / ops@chon.ai\n• CPO：Kim Nam-yul",
-
     "serviceTermsAgreeCheckbox": "(本條) 同意使用條款",
     "emailLabel": "電子郵件",
     "subjectLabel": "標題",
@@ -499,17 +454,14 @@
     "action_ok": "確定",
     "action_select": "選擇",
     "action_delete": "刪除",
-
     "hint_ask_anything": "有什麼可以幫您？",
     "hint_select_contact": "請選擇聯絡人",
     "label_content": "內容",
     "label_license_number": "執照號碼",
     "label_expiration_date": "過期日期",
     "label_aptitude_test": "適性測驗",
-
     "field_surname": "姓",
     "field_given_name": "名",
-
     "info_account_holder": "{account} {name}",
     "info_issued_date": "於 {date} 簽發",
     "self_id_created": "Self ID 已建立",
@@ -518,5 +470,34 @@
     "elder_brother": "兄",
     "little_brother": "弟",
     "elder_sister": "姐",
-    "little_sister": "妹"
+    "little_sister": "妹",
+    "chon_action_next": "下一步",
+    "chon_action_skip": "略過",
+    "chon_action_start": "開始",
+    "chon_action_confirm": "確認",
+    "chon_action_retry": "重試",
+    "chon_action_save": "儲存",
+    "chon_action_send": "傳送",
+    "chon_tutorial_s1_title": "用 CHON DID\n驗證自己",
+    "chon_tutorial_s1_body": "請家人為你的身分背書,\n在需要的地方完成驗證。",
+    "chon_tutorial_s2_title": "互相認證",
+    "chon_tutorial_s2_body": "與家人互相認證\n以證明你們的關係。",
+    "chon_tutorial_s3_title": "與家人一起\n繪製家譜",
+    "chon_tutorial_s3_body": "視覺化家族關係\n安全保管家譜。",
+    "chon_tutorial_s4_title": "準備好\n開始使用 CHON 了嗎?",
+    "chon_tutorial_s4_body": "已完成設定。\n立即開始使用。",
+    "chon_home_banner": "透過互相認證建立你的 CHON ID。",
+    "chon_home_tutorial_card": "CHON DID\n教學",
+    "chon_home_mutual_title": "互相認證",
+    "chon_home_mutual_subtitle": "與家人、親屬\n互相確認",
+    "chon_home_input_label": "輸入資訊",
+    "chon_home_q_contact": "聯絡\n(家譜)",
+    "chon_home_q_edit_profile": "編輯資料",
+    "chon_home_q_qr": "QR 碼",
+    "chon_home_q_support": "客服",
+    "chon_nav_home": "首頁",
+    "chon_nav_chon": "CHON",
+    "chon_nav_id_card": "身分證",
+    "chon_nav_mutual": "互認",
+    "chon_nav_family_tree": "家譜"
 }

@@ -27,11 +27,9 @@
     "EVENT_NOT_EXISTED": "Sự kiện không tồn tại",
     "EVENT_MUST_BE_CHECK_IN_BEFORE": "Cần check-in trước khi tham gia sự kiện",
     "PHONE_NUMBER_NOT_EXIST": "Số điện thoại không tồn tại",
-
     "VALIDATE_BANK_ACCOUNT_NOT_NULL": "Số tài khoản không được để trống",
     "VALIDATE_BANK_REF_BANK_NOT_NULL": "Ngân hàng tham chiếu không được để trống",
     "VALIDATE_BANK_ID_NOT_NULL": "ID ngân hàng không được để trống",
-
     "VALIDATE_CLAN_CLAN_NAME_NOT_NULL": "Tên clan không được để trống",
     "VALIDATE_CLAN_PHONE_NUMBER_NOT_NULL": "Số điện thoại không được để trống",
     "VALIDATE_CLAN_PHONE_NUMBER_INVALID_FORMAT": "Số điện thoại phải bắt đầu bằng mã quốc gia (ví dụ +84) theo sau là khoảng trắng và 8–12 chữ số",
@@ -42,11 +40,9 @@
     "VALIDATE_CLAN_SE_NOT_NULL": "Se không được để trống",
     "VALIDATE_CLAN_BIRTH_NOT_NULL": "Nơi sinh không được để trống",
     "VALIDATE_CLAN_PERSONAL_NAME_NOT_NULL": "Tên cá nhân không được để trống",
-
     "VALIDATE_RAW_DATA_NOT_NULL": "Dữ liệu gốc không được để trống",
     "VALIDATE_SIGNATURE_NOT_NULL": "Chữ ký không được để trống",
     "VALIDATE_PUBLIC_KEY_NOT_NULL": "Public key không được để trống",
-
     "VALIDATE_TEAKWONDO_NAME_NOT_NULL": "Tên không được để trống",
     "VALIDATE_TEAKWONDO_IMAGE_BASE64_NOT_NULL": "Ảnh base64 không được để trống",
     "VALIDATE_TEAKWONDO_IMAGE_BASE64_INVALID_FORMAT": "Ảnh phải ở định dạng base64 hợp lệ (data:image/<type>;base64,...) và kích thước ≤ 10MB",
@@ -56,7 +52,6 @@
     "VALIDATE_TEAKWONDO_LEVEL_NUMBER_NOT_NULL": "Số cấp độ không được để trống",
     "VALIDATE_TEAKWONDO_ISSUE_DATE_NOT_NULL": "Ngày cấp không được để trống",
     "VALIDATE_TEAKWONDO_ISSUE_DATE_INVALID_FORMAT": "Ngày cấp phải đúng định dạng yyyy-MM-dd",
-
     "ID_NUMBER_NOT_NULL": "Số ID không được để trống",
     "ID_NUMBER_INVALID_FORMAT": "Số ID chỉ được chứa chữ số",
     "GENDER_NOT_NULL": "Giới tính không được để trống",
@@ -71,17 +66,10 @@
     "IMG_BASE64_NOT_NULL": "imgBase64 không được để trống",
     "IMG_BASE64_INVALID_FORMAT": "Ảnh phải ở định dạng base64 hợp lệ",
     "VALIDATE_CARD_CARD_ID_NOT_NULL": "Mã thẻ không được để trống",
-
     "EVENT_CERTIFICATE_INVALID": "Chứng chỉ không hợp lệ",
     "EVENT_CERTIFICATE_IS_NOT_CONFIRMED": "Chứng chỉ chưa được xác nhận",
     "VALIDATE_EVENT_ID_NOT_NULL": "Mã sự kiện không được để trống",
     "VALIDATE_EVENT_ACTION_TYPE_INVALID": "Loại hành động sự kiện không được để trống và giá trị phải là 1 (check in) hoặc 2 (check out)",
-    "FAMILY_TREE_HAS_BEEN_INITIATED": "Cây gia phả đã được khởi tạo.",
-    "DID_GENERATE_FAIL": "Không thể tạo DID từ khóa công khai.",
-    "INTEGRATION_DID_FAIL": "Tích hợp DID thất bại.",
-    "ENROLL_DID_FAIL": "Đăng ký DID thất bại.",
-    "CONFIRM_DID_FAIL": "Xác nhận DID thất bại.",
-    "SUBMIT_DID_FAIL": "Gửi DID thất bại.",
     "FAMILY_TREE_HAS_BEEN_INITIATED": "Cây gia phả đã được khởi tạo.",
     "DID_GENERATE_FAIL": "Không thể tạo DID từ khóa công khai.",
     "INTEGRATION_DID_FAIL": "Tích hợp DID thất bại.",
@@ -93,7 +81,6 @@
     "NOT_FOUND": "Không tìm thấy",
     "REQUEST_TIMEOUT": "Yêu cầu đã hết thời gian chờ",
     "UNKNOWN": "Lỗi không xác định",
-
     "hello": "Xin chào",
     "home": "Trang chủ",
     "settings": "Cài đặt",
@@ -105,7 +92,6 @@
     "password": "Mật khẩu",
     "pleaseEnterUsername": "Vui lòng nhập tài khoản",
     "pleaseEnterPassword": "Vui lòng nhập mật khẩu",
-
     "account": "ID (email)",
     "signIn": "Đăng nhập",
     "signUp": "Đăng ký",
@@ -268,7 +254,7 @@
     "ownedIdList": "Danh sách ID đang sở hữu",
     "selectIdToSubmit": "Vui lòng chọn ID (Giấy tờ) để nộp",
     "enter": "Nhập",
-    "relationship": "Mối quan hệ",  
+    "relationship": "Mối quan hệ",
     "duplicateNameSelectNumber": "Có người trùng tên. Vui lòng chọn số thứ tự.",
     "enterNameAndRelationship": "Vui lòng nhập tên và\nthiết lập 'Mối quan hệ'",
     "sendTextMessage": "Gửi tin nhắn",
@@ -292,7 +278,6 @@
     "privacyPolicy": "Chính sách bảo mật",
     "reportProblem": "Báo cáo sự cố",
     "bankInfo": "Thông tin ngân hàng",
-
     "grandfather": "Ông",
     "grandmother": "Bà",
     "maternalGrandfather": "Ông ngoại",
@@ -342,7 +327,6 @@
     "familyEditInstruction": "Nhấn vào biểu tượng gia đình và nhấn nút \"Thêm/Xóa\" để chỉnh sửa.",
     "select": "Chọn",
     "delete": "Xóa",
-    "add": "Thêm",
     "groupCall": "Gọi nhóm",
     "groupChat": "Chat nhóm",
     "album": "Album",
@@ -357,7 +341,6 @@
     "cameraNotInitialized": "Camera chưa được khởi tạo",
     "appLanguage": "Ngôn ngữ ứng dụng",
     "systemDefault": "Mặc định hệ thống",
-    "confirm": "Xác nhận",
     "error": "Lỗi",
     "copied": "Đã sao chép",
     "fillAllRequiredFields": "Vui lòng điền đầy đủ thông tin bắt buộc",
@@ -366,115 +349,81 @@
     "residentNumberSecondPartInvalid": "Phần sau ID phải đúng 7 chữ số",
     "noCardsFound": "Không có thẻ nào",
     "updateFailed": "Không thể cập nhật",
-    "mutualAuthentication": "Xác thực chéo",
     "success": "Thành công",
     "ownerName": "{name}, ",
     "confirmRelationSuffix": " là {relation}.\nVui lòng xác nhận.",
     "termsMainTitle": "Điều khoản sử dụng Chon",
     "termsScrollDown": "Cuộn xuống",
     "termsConfirm": "Xác nhận",
-
     "termsCheckboxPrivacyRequired": "(Bắt buộc) Đồng ý thu thập và sử dụng thông tin cá nhân",
     "termsCheckboxThirdPartyRequired": "(Bắt buộc) Đồng ý cung cấp cho bên thứ ba (Xác thực chéo/Gia phả)",
     "termsCheckboxMarketingOptional": "(Tùy chọn) Đồng ý nhận thông tin tiếp thị (Email/SMS/Push)",
-
     "termsPrivacyConsentTitle": "Đồng ý thu thập & sử dụng thông tin cá nhân Chon",
     "termsPurposeTitle": "1) Mục đích thu thập và sử dụng",
     "termsPurposeContent": "Công ty Chon (sau đây gọi là \"Công ty\") thu thập và sử dụng thông tin cá nhân cho các mục đích sau:\n• Đăng ký và quản lý tài khoản (định danh, đăng nhập, ngăn chặn gian lận)\n• Xác thực chéo và kết nối quan hệ (gia đình/bạn bè), tạo và quản lý cây gia phả\n• Vận hành dịch vụ, bảo mật, cải thiện chất lượng\n• Hỗ trợ khách hàng và giải quyết khiếu nại",
-
     "termsItemsTitle": "2) Các mục thông tin thu thập",
     "termsItemsContent": "Công ty thu thập các thông tin sau:\n(A) Bắt buộc cho tài khoản:\n• Email hoặc Số điện thoại\n• Mật khẩu (mã hóa) hoặc token xác thực\n• Tên hiển thị (Tên/Biệt danh)\n• UID nội bộ\n(B) Cho tính năng Gia phả:\n• Thông tin mối quan hệ do người dùng nhập\n• Thông tin xác thực (mã mời, token)\n• Thông tin hồ sơ công khai (Ảnh, Giới thiệu)\n(C) Tự động thu thập:\n• Nhật ký truy cập, IP, Thiết bị, Cookies",
-
     "termsRetentionTitle": "3) Thời gian lưu trữ",
     "termsRetentionContent": "Về nguyên tắc, thông tin được lưu trữ cho đến khi hủy thành viên. Ngoại trừ trường hợp pháp luật yêu cầu lưu trữ.",
-
     "termsAddendumTitle": "Phụ lục",
     "termsAddendumContent": "1. Các điều khoản này có hiệu lực từ [01/02/2026].\n2. Áp dụng cho cả các thành viên đã tham gia trước ngày này.",
-
     "termsRefusalTitle": "4) Quyền từ chối và bất lợi",
     "termsRefusalContent": "Bạn có quyền từ chối đồng ý. Tuy nhiên, nếu từ chối các mục bắt buộc, việc sử dụng dịch vụ (Đăng ký/Xác thực chéo) có thể bị hạn chế.",
-
     "termsMarketingInfoTitle": "5) Đồng ý tùy chọn (Tiếp thị)",
     "termsMarketingInfoContent": "Bạn vẫn có thể sử dụng dịch vụ cơ bản ngay cả khi không đồng ý mục này.\nNgày hiệu lực: 01/02/2026\nCông ty: Chon Inc.\n• Đại diện: Shin Geun-young\n• Địa chỉ: 309, 3F, 464 Gangnam-daero, Gangnam-gu, Seoul",
-
     "termsThirdPartyTitle": "Đồng ý cung cấp thông tin cho bên thứ ba",
     "termsThirdPartyContent": "Công ty cung cấp thông tin cá nhân cho bên thứ ba (bao gồm các thành viên khác) như sau:",
-
     "termsRecipientTitle": "1) Người nhận",
     "termsRecipientContent": "• Các thành viên khác đã thiết lập xác thực chéo\n• Các thành viên được chia sẻ cây gia phả",
-
     "termsProvisionPurposeTitle": "2) Mục đích cung cấp",
     "termsProvisionPurposeContent": "• Thực hiện xác thực chéo\n• Kết nối mối quan hệ\n• Hiển thị cây gia phả",
-
     "termsProvisionItemsTitle": "3) Các mục cung cấp",
     "termsProvisionItemsContent": "Chỉ cung cấp thông tin được thành viên đặt là công khai/chia sẻ:\n• Tên hiển thị\n• Thông tin hồ sơ công khai\n• Dữ liệu mối quan hệ\n• Dữ liệu cây gia phả\n* Số điện thoại/Email không được cung cấp trừ khi bạn chủ động chia sẻ.",
-
     "termsRecipientRetentionTitle": "4) Thời gian lưu trữ của người nhận",
     "termsRecipientRetentionContent": "• Người nhận có thể xem trong khi mối quan hệ hoặc cài đặt chia sẻ được duy trì.\n• Nếu quan hệ bị xóa, thông tin sẽ ngừng hiển thị.",
-
     "termsThirdPartyRefusalTitle": "5) Quyền từ chối (Bên thứ ba)",
     "termsThirdPartyRefusalContent": "Bạn có thể từ chối cung cấp cho bên thứ ba. Tuy nhiên, điều này là cần thiết cho tính năng xác thực chéo và gia phả, nên việc từ chối sẽ hạn chế các tính năng này.",
-
     "termsMarketingConsentDetailTitle": "[Tùy chọn] Chi tiết đồng ý tiếp thị",
     "termsMarketingConsentDetailContent": "Dịch vụ vẫn khả dụng nếu không đồng ý.\n• Mục đích: Sự kiện, Khuyến mãi, Tính năng mới\n• Mục thu thập: Email, SĐT, Push Token\n• Lưu trữ: Đến khi rút lại đồng ý hoặc hủy thành viên",
     "serviceTermsTitle": "Điều khoản sử dụng Chon",
     "serviceTermsHeaderTitle": "Điều khoản sử dụng dịch vụ Chon",
     "serviceTermsHeaderContent": "Ngày hiệu lực: 01/02/2026\nPhiên bản: v1.0\nTên công ty: Công ty Chon (“Công ty”)\nTên dịch vụ: Chon (“Dịch vụ”)",
-    
     "serviceTermsArt1Title": "Điều 1 (Mục đích)",
     "serviceTermsArt1Content": "Mục đích của các điều khoản này là quy định quyền, nghĩa vụ và trách nhiệm, điều kiện và thủ tục sử dụng, cũng như các vấn đề cần thiết khác giữa Công ty và Người dùng (bao gồm cả Thành viên) liên quan đến việc sử dụng dịch vụ Chon do Công ty cung cấp.",
-    
     "serviceTermsArt2Title": "Điều 2 (Định nghĩa)",
     "serviceTermsArt2Content": "1. Dịch vụ: Là ứng dụng/web Chon và các dịch vụ liên quan do Công ty cung cấp.\n2. Người dùng: Là người truy cập Dịch vụ và sử dụng Dịch vụ do Công ty cung cấp theo Điều khoản này.\n3. Thành viên: Là người đồng ý với Điều khoản này, tạo tài khoản và sử dụng Dịch vụ.\n4. Tài khoản: Là phương tiện đăng nhập (email/số điện thoại/đăng nhập xã hội, v.v.) và thông tin đi kèm do Thành viên thiết lập để nhận dạng và sử dụng Dịch vụ.\n5. Nội dung: Là văn bản, hình ảnh, tài liệu (bao gồm PDF), liên kết, dữ liệu (bao gồm cây gia phả/sơ đồ mối quan hệ/thông tin hồ sơ) và các thông tin khác mà Thành viên đăng, đăng ký, tải lên hoặc truyền tải trong Dịch vụ.\n6. Xác thực chéo: Là quy trình hoặc chức năng xác thực do Dịch vụ cung cấp để xác nhận và kết nối các mối quan hệ cụ thể giữa các Thành viên (gia đình/bạn bè/tổ chức, v.v.).\n7. Dịch vụ trả phí: Là các gói đăng ký, quyền sử dụng, tính năng bổ sung, v.v. do Công ty cung cấp có thu phí (nếu có).",
-    
     "serviceTermsArt3Title": "Điều 3 (Hiệu lực và Áp dụng)",
     "serviceTermsArt3Content": "1. Các điều khoản này có hiệu lực khi được đăng trên màn hình Dịch vụ (màn hình ban đầu hoặc màn hình liên kết) hoặc được thông báo bằng phương thức khác và được Thành viên đồng ý.\n2. Công ty có thể sửa đổi các điều khoản này trong phạm vi không vi phạm pháp luật liên quan.\n3. Các vấn đề không được quy định trong Điều khoản này sẽ tuân theo pháp luật liên quan, chính sách vận hành/hướng dẫn do Công ty quy định riêng và tập quán thương mại chung.",
-    
     "serviceTermsArt4Title": "Điều 4 (Thay đổi và Thông báo)",
     "serviceTermsArt4Content": "1. Khi sửa đổi điều khoản, Công ty sẽ thông báo ngày áp dụng, nội dung sửa đổi và lý do sửa đổi trong Dịch vụ.\n2. Trong trường hợp thay đổi quan trọng hoặc bất lợi cho Người dùng, Công ty sẽ thông báo trước một khoảng thời gian hợp lý (ví dụ: ít nhất 30 ngày) và thông báo riêng nếu cần thiết.\n3. Thành viên không đồng ý với điều khoản thay đổi có thể chấm dứt hợp đồng sử dụng (hủy thành viên) trước khi điều khoản thay đổi có hiệu lực.",
-    
     "serviceTermsArt5Title": "Điều 5 (Đăng ký và Quản lý Tài khoản)",
     "serviceTermsArt5Content": "1. Đăng ký thành viên hoàn tất khi Người dùng đồng ý với điều khoản và hoàn thành các thủ tục do Công ty quy định (tạo tài khoản, xác minh danh tính, v.v.).\n2. Thành viên phải duy trì thông tin tài khoản cập nhật nhất và chịu trách nhiệm về mọi bất lợi do cung cấp thông tin sai lệch hoặc đánh cắp thông tin của người khác.\n3. Thành viên có trách nhiệm quản lý tài khoản/mật khẩu (hoặc phương tiện xác thực) và phải thông báo ngay cho Công ty nếu nghi ngờ có bên thứ ba sử dụng.",
-    
     "serviceTermsArt6Title": "Điều 6 (Sử dụng bởi Người chưa thành niên)",
     "serviceTermsArt6Content": "1. Việc đăng ký và quy trình liên quan đến thông tin cá nhân của trẻ em dưới 14 tuổi tuân theo pháp luật liên quan như sự đồng ý của người đại diện theo pháp luật (có thể hạn chế đăng ký theo chính sách Dịch vụ).\n2. Công ty có thể yêu cầu xác minh độ tuổi hoặc sự đồng ý của người đại diện theo pháp luật nếu cần thiết.",
-    
     "serviceTermsArt7Title": "Điều 7 (Cung cấp và Thay đổi Dịch vụ)",
     "serviceTermsArt7Content": "1. Công ty có thể cung cấp các dịch vụ sau:\na. Kết nối và quản lý mối quan hệ dựa trên xác thực chéo (gia đình/bạn bè/tổ chức, v.v.)\nb. Tạo, xem và chia sẻ cây gia phả/sơ đồ mối quan hệ\nc. Cấu hình và hiển thị Hồ sơ/ID (thân phận/kết nối)\nd. Tải lên và sắp xếp tài liệu/hình ảnh (bao gồm PDF)\ne. Các tính năng bổ sung như tìm kiếm/tóm tắt/hỏi đáp dựa trên AI (nếu có)\n2. Công ty có thể thay đổi hoặc ngừng cung cấp toàn bộ hoặc một phần Dịch vụ và sẽ thông báo trước trong trường hợp thay đổi hoặc ngừng cung cấp quan trọng.\n3. Công ty có thể tiến hành bảo trì theo nhu cầu vận hành/kỹ thuật và thời gian bảo trì sẽ được thông báo trên màn hình Dịch vụ.",
-    
     "serviceTermsArt8Title": "Điều 8 (Quy định đặc biệt về Xác thực chéo và Dữ liệu mối quan hệ)",
     "serviceTermsArt8Content": "1. Xác thực chéo là tính năng hỗ trợ xác nhận mối quan hệ giữa các Thành viên, Công ty không đảm bảo hiệu lực pháp lý hoặc tính trung thực của mối quan hệ thực tế giữa các Thành viên.\n2. Thành viên không được nhập hoặc đăng thông tin nhạy cảm về người khác (ví dụ: số CMND, v.v.) mà không có sự đồng ý của họ.\n3. Dữ liệu mối quan hệ (cây gia phả/sơ đồ mối quan hệ) được tạo ra bởi sự nhập liệu và tương tác của Thành viên, tranh chấp phát sinh từ đó về nguyên tắc sẽ được giải quyết giữa các bên. Công ty không có nghĩa vụ can thiệp trừ khi pháp luật quy định trách nhiệm.",
-    
     "serviceTermsArt9Title": "Điều 9 (Quyền đối với Nội dung và Cấp phép sử dụng)",
     "serviceTermsArt9Content": "1. Quyền đối với Nội dung về nguyên tắc thuộc về Thành viên đã tạo/đăng ký nội dung đó.\n2. Thành viên cấp cho Công ty quyền sử dụng không độc quyền để lưu trữ, sao chép, truyền tải, chuyển đổi (ví dụ: chuyển đổi định dạng/lập chỉ mục tìm kiếm) và hiển thị Nội dung đó trong phạm vi cần thiết để vận hành, cung cấp và cải thiện Dịch vụ.\n3. Thành viên đảm bảo rằng mình nắm giữ các quyền hợp pháp hoặc đã nhận được sự cho phép sử dụng đối với các tài liệu, hình ảnh, văn bản, v.v. được tải lên.\n4. Trường hợp Công ty có ý định sử dụng Nội dung để cải thiện tính năng AI, v.v., Công ty sẽ thực hiện các thủ tục thông báo/đồng ý riêng theo yêu cầu của pháp luật (nếu cần thiết).",
-    
     "serviceTermsArt10Title": "Điều 10 (Hành vi bị cấm)",
     "serviceTermsArt10Content": "Người dùng không được thực hiện các hành vi sau:\n1. Đánh cắp tài khoản, giả mạo danh tính người khác\n2. Đăng thông tin bất hợp pháp, vi phạm bản quyền, nội dung khiêu dâm/quay lén\n3. Gây quá tải cho Dịch vụ hoặc máy chủ hoặc xâm phạm bảo mật\n4. Thu thập/cào dữ liệu trái phép bằng phương tiện tự động (trừ phạm vi được Công ty cho phép)\n5. Xâm phạm quyền của người khác (quyền hình ảnh, thông tin cá nhân, danh dự, v.v.)\n6. Các hành vi khác vi phạm pháp luật hoặc trái với thuần phong mỹ tục và trật tự xã hội",
-    
     "serviceTermsArt11Title": "Điều 11 (Hạn chế sử dụng và Chấm dứt hợp đồng)",
     "serviceTermsArt11Content": "1. Trường hợp Thành viên vi phạm Điều khoản này hoặc chính sách vận hành, Công ty có thể áp dụng các biện pháp như cảnh cáo, xóa/ẩn nội dung, hạn chế tính năng, tạm ngừng sử dụng, ngừng sử dụng vĩnh viễn (hủy tài khoản) tùy theo mức độ vi phạm.\n2. Thành viên có thể chấm dứt hợp đồng sử dụng (hủy thành viên) bất cứ lúc nào thông qua quy trình trong Dịch vụ.\n3. Sau khi hạn chế sử dụng hoặc chấm dứt, một số thông tin có thể được lưu trữ trong một khoảng thời gian nhất định theo pháp luật và chính sách lưu trữ của Công ty, chi tiết tuân theo Chính sách bảo mật.",
-    
     "serviceTermsArt12Title": "Điều 12 (Dịch vụ trả phí và Thanh toán)",
     "serviceTermsArt12Content": "1. Nội dung, giá cước, phương thức thanh toán, thời gian cung cấp, tiêu chuẩn hoàn tiền, v.v. của Dịch vụ trả phí tuân theo hướng dẫn riêng (màn hình Dịch vụ/trang thanh toán/chính sách hoàn tiền).\n2. Các điều kiện gia hạn tự động, hủy bỏ, hoàn tiền của dịch vụ đăng ký có thể áp dụng đồng thời chính sách của phương thức thanh toán và cửa hàng ứng dụng (ví dụ: App Store/Play Store) và chính sách của Công ty.",
-    
     "serviceTermsArt13Title": "Điều 13 (Miễn trừ và Giới hạn trách nhiệm)",
     "serviceTermsArt13Content": "1. Công ty không chịu trách nhiệm trong trường hợp không thể cung cấp Dịch vụ do nguyên nhân bất khả kháng như thiên tai, chiến tranh, mất điện, sự cố mạng viễn thông, sự cố dịch vụ của bên thứ ba.\n2. Công ty không chịu trách nhiệm về tranh chấp giữa những Người dùng, tính chính xác của thông tin do Người dùng nhập, độ tin cậy của kết quả xác thực chéo, tính hợp pháp của Nội dung, trừ khi pháp luật quy định trách nhiệm.\n3. Trường hợp cung cấp tính năng AI, kết quả đầu ra của AI chỉ mang tính tham khảo (có thể có lỗi), phán quyết cuối cùng và trách nhiệm thuộc về Người dùng.",
-    
     "serviceTermsArt14Title": "Điều 14 (Thông báo)",
     "serviceTermsArt14Content": "1. Công ty có thể thông báo bằng các phương thức hợp lý như email/số điện thoại/thông báo đẩy (push)/thông báo trong Dịch vụ mà Thành viên đã đăng ký.\n2. Trường hợp Thành viên không nhận được thông báo do không duy trì thông tin liên hệ cập nhật, mọi bất lợi phát sinh thuộc về Thành viên.",
-    
     "serviceTermsArt15Title": "Điều 15 (Bảo vệ thông tin cá nhân)",
     "serviceTermsArt15Content": "Các vấn đề về xử lý thông tin cá nhân (thu thập, sử dụng, cung cấp, ủy thác, hủy bỏ, v.v.) tuân theo Chính sách bảo mật và các thủ tục đồng ý liên quan. Điều khoản sử dụng không thay thế cho sự đồng ý về thông tin cá nhân.",
-    
     "serviceTermsArt16Title": "Điều 16 (Luật áp dụng và Thẩm quyền)",
     "serviceTermsArt16Content": "1. Các điều khoản này được giải thích và áp dụng theo pháp luật Hàn Quốc.\n2. Trường hợp phát sinh tranh chấp liên quan đến việc sử dụng Dịch vụ, ưu tiên giải quyết thông qua thương lượng giữa các bên, nếu thương lượng không thành, Tòa án Quận Trung tâm Seoul sẽ là tòa án có thẩm quyền độc quyền (hoặc tòa án có thẩm quyền theo Luật Tố tụng Dân sự).",
-    
     "serviceTermsAddendumTitle": "Phụ lục",
     "serviceTermsAddendumContent": "1. Các điều khoản này có hiệu lực từ [01/02/2026].\n2. Các điều khoản này cũng áp dụng cho các Thành viên đã tham gia trước ngày hiệu lực (trừ trường hợp có hạn chế theo pháp luật).",
-    
     "serviceTermsCompanyInfoTitle": "Thông tin công ty",
     "serviceTermsCompanyInfoContent": "• Tên: Công ty Chon\n• Đại diện: Shin Geun-young\n• Số ĐKKD: 196-86-03544\n• Địa chỉ: 309, 3F, 464 Gangnam-daero, Gangnam-gu, Seoul\n• CSKH: 010-3420-8691 / ops@chon.ai\n• CPO: Kim Nam-yul / Giám đốc / 010-9949-4887",
-
     "serviceTermsAgreeCheckbox": "(Điều khoản này) Đồng ý Điều khoản sử dụng",
     "emailLabel": "Email",
     "subjectLabel": "Tiêu đề",
@@ -505,17 +454,14 @@
     "action_ok": "OK",
     "action_select": "Chọn",
     "action_delete": "Xóa",
-
     "hint_ask_anything": "Bạn cần giúp gì?",
     "hint_select_contact": "Chọn người liên hệ",
     "label_content": "Nội dung",
     "label_license_number": "Số giấy phép",
     "label_expiration_date": "Ngày hết hạn",
     "label_aptitude_test": "Kiểm tra sát hạch",
-
     "field_surname": "Họ",
     "field_given_name": "Tên",
-
     "info_account_holder": "{account} {name}",
     "info_issued_date": "Cấp ngày {date}",
     "self_id_created": "Self ID đã được tạo",
@@ -524,5 +470,34 @@
     "elder_brother": "anh trai",
     "little_brother": "em trai",
     "elder_sister": "chị gái",
-    "little_sister": "em gái"
+    "little_sister": "em gái",
+    "chon_action_next": "Tiếp",
+    "chon_action_skip": "Bỏ qua",
+    "chon_action_start": "Bắt đầu",
+    "chon_action_confirm": "Xác nhận",
+    "chon_action_retry": "Thử lại",
+    "chon_action_save": "Lưu",
+    "chon_action_send": "Gửi",
+    "chon_tutorial_s1_title": "Xác minh\nbản thân với CHON DID",
+    "chon_tutorial_s1_body": "Được người thân xác nhận danh tính\nvà xác thực khi cần thiết.",
+    "chon_tutorial_s2_title": "Xác thực lẫn nhau",
+    "chon_tutorial_s2_body": "Xác thực với gia đình\nđể chứng minh mối quan hệ.",
+    "chon_tutorial_s3_title": "Cây gia phả\nvới gia đình",
+    "chon_tutorial_s3_body": "Trực quan hóa quan hệ gia đình\nvà lưu trữ gia phả an toàn.",
+    "chon_tutorial_s4_title": "Sẵn sàng\nbắt đầu với CHON?",
+    "chon_tutorial_s4_body": "Cài đặt đã hoàn tất.\nSử dụng ngay bây giờ.",
+    "chon_home_banner": "Tạo CHON ID của bạn qua xác thực lẫn nhau.",
+    "chon_home_tutorial_card": "Hướng dẫn\nCHON DID",
+    "chon_home_mutual_title": "Xác thực lẫn nhau",
+    "chon_home_mutual_subtitle": "Xác minh lẫn nhau\nvới gia đình",
+    "chon_home_input_label": "Thông tin đầu vào",
+    "chon_home_q_contact": "Liên hệ\n(Gia phả)",
+    "chon_home_q_edit_profile": "Sửa hồ sơ",
+    "chon_home_q_qr": "Mã QR",
+    "chon_home_q_support": "Hỗ trợ",
+    "chon_nav_home": "Trang chủ",
+    "chon_nav_chon": "CHON",
+    "chon_nav_id_card": "Thẻ ID",
+    "chon_nav_mutual": "Xác thực",
+    "chon_nav_family_tree": "Gia phả"
 }
